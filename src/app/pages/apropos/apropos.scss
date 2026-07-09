@@ -1,0 +1,68 @@
+ .ct-hero {
+     position: relative;
+     min-height: 56vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     overflow: hidden;
+     padding: 80px 24px 60px;
+
+     @media (max-width: 560px) {
+         min-height: 62vh;
+         padding: 64px 18px 48px;
+     }
+ }
+
+ .ct-hero-bg {
+     position: absolute;
+     inset: 0;
+     background-color: #020816;
+     background-image: url('/apropos.jpg');
+     background-position: center 45.5%;
+     background-size: cover;
+
+     &::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: rgba(2, 8, 22, 0.4);
+     }
+
+     &::after {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background-image:
+             linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+             linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+         background-size: 60px 60px;
+         mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+         -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+     }
+ }
+
+ .ct-hero-content {
+     position: relative;
+     z-index: 2;
+     max-width: 680px;
+ }
+
+ .ct-hero-title {
+     font-family: 'Outfit', sans-serif;
+     font-size: clamp(2.5rem, 6vw, 5rem);
+     font-weight: 800;
+     color: #ffffff;
+     line-height: 1.1;
+     letter-spacing: -1.5px;
+     margin-bottom: 20px;
+     overflow-wrap: anywhere;
+ }
+
+ .ct-hero-desc {
+     font-size: clamp(1rem, 1.8vw, 1.15rem);
+     color: rgba(255, 255, 255, 0.75);
+     line-height: 1.7;
+     max-width: 600px;
+     margin: 0 auto;
+ }
