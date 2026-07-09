@@ -26,4 +26,4 @@ export const routes: Routes = [
 
   // Redirection 404
   { path: '**', redirectTo: '/home' }
-];
+];
