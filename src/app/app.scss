@@ -2,5 +2,7 @@
   min-height: calc(100vh - var(--navbar-height));
   display: flex;
   flex-direction: column;
-  background-color: var(--white);
+  // Pas de background-color ici : on laisse le pattern global
+  // de body::before (patt1.png) s'afficher en transparence.
+  background-color: transparent;
 }

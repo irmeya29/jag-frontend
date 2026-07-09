@@ -113,6 +113,14 @@
     --container-xl: 1280px;
     --container-2xl: 1440px;
     --navbar-height: 81px;
+
+    // ------------------------------------------------------------
+    // Pattern de fond global (patt1.png)
+    // Modifiez --pattern-opacity pour ajuster l'intensité du motif
+    // sur l'ensemble du site depuis ce seul endroit.
+    // Valeur recommandée : entre 0.03 (très subtil) et 0.15 (visible)
+    // ------------------------------------------------------------
+    --pattern-opacity: 0.06;
 }
 
 
@@ -142,6 +150,26 @@ body {
     background-color: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    // Nécessaire pour que le pseudo-élément pattern soit positionné
+    // par rapport au viewport (position: fixed ci-dessous)
+    position: relative;
+}
+
+// ------------------------------------------------------------
+// PATTERN DE FOND GLOBAL — patt1.png
+// Appliqué sur toutes les pages via un pseudo-élément.
+// Pour modifier l'opacité : changer --pattern-opacity dans :root.
+// ------------------------------------------------------------
+body::before {
+    content: '';
+    position: fixed; // Couvre tout le viewport, quelle que soit la page
+    inset: 0; // top/right/bottom/left = 0
+    z-index: -1; // Derrière tout le contenu
+    background-image: url('/patt2.png');
+    background-repeat: repeat;
+    background-size: auto;
+    opacity: var(--pattern-opacity);
+    pointer-events: none; // Le pattern ne bloque pas les clics
 }
 
 h1,
