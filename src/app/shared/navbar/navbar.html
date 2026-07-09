@@ -1,1 +1,59 @@
-<p>navbar works!</p>
+<nav class="navbar animate-fadeIn">
+  <div class="container navbar-container">
+    <!-- Logo -->
+    <a routerLink="/" class="logo-link" (click)="closeMenu()">
+      <img src="logo.png" alt="Just Agro Group Logo" class="logo-img" />
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-toggle" [class.is-active]="isMenuOpen()" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="nav-menu" [class.is-open]="isMenuOpen()">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a routerLink="/home" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Accueil</a>
+        </li>
+        <li class="nav-item has-dropdown" [class.is-active]="isDropdownOpen()">
+          <a class="nav-link dropdown-toggle" (click)="toggleDropdown($event)">
+            Nos Pôles
+            <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/nospoles/pole1" routerLinkActive="active" class="dropdown-link"
+                (click)="closeMenu()">Maîtrise d’Ouvrage Agricole </a></li>
+            <li><a routerLink="/nospoles/pole2" routerLinkActive="active" class="dropdown-link"
+                (click)="closeMenu()">Fournisseur Contractuel Industriel </a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/notre-processus" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Notre
+            Processus</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/realisations" routerLinkActive="active" class="nav-link"
+            (click)="closeMenu()">Réalisations</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/actualites" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Actualités</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Contact</a>
+        </li>
+      </ul>
+
+      <!-- CTA -->
+      <div class="nav-cta">
+        <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace" (click)="closeMenu()">
+          MON ESPACE JUST
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

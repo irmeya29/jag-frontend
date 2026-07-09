@@ -1,1 +1,113 @@
-<p>footer works!</p>
+<footer class="footer pos-relative overflow-hidden">
+  <div class="footer-wave-bg"></div>
+
+  <div class="container footer-container">
+    <!-- Top Part: Logo, Info & Action -->
+    <div class="footer-top-row">
+      <div class="footer-brand-section">
+        <a routerLink="/" class="footer-logo">
+          <img src="logo.png" alt="Just Agro Group" class="footer-logo-img logo-large" />
+        </a>
+        <p class="footer-mission">
+          Opérateur agricole industriel d'excellence en Afrique de l'Ouest. Nous structurons des projets durables et
+          transparents à fort impact pour nos investisseurs et partenaires.
+        </p>
+      </div>
+      <div class="footer-action-section">
+        <h5 class="action-heading">Envie de collaborer avec nous ?</h5>
+        <div class="action-buttons">
+          <a routerLink="/contact" class="btn btn--primary btn--sm">
+            Contacter JAG
+          </a>
+          <a routerLink="/mon-espace-just" class="btn btn--outline btn--sm text-white">
+            Mon Espace Just
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider-glow"></div>
+
+    <!-- Middle Part: Quick Links & Contact info -->
+    <div class="footer-grid">
+      <!-- Navigation Links -->
+      <div class="footer-col">
+        <h4 class="footer-title">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a routerLink="/home"><span class="bullet"></span>Accueil</a></li>
+          <li><a routerLink="/apropos"><span class="bullet"></span>À propos</a></li>
+          <li><a routerLink="/notre-processus"><span class="bullet"></span>Notre Processus</a></li>
+          <li><a routerLink="/realisations"><span class="bullet"></span>Réalisations</a></li>
+          <li><a routerLink="/actualites"><span class="bullet"></span>Actualités</a></li>
+          <li><a routerLink="/contact"><span class="bullet"></span>Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Poles Links -->
+      <div class="footer-col">
+        <h4 class="footer-title">ACCES RAPIDE</h4>
+        <ul class="footer-links">
+          <li><a routerLink="/nospoles/pole1"><span class="bullet"></span> Maîtrise d’Ouvrage Agricole</a></li>
+          <li><a routerLink="/nospoles/pole2"><span class="bullet"></span>Fournisseur Contractuel Industriel</a></li>
+          <li><a routerLink="/mon-espace-just"><span class="bullet"></span>Mon Espace Just</a></li>
+          <li><a href="#"><span class="bullet"></span>Mentions Légales</a></li>
+        </ul>
+      </div>
+
+      <!-- Address / Phone Coordinates -->
+      <div class="footer-col">
+        <h4 class="footer-title">LOCALISATION & CONTACTS</h4>
+        <ul class="footer-meta-list">
+          <li>
+            <svg class="meta-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Koudougou, Burkina Faso</span>
+          </li>
+          <li>
+            <svg class="meta-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <a href="mailto:contact@justagrogroup.com">contact&#64;justagrogroup.com</a>
+          </li>
+          <li>
+            <svg class="meta-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>+226 54 12 62 99</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick WhatsApp / Messenger -->
+      <div class="footer-col">
+        <h4 class="footer-title">SUPPORT DIRECT</h4>
+        <p class="direct-desc">Besoin d'une réponse instantanée ? Discutez avec nos équipes sur WhatsApp.</p>
+        <ul class="footer-meta-list">
+          <li>
+            <svg class="meta-icon wa-icon-static" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.92 9.92 0 0 0 4.775 1.226h.005c5.505 0 9.99-4.478 9.99-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2zm5.79 14.204c-.25.704-1.25 1.286-1.722 1.336-.473.05-1.054.084-2.83-.655-2.28-.946-3.75-3.268-3.864-3.42-.113-.151-.925-1.23-.925-2.347 0-1.117.585-1.666.793-1.892.208-.225.454-.284.606-.284.15 0 .303.003.435.009.136.006.317-.05.497.39.184.448.629 1.536.685 1.648.056.113.094.246.019.395-.075.152-.113.246-.226.38-.113.136-.24.303-.34.407-.113.113-.23.236-.098.464.13.228.583.962 1.25 1.558.86.769 1.583.998 1.81.112.227-.113.454-.265.586-.416.13-.15.265-.113.435-.05.17.062 1.077.508 1.266.602.188.095.316.14.364.221.047.082.047.472-.203 1.176z" />
+            </svg>
+            <a href="https://wa.me/22678612152" target="_blank" rel="noopener noreferrer" class="wa-num-static">+226 78
+              61 21 52</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="footer-bottom">
+      <p class="copyright">
+        © 2026 <strong>Just Agro Group</strong>. Tous droits réservés.
+      </p>
+      <p class="footer-author">
+        Propulsé avec passion par <span class="author-badge">Irdel</span>
+      </p>
+    </div>
+  </div>
+</footer>
