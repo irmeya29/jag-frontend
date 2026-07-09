@@ -47,13 +47,20 @@
           <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Contact</a>
         </li>
       </ul>
-
-      <!-- CTA -->
-      <div class="nav-cta">
-        <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace" (click)="closeMenu()">
+      
+      <!-- Mobile CTA (Only visible inside drawer on mobile) -->
+      <div class="mobile-cta-only">
+        <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace btn--block" (click)="closeMenu()">
           MON ESPACE JUST
         </a>
       </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="nav-cta">
+      <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace" (click)="closeMenu()">
+        MON ESPACE JUST
+      </a>
     </div>
   </div>
 </nav>
