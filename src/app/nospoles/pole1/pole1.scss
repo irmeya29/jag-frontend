@@ -42,12 +42,29 @@
      }
  }
 
- .ct-hero-content {
+ .ct-hero .ct-hero-content {
      position: relative;
      z-index: 2;
-     max-width: 680px;
+     max-width: 800px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
  }
-
+ 
+ .ct-hero-tag {
+     background: rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(10px);
+     padding: 8px 16px;
+     border-radius: 50px;
+     color: var(--jag-green);
+     font-weight: 700;
+     font-size: 0.9rem;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     margin-bottom: 20px;
+     border: 1px solid rgba(255,255,255,0.2);
+ }
+ 
  .ct-hero-title {
      font-family: 'Outfit', sans-serif;
      font-size: clamp(2.5rem, 6vw, 5rem);
@@ -55,183 +72,291 @@
      color: #ffffff;
      line-height: 1.1;
      letter-spacing: -1.5px;
-     margin-bottom: 20px;
+     margin-bottom: 24px;
      overflow-wrap: anywhere;
+     text-shadow: 0 10px 30px rgba(0,0,0,0.3);
  }
-
+ 
  .ct-hero-desc {
-     font-size: clamp(1rem, 1.8vw, 1.15rem);
-     color: rgba(255, 255, 255, 0.75);
+     font-size: clamp(1rem, 1.8vw, 1.25rem);
+     color: rgba(255, 255, 255, 0.85);
      line-height: 1.7;
-     max-width: 600px;
-     margin: 0 auto;
+     max-width: 650px;
+     margin: 0 auto 40px;
  }
-
- // Global settings for this view
- .ct-section {
-     padding: 80px 24px;
-     background-color: #ffffff;
-     color: #bcafaf;
-     font-family: 'Inter', sans-serif;
-
-     &.ct-process {
-         background-color: #f8fafc; // subtle gray
+ 
+ .ct-hero-btn {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     background: var(--jag-green);
+     color: #ffffff;
+     font-weight: 700;
+     padding: 16px 36px;
+     border-radius: 50px;
+     text-decoration: none;
+     transition: all 0.3s ease;
+     box-shadow: 0 10px 30px rgba(46, 170, 99, 0.4);
+     
+     &:hover {
+         transform: translateY(-3px);
+         background: #248f52;
+         box-shadow: 0 15px 40px rgba(46, 170, 99, 0.5);
      }
  }
-
+ 
+ // Global settings for this view
+ .ct-section {
+     padding: 100px 24px;
+     background-color: #ffffff;
+     color: var(--jag-text);
+     font-family: 'Inter', sans-serif;
+ 
+     &.ct-process {
+         background-color: #f8fafc;
+     }
+ }
+ 
  .ct-container {
      max-width: 1200px;
      margin: 0 auto;
  }
-
- .ct-grid-2 {
+ 
+ .ct-text-center {
+     text-align: center;
+ }
+ 
+ .ct-section-surtitle {
+     display: block;
+     color: var(--jag-orange);
+     font-weight: 700;
+     font-size: 0.9rem;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-bottom: 12px;
+ }
+ 
+ .ct-section-title {
+     font-family: 'Outfit', sans-serif;
+     font-size: clamp(2.2rem, 4vw, 3.5rem);
+     font-weight: 800;
+     color: var(--jag-navy);
+     margin-bottom: 24px;
+     line-height: 1.1;
+ }
+ 
+ .ct-subtitle {
+     font-size: 1.15rem;
+     color: var(--jag-text);
+     max-width: 650px;
+     margin: 0 auto;
+ }
+ 
+ /* --- CIBLE & MISSION --- */
+ .ct-target-grid {
      display: grid;
      grid-template-columns: 1fr 1fr;
      gap: 60px;
      align-items: center;
-
-     @media (max-width: 768px) {
+ 
+     @media (max-width: 992px) {
          grid-template-columns: 1fr;
-         gap: 40px;
+         gap: 50px;
      }
  }
-
- .ct-grid-4 {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-     gap: 30px;
-     margin-top: 50px;
+ 
+ .ct-target-text {
+     display: flex;
+     flex-direction: column;
  }
-
- .ct-text-center {
-     text-align: center;
+ 
+ .ct-target-card {
+     display: flex;
+     gap: 20px;
+     padding: 24px;
+     border-radius: 16px;
+     background: #f8fafc;
+     margin-bottom: 20px;
+     transition: all 0.3s ease;
+ 
+     &:hover {
+         transform: translateX(10px);
+         background: #f1f5f9;
+     }
+ 
+     &.highlight {
+         background: rgba(46, 170, 99, 0.05);
+         border: 1px solid rgba(46, 170, 99, 0.1);
+         
+         &:hover {
+             background: rgba(46, 170, 99, 0.08);
+         }
+     }
  }
-
- .ct-section-title {
-     font-family: 'Outfit', sans-serif;
-     font-size: clamp(2rem, 4vw, 3rem);
-     font-weight: 700;
-     color: var(--jag-navy);
-     margin-bottom: 24px;
-     line-height: 1.2;
+ 
+ .ct-target-icon {
+     font-size: 2.5rem;
+     line-height: 1;
  }
-
- .ct-subtitle {
-     font-size: 1.15rem;
-     color: var(--jag-text);
-     max-width: 600px;
-     margin: 0 auto;
- }
-
- .ct-text {
-     font-size: 1.1rem;
-     color: var(--jag-text);
-     line-height: 1.7;
-     margin-bottom: 16px;
-
-     strong {
-         color: var(--jag-green);
+ 
+ .ct-target-info {
+     h4 {
+         font-family: 'Outfit', sans-serif;
+         font-size: 1.3rem;
          font-weight: 700;
+         color: var(--jag-navy);
+         margin-bottom: 8px;
+     }
+     
+     p {
+         color: var(--jag-text);
+         line-height: 1.6;
+         margin: 0;
      }
  }
-
+ 
  .ct-keyword {
      color: var(--jag-green);
      font-weight: 700;
  }
-
- /* Placeholders for images */
- .ct-image-zone {
-     width: 100%;
-     height: 100%;
-     min-height: 400px;
-     border-radius: 5px;
-     overflow: hidden;
+ 
+ .ct-visual-card {
      position: relative;
-     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+     border-radius: 24px;
+     overflow: hidden;
+     box-shadow: 0 24px 50px rgba(13, 33, 55, 0.1);
+     aspect-ratio: 4/5;
  }
-
- .ct-placeholder {
+ 
+ .ct-visual-img {
      width: 100%;
      height: 100%;
-     min-height: 250px;
-     background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-     background-image: url('/road.jpg');
-     background-size: cover;
-     background-position: center;
+     object-fit: cover;
+     transition: transform 0.7s ease;
+     
+     &:hover {
+         transform: scale(1.05);
+     }
+ }
+ 
+ .ct-visual-badge {
+     position: absolute;
+     bottom: 30px;
+     left: -20px;
+     background: #ffffff;
+     padding: 20px 30px;
+     border-radius: 16px;
+     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
      display: flex;
      flex-direction: column;
      align-items: center;
-     justify-content: center;
-     color: #64748b;
-     position: relative;
-     border: 3px dashed;
-     border-radius: inherit;
-     transition: all 0.3s ease;
-
-
-
-     &::after {
-         content: attr(data-label);
-         margin-top: 15px;
-         font-weight: 600;
-         font-size: 1.1rem;
-         text-align: center;
-         padding: 0 20px;
+     z-index: 10;
+     
+     .badge-number {
+         font-family: 'Outfit', sans-serif;
+         font-size: 2.5rem;
+         font-weight: 800;
+         color: var(--jag-green);
+         line-height: 1;
+     }
+     
+     .badge-text {
+         font-size: 0.9rem;
+         font-weight: 700;
+         color: var(--jag-navy);
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         margin-top: 5px;
+     }
+     
+     @media (max-width: 768px) {
+         left: 20px;
      }
  }
-
- .ct-placeholder-icon {
-     font-size: 3rem;
+ 
+ /* --- PROCESSUS --- */
+ .ct-process-timeline {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+     gap: 30px;
+     margin-top: 60px;
  }
-
- .ct-placeholder-large {
-     min-height: 450px;
- }
-
- /* Cards Process */
- .ct-card {
+ 
+ .ct-step-card {
      background: #ffffff;
-     border-radius: 0px;
-     overflow: hidden;
-     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-     border: 1px solid rgba(0, 0, 0, 0.05);
-
+     border-radius: 20px;
+     padding: 30px 24px;
+     position: relative;
+     box-shadow: 0 15px 35px rgba(13, 33, 55, 0.04);
+     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     border: 1px solid rgba(13, 33, 55, 0.03);
+ 
      &:hover {
-         transform: translateY(-10px);
-         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+         transform: translateY(-15px);
+         box-shadow: 0 25px 50px rgba(13, 33, 55, 0.08);
+         
+         .ct-step-number {
+             background: var(--jag-green);
+             color: #ffffff;
+         }
      }
  }
-
- .ct-card-image {
-     height: 220px;
-     width: 100%;
-
-     .ct-placeholder {
-         border: none;
-         border-radius: 0;
-     }
- }
-
- .ct-card-body {
-     padding: 24px;
-     text-align: center;
- }
-
- .ct-card-title {
-     font-family: 'Outfit', sans-serif;
-     font-size: 1.3rem;
-     font-weight: 750;
+ 
+ .ct-step-number {
+     position: absolute;
+     top: -20px;
+     left: 24px;
+     width: 45px;
+     height: 45px;
+     background: #f1f5f9;
      color: var(--jag-navy);
-     margin-bottom: 5px;
-     margin-top: 25px;
+     font-family: 'Outfit', sans-serif;
+     font-weight: 800;
+     font-size: 1.1rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 12px;
+     transition: all 0.3s ease;
+     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
  }
-
- .ct-card-desc {
-     color: var(--jag-text);
-     font-size: 1rem;
-     line-height: 1.5;
+ 
+ .ct-step-image-wrap {
+     width: 100%;
+     height: 180px;
+     border-radius: 12px;
+     overflow: hidden;
+     margin-top: 10px;
+     margin-bottom: 20px;
+     background: #f8fafc;
+     
+     img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         transition: transform 0.5s ease;
+     }
+ }
+ 
+ .ct-step-card:hover .ct-step-image-wrap img {
+     transform: scale(1.08);
+ }
+ 
+ .ct-step-content {
+     h3 {
+         font-family: 'Outfit', sans-serif;
+         font-size: 1.4rem;
+         font-weight: 700;
+         color: var(--jag-navy);
+         margin-bottom: 10px;
+     }
+     
+     p {
+         color: var(--jag-text);
+         line-height: 1.6;
+         font-size: 1.05rem;
+         margin: 0;
+     }
  }
 
  /* Nouvelle Rémunération Card */
