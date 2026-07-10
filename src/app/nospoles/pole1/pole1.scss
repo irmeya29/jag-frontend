@@ -1,0 +1,465 @@
+ .ct-hero {
+     position: relative;
+     min-height: 56vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     overflow: hidden;
+     padding: 80px 24px 60px;
+
+     @media (max-width: 560px) {
+         min-height: 62vh;
+         padding: 64px 18px 48px;
+     }
+ }
+
+ .ct-hero-bg {
+     position: absolute;
+     inset: 0;
+     background-color: var(--jag-navy);
+     background-image: url('/pole1hero.png');
+     background-position: center 45.5%;
+     background-size: cover;
+
+     &::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: rgba(2, 8, 22, 0.4);
+     }
+
+     &::after {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background-image:
+             linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+             linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+         background-size: 60px 60px;
+         mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+         -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+     }
+ }
+
+ .ct-hero-content {
+     position: relative;
+     z-index: 2;
+     max-width: 680px;
+ }
+
+ .ct-hero-title {
+     font-family: 'Outfit', sans-serif;
+     font-size: clamp(2.5rem, 6vw, 5rem);
+     font-weight: 800;
+     color: #ffffff;
+     line-height: 1.1;
+     letter-spacing: -1.5px;
+     margin-bottom: 20px;
+     overflow-wrap: anywhere;
+ }
+
+ .ct-hero-desc {
+     font-size: clamp(1rem, 1.8vw, 1.15rem);
+     color: rgba(255, 255, 255, 0.75);
+     line-height: 1.7;
+     max-width: 600px;
+     margin: 0 auto;
+ }
+
+ // Global settings for this view
+ .ct-section {
+     padding: 80px 24px;
+     background-color: #ffffff;
+     color: #bcafaf;
+     font-family: 'Inter', sans-serif;
+
+     &.ct-process {
+         background-color: #f8fafc; // subtle gray
+     }
+ }
+
+ .ct-container {
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .ct-grid-2 {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 60px;
+     align-items: center;
+
+     @media (max-width: 768px) {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+ }
+
+ .ct-grid-4 {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 30px;
+     margin-top: 50px;
+ }
+
+ .ct-text-center {
+     text-align: center;
+ }
+
+ .ct-section-title {
+     font-family: 'Outfit', sans-serif;
+     font-size: clamp(2rem, 4vw, 3rem);
+     font-weight: 700;
+     color: var(--jag-navy);
+     margin-bottom: 24px;
+     line-height: 1.2;
+ }
+
+ .ct-subtitle {
+     font-size: 1.15rem;
+     color: var(--jag-text);
+     max-width: 600px;
+     margin: 0 auto;
+ }
+
+ .ct-text {
+     font-size: 1.1rem;
+     color: var(--jag-text);
+     line-height: 1.7;
+     margin-bottom: 16px;
+
+     strong {
+         color: var(--jag-green);
+         font-weight: 700;
+     }
+ }
+
+ .ct-keyword {
+     color: var(--jag-green);
+     font-weight: 700;
+ }
+
+ /* Placeholders for images */
+ .ct-image-zone {
+     width: 100%;
+     height: 100%;
+     min-height: 400px;
+     border-radius: 5px;
+     overflow: hidden;
+     position: relative;
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+ }
+
+ .ct-placeholder {
+     width: 100%;
+     height: 100%;
+     min-height: 250px;
+     background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+     background-image: url('/road.jpg');
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     color: #64748b;
+     position: relative;
+     border: 3px dashed;
+     border-radius: inherit;
+     transition: all 0.3s ease;
+
+
+
+     &::after {
+         content: attr(data-label);
+         margin-top: 15px;
+         font-weight: 600;
+         font-size: 1.1rem;
+         text-align: center;
+         padding: 0 20px;
+     }
+ }
+
+ .ct-placeholder-icon {
+     font-size: 3rem;
+ }
+
+ .ct-placeholder-large {
+     min-height: 450px;
+ }
+
+ /* Cards Process */
+ .ct-card {
+     background: #ffffff;
+     border-radius: 0px;
+     overflow: hidden;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     border: 1px solid rgba(0, 0, 0, 0.05);
+
+     &:hover {
+         transform: translateY(-10px);
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+     }
+ }
+
+ .ct-card-image {
+     height: 220px;
+     width: 100%;
+
+     .ct-placeholder {
+         border: none;
+         border-radius: 0;
+     }
+ }
+
+ .ct-card-body {
+     padding: 24px;
+     text-align: center;
+ }
+
+ .ct-card-title {
+     font-family: 'Outfit', sans-serif;
+     font-size: 1.3rem;
+     font-weight: 750;
+     color: var(--jag-navy);
+     margin-bottom: 5px;
+     margin-top: 25px;
+ }
+
+ .ct-card-desc {
+     color: var(--jag-text);
+     font-size: 1rem;
+     line-height: 1.5;
+ }
+
+ /* Nouvelle Rémunération Card */
+ .remun-card {
+     background: #ffffff;
+     border-radius: 20px;
+     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     margin-top: 20px;
+ }
+
+ .remun-card-body {
+     display: flex;
+     flex-direction: row;
+
+     @media (max-width: 768px) {
+         flex-direction: column;
+     }
+ }
+
+ .remun-client-side,
+ .remun-jag-side {
+     flex: 1;
+     padding: 60px 50px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+
+ .remun-client-side {
+     background-color: #ffffff;
+ }
+
+ .remun-jag-side {
+     background-color: var(--jag-navy);
+     color: #ffffff;
+ }
+
+ .remun-subtitle {
+     font-size: 0.85rem;
+     font-weight: 800;
+     letter-spacing: 1.5px;
+     text-transform: uppercase;
+     margin-bottom: 20px;
+     color: var(--jag-orange);
+
+     &.jag-color {
+         color: var(--jag-green);
+     }
+ }
+
+ .remun-title {
+     font-family: 'Outfit', sans-serif;
+     font-size: clamp(2rem, 3vw, 2.5rem);
+     font-weight: 800;
+     margin-bottom: 20px;
+     color: var(--jag-navy);
+ }
+
+ .remun-jag-side .remun-title {
+     color: #ffffff;
+ }
+
+ .remun-desc {
+     font-size: 1.05rem;
+     line-height: 1.6;
+     color: var(--jag-text);
+     margin-bottom: 40px;
+ }
+
+ .remun-jag-side .remun-desc {
+     color: #94a3b8;
+ }
+
+ .remun-pills {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 12px;
+ }
+
+ .pill {
+     font-size: 0.75rem;
+     font-weight: 750;
+     padding: 10px 18px;
+     border-radius: 50px;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ .pill-light {
+     background-color: var(--jag-muted);
+     color: var(--jag-text);
+ }
+
+ .pill-dark {
+     background-color: var(--jag-forest);
+     color: #ffffff;
+ }
+
+ .remun-card-footer {
+     background-color: var(--jag-navy);
+     padding: 24px 50px;
+     border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+     p {
+         color: #f8fafc;
+         font-size: 1rem;
+         margin: 0;
+
+         strong {
+             font-weight: 600;
+             color: #ffffff;
+         }
+     }
+ }
+
+ /* Images spécifiques par zone (remplacez 'road.jpg' par le chemin de vos images) */
+ .ct-target-img {
+     background-image: url('/road.jpg');
+     /* Image de la cible (ex: investisseur) */
+ }
+
+ .ct-diag-img {
+     background-image: url('/analyse-terrain.png');
+     /* Image 1. Diagnostic */
+ }
+
+ .ct-plan-img {
+     background-image: url('/plannificat.jpg');
+     /* Image 2. Planification */
+ }
+
+ .ct-prod-img {
+     background-image: url('/culture.jpg');
+     /* Image 3. Production */
+ }
+
+ .ct-rep-img {
+     background-image: url('/produ.jpg');
+     /* Image 4. Reporting */
+ }
+
+ .ct-remun-img {
+     background-image: url('/road.jpg');
+     /* Image Rémunération */
+ }
+
+ /* CTA Section */
+ .ct-cta {
+     background-color: var(--jag-muted);
+     padding: 80px 24px;
+ }
+
+ .ct-cta-container {
+     max-width: 800px;
+     background: linear-gradient(135deg, var(--jag-navy), var(--jag-forest));
+     border-radius: 20px;
+     padding: 60px 40px;
+     text-align: center;
+     color: #ffffff;
+     box-shadow: 0 20px 40px rgba(10, 61, 46, 0.2);
+     position: relative;
+     overflow: hidden;
+
+     &::before {
+         content: '';
+         position: absolute;
+         top: -50%;
+         left: -50%;
+         width: 200%;
+         height: 200%;
+         background: radial-gradient(circle at center, rgba(46, 170, 99, 0.15) 0%, transparent 60%);
+         pointer-events: none;
+     }
+ }
+
+ .ct-cta-content {
+     position: relative;
+     z-index: 2;
+ }
+
+ .ct-cta-title {
+     font-family: 'Outfit', sans-serif;
+     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+     font-weight: 800;
+     margin-bottom: 20px;
+     color: #ffffff;
+ }
+
+ .ct-cta-text {
+     font-size: 1.15rem;
+     color: rgba(255, 255, 255, 0.85);
+     line-height: 1.6;
+     margin-bottom: 40px;
+     max-width: 600px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .ct-cta-btn {
+     display: inline-flex;
+     align-items: center;
+     gap: 12px;
+     background-color: var(--jag-green);
+     color: #ffffff;
+     font-weight: 700;
+     font-size: 1.1rem;
+     padding: 16px 36px;
+     border-radius: 50px;
+     text-decoration: none;
+     transition: all 0.3s ease;
+     box-shadow: 0 10px 20px rgba(46, 170, 99, 0.3);
+
+     &:hover {
+         background-color: #248f52;
+         /* slightly darker green */
+         transform: translateY(-3px);
+         box-shadow: 0 15px 25px rgba(46, 170, 99, 0.4);
+
+         .arrow {
+             transform: translateX(5px);
+         }
+     }
+
+     .arrow {
+         transition: transform 0.3s ease;
+         font-size: 1.2rem;
+     }
+ }
