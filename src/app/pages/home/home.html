@@ -1,29 +1,40 @@
 <!-- HERO PREMIUM -->
 <div class="home-page">
-  <section class="premium-hero">
+  <section class="premium-hero-wavy">
+    <!-- Image de fond (Tomate / Agriculture) en haut à droite -->
     <div class="hero-bg-wrapper">
-      <div class="hero-bg-image" style="background-image: url('/hero_farmland.png');"></div>
-      <div class="hero-gradient-overlay"></div>
+      <div class="hero-bg-image" style="background-image: url('/tomate.jpg');"></div>
     </div>
-    
-    <div class="container hero-content fade-up">
+
+    <!-- Formes de vagues superposées (Diagonale Top-Left vers Bottom-Right) -->
+    <div class="waves-container">
+      <svg class="wave wave-light" viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <path fill="var(--jag-green-20)" d="M0,0 L0,800 L1440,800 L1440,500 C1000,750 600,100 450,0 Z" />
+      </svg>
+      <svg class="wave wave-dark" viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <path fill="var(--jag-forest)" d="M0,0 L0,800 L1440,800 L1440,550 C1000,800 550,150 400,0 Z" />
+      </svg>
+      <svg class="wave wave-white" viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,0 L0,800 L1440,800 L1440,600 C1000,850 500,200 350,0 Z" />
+      </svg>
+      <!-- Filigrane de feuilles (watermark) en fond de la zone blanche -->
+      <div class="leaf-watermark"></div>
+    </div>
+
+    <!-- Contenu texte (aligné dans la zone blanche) -->
+    <div class="hero-content-wavy fade-up">
       <div class="hero-text-block">
-        <span class="hero-surtitle">Just Agro Group</span>
-        <h1 class="hero-title">Cultivons l'avenir <span class="text-accent">ensemble</span></h1>
-        <p class="hero-subtitle">
-          Nous vous accompagnons avec des solutions agricoles innovantes, durables et performantes.
+        <span class="hero-surtitle-wavy">Just Agro Group</span>
+        <h1 class="hero-title-wavy">Cultivons l'avenir <br><span class="text-accent">ensemble</span></h1>
+        <p class="hero-desc-wavy">
+          Nous vous accompagnons avec des solutions agricoles innovantes, durables et performantes. Notre expertise
+          agronomique et financière à votre service.
         </p>
-  
-        <div class="hero-btn-group">
-          <a routerLink="/notreprocessus" class="btn-premium btn-primary">
-            <span class="btn-text">Découvrir notre expertise</span>
-          </a>
-          <a routerLink="/contact" class="btn-premium btn-glass">
-            <span class="btn-text">Nous contacter</span>
-          </a>
-        </div>
+        <div class="hero-slogan">L'excellence Agricole</div>
       </div>
     </div>
+
+
   </section>
 
 
@@ -84,7 +95,7 @@
         </div>
 
         <!-- Bento Item 2: Small -->
-        <div class="bento-card bento-small fade-up delay-2" style="background-image: url('/produ.jpg');">
+        <div class="bento-card bento-small fade-up delay-2" style="background-image: url('/tpe.jpg');">
           <div class="bento-overlay"></div>
           <div class="bento-content">
             <h3>Vente Garantie</h3>
@@ -109,7 +120,7 @@
       <div class="poles-grid-modern">
         <!-- Pole 1 -->
         <a routerLink="/pole-1" class="pole-card-modern fade-up delay-1">
-          <div class="pole-card-img" style="background-image: url('/terre-nue.jpg');"></div>
+          <div class="pole-card-img" style="background-image: url('/terr-del.jpg');"></div>
           <div class="pole-card-body">
             <span class="pole-number">01</span>
             <h3>Structuration</h3>
@@ -121,7 +132,7 @@
 
         <!-- Pole 2 -->
         <a routerLink="/pole-2" class="pole-card-modern fade-up delay-2">
-          <div class="pole-card-img" style="background-image: url('/culture.jpg');"></div>
+          <div class="pole-card-img" style="background-image: url('/mat-premi.jpg');"></div>
           <div class="pole-card-body">
             <span class="pole-number">02</span>
             <h3>Sourcing</h3>
