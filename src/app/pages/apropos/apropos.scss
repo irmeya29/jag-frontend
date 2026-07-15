@@ -1,68 +1,408 @@
- .ct-hero {
-     position: relative;
-     min-height: 56vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     overflow: hidden;
-     padding: 80px 24px 60px;
+/* ---- HERO ---- */
+.apropos-hero {
+    position: relative;
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 24px 100px;
+    overflow: hidden;
 
-     @media (max-width: 560px) {
-         min-height: 62vh;
-         padding: 64px 18px 48px;
-     }
- }
+    @media (max-width: 768px) {
+        min-height: 70vh;
+        padding: 120px 18px 60px;
+    }
+}
 
- .ct-hero-bg {
-     position: absolute;
-     inset: 0;
-     background-color: #020816;
-     background-image: url('/apropos.jpg');
-     background-position: center 45.5%;
-     background-size: cover;
+.apropos-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-color: none;
+    background-image: url('/apropos2.jpg');
+    background-size: cover;
+    background-position: center;
 
-     &::before {
-         content: '';
-         position: absolute;
-         inset: 0;
-         background: rgba(2, 8, 22, 0.4);
-     }
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg,
+                rgba(10, 61, 46, 0.05) 0%,
+                rgba(13, 33, 55, 0.02) 50%,
+                rgba(13, 33, 55, 0.02) 100%);
+    }
 
-     &::after {
-         content: '';
-         position: absolute;
-         inset: 0;
-         background-image:
-             linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
-             linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
-         background-size: 60px 60px;
-         mask-image: radial-gradient(ellipse at center, black, transparent 80%);
-         -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
-     }
- }
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(46, 170, 99, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(46, 170, 99, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+        -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    }
+}
 
- .ct-hero-content {
-     position: relative;
-     z-index: 2;
-     max-width: 680px;
- }
+.apropos-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    text-align: center;
+}
 
- .ct-hero-title {
-     font-family: 'Outfit', sans-serif;
-     font-size: clamp(2.5rem, 6vw, 5rem);
-     font-weight: 800;
-     color: #ffffff;
-     line-height: 1.1;
-     letter-spacing: -1.5px;
-     margin-bottom: 20px;
-     overflow-wrap: anywhere;
- }
+.apropos-hero-title {
+    margin: 0 0 24px;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: #ffffff;
+    letter-spacing: -1px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
 
- .ct-hero-desc {
-     font-size: clamp(1rem, 1.8vw, 1.15rem);
-     color: rgba(255, 255, 255, 0.75);
-     line-height: 1.7;
-     max-width: 600px;
-     margin: 0 auto;
- }
+.apropos-hero-text {
+    max-width: 620px;
+    margin: 0 auto 36px;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.apropos-hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+/* ---- NOS RACINES ---- */
+.racines-section {
+    padding: 100px 24px;
+    background: var(--jag-muted);
+
+    @media (max-width: 768px) {
+        padding: 72px 18px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.racines-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.racines-text {
+    @media (max-width: 900px) {
+        order: 1;
+    }
+}
+
+.section-tag {
+    display: inline-block;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+}
+
+.tag-green {
+    background: rgba(46, 170, 99, 0.15);
+    color: var(--jag-green);
+    border: 1px solid rgba(46, 170, 99, 0.25);
+}
+
+.section-heading {
+    margin: 0 0 18px;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    color: var(--jag-navy);
+}
+
+.section-body {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    max-width: 580px;
+    color: var(--jag-text);
+}
+
+.racines-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 900px) {
+        order: 2;
+    }
+}
+
+.racines-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    animation: deposit 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes deposit {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px) scale(0.9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(8px) scale(1.01);
+    }
+
+    80% {
+        transform: translateY(-3px) scale(0.995);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---- SPLIT SECTIONS (Histoire / Equipes) ---- */
+.about-split {
+    padding: 100px 24px;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        padding: 72px 18px;
+    }
+}
+
+.about-split--navy {
+    background: linear-gradient(160deg, var(--jag-navy) 0%, #081c33 100%);
+    color: #ffffff;
+}
+
+.about-split--white {
+    background: #ffffff;
+    color: var(--jag-text);
+}
+
+.about-split-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+.about-split-grid--reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-split-heading {
+    margin: 0 0 20px;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+
+    &--dark {
+        color: var(--jag-navy);
+    }
+}
+
+.about-split-body {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 520px;
+
+    &--dark {
+        color: var(--jag-text);
+    }
+}
+
+.about-split-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 900px) {
+        order: -1;
+    }
+}
+
+.about-big-number {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: clamp(5rem, 12vw, 9rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+    color: rgba(255, 255, 255, 0.06);
+    position: relative;
+
+    &--green {
+        color: rgba(46, 170, 99, 0.10);
+    }
+}
+
+.about-big-label {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: -12px;
+
+    &--dark {
+        color: rgba(13, 33, 55, 0.30);
+    }
+}
+
+/* ---- STATEMENT (Vision) ---- */
+.about-statement {
+    padding: 120px 24px;
+    background: #ffffff;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        padding: 80px 18px;
+    }
+}
+
+.about-statement .container {
+    max-width: 900px;
+}
+
+.about-statement-text {
+    margin: 24px 0 0;
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--jag-navy);
+}
+
+.text-green {
+    color: var(--jag-green);
+}
+
+/* ---- VALEURS ---- */
+.about-valeurs {
+    padding: 100px 24px;
+    background: var(--jag-muted);
+
+    @media (max-width: 768px) {
+        padding: 72px 18px;
+    }
+}
+
+.about-valeurs-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.about-valeurs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.about-valeur-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 36px 32px;
+    border: 1px solid rgba(13, 33, 55, 0.04);
+    box-shadow: 0 16px 48px rgba(13, 33, 55, 0.04);
+    transition: all 0.35s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 60px rgba(13, 33, 55, 0.08);
+    }
+
+    h3 {
+        margin: 0 0 10px;
+        font-family: var(--font-heading, 'Montserrat', sans-serif);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--jag-navy);
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: var(--jag-text);
+    }
+}
+
+.about-valeur-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.about-valeur-icon--green {
+    background: rgba(46, 170, 99, 0.12);
+    color: var(--jag-green);
+    border: 1px solid rgba(46, 170, 99, 0.22);
+}
+
+.about-valeur-icon--navy {
+    background: rgba(13, 33, 55, 0.08);
+    color: var(--jag-navy);
+    border: 1px solid rgba(13, 33, 55, 0.12);
+}
+
+.about-valeur-icon--orange {
+    background: rgba(255, 107, 53, 0.12);
+    color: var(--jag-orange);
+    border: 1px solid rgba(255, 107, 53, 0.22);
+}

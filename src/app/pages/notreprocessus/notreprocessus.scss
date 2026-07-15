@@ -1,0 +1,79 @@
+.proc-hero {
+    position: relative;
+    min-height: 56vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 100px 24px 80px;
+
+    @media (max-width: 560px) {
+        min-height: 62vh;
+        padding: 80px 18px 60px;
+    }
+}
+
+.proc-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--jag-navy, #0D2137);
+    background-image: url('/dame.jpg');
+    background-position: center 30%;
+    background-size: cover;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(13, 33, 55, 0.55); // navy dark overlay
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+        -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    }
+}
+
+.proc-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.proc-hero-tag {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: var(--jag-green, #2EAA63);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.proc-hero-title {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
