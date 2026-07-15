@@ -13,7 +13,11 @@ export class Pole2 implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
+    window.scrollTo(0, 0);
     this.initScrollReveal();
+    setTimeout(() => {
+      document.documentElement.classList.add('snap-scroll-enabled');
+    }, 50);
   }
 
   private initScrollReveal(): void {
@@ -42,6 +46,8 @@ export class Pole2 implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    document.documentElement.classList.remove('snap-scroll-enabled');
     if (this.observer) this.observer.disconnect();
   }
 }
+
