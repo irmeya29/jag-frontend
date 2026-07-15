@@ -679,182 +679,161 @@ $blur: blur(20px);
     }
 }
 
-// 4. REMUNERATION
-.jag-remun-section {
-    background-color: var(--jag-navy);
-    color: white;
+// 4. REMUNERATION (Pacte de Rentabilité)
+.pacte-rentabilite-section {
+    padding: 60px 0; // decreased padding
+    background: #f8f9fa;
+    color: var(--jag-navy);
+}
 
-    .section-header {
-        .title {
-            color: white;
-        }
-
-        .subtitle {
-            color: rgba(255, 255, 255, 0.7);
-        }
+.pacte-header {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    .pacte-surtitle {
+        color: var(--jag-green);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 0.85rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .pacte-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: var(--jag-navy);
+    }
+    
+    .pacte-subtitle {
+        color: var(--jag-text);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
 
-.remun-modern-card {
-    background: var(--white);
-    border-radius: 32px;
-    overflow: hidden;
-    color: var(--jag-text);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+.pacte-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-.remun-split {
+.pacte-cards-wrapper {
     display: flex;
-    position: relative;
-
-    @media (max-width: 992px) {
+    gap: 30px;
+    margin-bottom: 30px;
+    
+    @media (max-width: 768px) {
         flex-direction: column;
     }
 }
 
-.split-side {
+.pacte-card {
     flex: 1;
-    padding: 60px;
-
-    .side-header {
-        margin-bottom: 30px;
-
-        .badge {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 25px;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    
+    &.jag-card {
+        background: var(--jag-navy);
+        color: white;
+        border: none;
+        
+        .role-badge {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        h3 {
+            color: white;
+        }
+        
+        li {
+            color: rgba(255,255,255,0.8);
+        }
+    }
+    
+    .card-top {
+        margin-bottom: 20px;
+        
+        .role-badge {
             display: inline-block;
-            padding: 6px 12px;
-            border-radius: 8px;
+            padding: 5px 12px;
+            background: var(--jag-muted);
+            color: var(--jag-green);
             font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-
-            &.badge-light {
-                background: var(--jag-muted);
-                color: var(--jag-navy);
-            }
-
-            &.badge-dark {
-                background: rgba(255, 255, 255, 0.2);
-                color: white;
-            }
-        }
-
-        .side-title {
-            font-size: 2.5rem;
             margin: 0;
+            color: var(--jag-navy);
         }
     }
-
-    .side-desc {
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-        line-height: 1.6;
-    }
-
-    .check-list {
+    
+    .pacte-list {
         list-style: none;
         padding: 0;
         margin: 0;
-
+        
         li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: var(--jag-text);
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            font-weight: 700;
-            font-size: 0.95rem;
-
-            .icon {
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.7rem;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            &::before {
+                content: '✓';
+                color: var(--jag-green);
+                font-weight: bold;
+                margin-right: 10px;
             }
         }
     }
-}
-
-.side-client {
-    background: var(--white);
-
-    .side-title {
-        color: var(--jag-navy);
-    }
-
-    .check-list li {
-        color: var(--jag-navy);
-
-        .icon {
-            background: var(--jag-green-10);
-            color: var(--jag-green);
-        }
+    
+    &.jag-card .pacte-list li {
+        border-bottom-color: rgba(255,255,255,0.1);
     }
 }
 
-.side-jag {
-    background: var(--jag-green);
-    color: white;
-
-    .side-title {
-        color: white;
-    }
-
-    .text-muted-light {
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    .check-list li {
-        color: white;
-
-        .icon {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-    }
-}
-
-.split-divider {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-
-    @media (max-width: 992px) {
-        top: 50%; // Adjust for mobile stacking if needed, or hide it
-        display: none;
-    }
-
-    .vs-badge {
-        width: 60px;
-        height: 60px;
-        background: var(--jag-orange);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-display);
-        font-size: 2rem;
-        font-weight: 800;
-        box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
-        border: 4px solid var(--white);
-    }
-}
-
-.remun-footer {
-    background: #091829;
-    padding: 30px 60px;
+.pacte-result {
+    background: rgba(46, 170, 99, 0.1);
+    border-radius: 12px;
+    padding: 20px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
-
-    .highlight {
-        color: white;
-        font-weight: 700;
+    border: 1px dashed var(--jag-green);
+    
+    .result-content {
+        color: var(--jag-forest);
+        font-size: 1.1rem;
+        
+        strong {
+            font-weight: 800;
+        }
     }
 }
 
