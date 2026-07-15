@@ -1,39 +1,36 @@
-<!-- HERO PREMIUM -->
+<!-- HERO EXACT (Reference Match) -->
 <div class="home-page">
-  <section class="premium-hero-wavy">
-    <!-- Image de fond (Tomate / Agriculture) en haut à droite -->
-    <div class="hero-bg-wrapper">
-      <div class="hero-bg-image" style="background-image: url('/tomate.jpg');"></div>
-    </div>
+  <section class="exact-hero">
 
-    <!-- Formes de vagues superposées (Diagonale Top-Left vers Bottom-Right) -->
-    <div class="waves-container">
-      <svg class="wave wave-light" viewBox="0 0 1440 800" preserveAspectRatio="none">
-        <path fill="var(--jag-green-20)" d="M0,0 L0,800 L1440,800 L1440,500 C1000,750 600,100 450,0 Z" />
-      </svg>
-      <svg class="wave wave-dark" viewBox="0 0 1440 800" preserveAspectRatio="none">
-        <path fill="var(--jag-forest)" d="M0,0 L0,800 L1440,800 L1440,550 C1000,800 550,150 400,0 Z" />
-      </svg>
-      <svg class="wave wave-white" viewBox="0 0 1440 800" preserveAspectRatio="none">
-        <path fill="#ffffff" d="M0,0 L0,800 L1440,800 L1440,600 C1000,850 500,200 350,0 Z" />
-      </svg>
-      <!-- Filigrane de feuilles (watermark) en fond de la zone blanche -->
-      <div class="leaf-watermark"></div>
-    </div>
+    <!-- Background Layer (Image + Shapes) -->
+    <div class="hero-bg-layer">
+      <img src="/tomate.jpg" class="bg-img" alt="Agriculture" />
+      <div class="bg-shapes">
 
-    <!-- Contenu texte (aligné dans la zone blanche) -->
-    <div class="hero-content-wavy fade-up">
-      <div class="hero-text-block">
-        <span class="hero-surtitle-wavy">Just Agro Group</span>
-        <h1 class="hero-title-wavy">Cultivons l'avenir <br><span class="text-accent">ensemble</span></h1>
-        <p class="hero-desc-wavy">
-          Nous vous accompagnons avec des solutions agricoles innovantes, durables et performantes. Notre expertise
-          agronomique et financière à votre service.
-        </p>
-        <div class="hero-slogan">L'excellence Agricole</div>
       </div>
     </div>
 
+
+
+    <!-- Main Hero Content -->
+    <div class="hero-main-content">
+      <div class="hero-left-col">
+        <div class="hero-badge-top">
+          <i class="fa-solid fa-leaf"></i> EXPERTS AGRICOLES À VOS CÔTÉS
+        </div>
+        <h1 class="hero-title">
+          Cultivons <br>l'avenir <br><span class="text-accent">ensemble</span>
+        </h1>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">
+            <i class="fa-solid fa-leaf"></i> DÉCOUVRIR NOS SOLUTIONS
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Feuilles décoratives au premier plan (optionnel) -->
+    <div class="deco-leaf deco-left"></div>
+    <div class="deco-leaf deco-right"></div>
 
   </section>
 
@@ -120,13 +117,13 @@
       <div class="poles-grid-modern">
         <!-- Pole 1 -->
         <a routerLink="/pole-1" class="pole-card-modern fade-up delay-1">
-          <div class="pole-card-img" style="background-image: url('/terr-del.jpg');"></div>
+          <div class="pole-card-img" style="background-image: url('/terr.jpg');"></div>
           <div class="pole-card-body">
             <span class="pole-number">01</span>
             <h3>Structuration</h3>
             <p>Pour les propriétaires fonciers. Vous possédez la terre, nous apportons le capital intellectuel et
               opérationnel pour la valoriser à son plein potentiel.</p>
-            <span class="pole-link">Découvrir le Pôle 1 →</span>
+            <span class="pole-link" routerLink="/pole1">Découvrir le Pôle 1 →</span>
           </div>
         </a>
 
