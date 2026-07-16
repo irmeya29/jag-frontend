@@ -7,7 +7,7 @@
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(13, 33, 55, 0.05);
+  border-bottom: 1px solid rgba(11, 29, 58, 0.05);
   z-index: var(--z-navbar);
   display: flex;
   align-items: center;
@@ -40,6 +40,7 @@
 }
 
 .logo-img {
+    filter: saturate(0.8) contrast(1.1);
   height: 65px;
   width: auto;
   object-fit: contain;
@@ -125,7 +126,7 @@
   max-width: 350px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(13, 33, 55, 0.08);
+  border: 1px solid rgba(11, 29, 58, 0.08);
   padding: var(--space-2);
   opacity: 0;
   visibility: hidden;
@@ -184,16 +185,15 @@
   background-color: var(--jag-orange);
   border-color: var(--jag-orange);
   color: var(--white);
-  box-shadow: 0 4px 10px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 4px 10px rgba(15, 76, 58, 0.2);
   transition: all var(--transition-base);
   white-space: nowrap;
 
   &:hover {
-    background-color: var(--jag-navy);
-    border-color: var(--jag-navy);
-    box-shadow: 0 4px 12px rgba(13, 33, 55, 0.25);
-    transform: translateY(-2px);
-  }
+        background-color: transparent !important;
+        color: var(--jag-green) !important;
+        border-color: var(--jag-green) !important;
+    }
 }
 
 // Mobile Toggle modernise
@@ -254,7 +254,7 @@
     max-height: calc(85vh - var(--navbar-height));
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(13, 33, 55, 0.08);
+    border: 1px solid rgba(11, 29, 58, 0.08);
     border-radius: var(--radius-xl);
     flex-direction: column;
     padding: var(--space-6);

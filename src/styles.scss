@@ -5,7 +5,7 @@
 // ------------------------------------------------------------
 // 1. GOOGLE FONTS
 // ------------------------------------------------------------
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 
 // ------------------------------------------------------------
@@ -14,21 +14,28 @@
 :root {
   // Brand colors
   --jag-green: #2EAA63;
+  /* Deep Green */
   --jag-blue: #1E9BD7;
-  --jag-navy: #0D2137;
-  --jag-forest: #0A3D2E;
+  /* Midnight Blue */
+  --jag-navy: #0b1d3a;
+  /* Midnight Blue */
+  --jag-forest: #081529;
+  /* Darker Midnight */
   --jag-orange: #FF6B35;
-  --jag-text: #555555;
-  --jag-muted: #F7F8FC;
+  /* Accent = Deep Green */
+  --jag-text: #4a5568;
+  /* Minimalist Gray */
+  --jag-muted: #f8fafc;
+  /* Crisp Light BG */
 
   // Derivees (transparences)
-  --jag-green-10: rgba(46, 170, 99, 0.10);
-  --jag-green-20: rgba(46, 170, 99, 0.20);
-  --jag-blue-10: rgba(30, 155, 215, 0.10);
-  --jag-blue-20: rgba(30, 155, 215, 0.20);
-  --jag-navy-80: rgba(13, 33, 55, 0.80);
-  --jag-navy-90: rgba(13, 33, 55, 0.90);
-  --jag-orange-10: rgba(255, 107, 53, 0.10);
+  --jag-green-10: rgba(15, 76, 58, 0.10);
+  --jag-green-20: rgba(15, 76, 58, 0.20);
+  --jag-blue-10: rgba(11, 29, 58, 0.10);
+  --jag-blue-20: rgba(11, 29, 58, 0.20);
+  --jag-navy-80: rgba(11, 29, 58, 0.80);
+  --jag-navy-90: rgba(11, 29, 58, 0.90);
+  --jag-orange-10: rgba(15, 76, 58, 0.10);
 
   // Neutres
   --white: #FFFFFF;
@@ -42,8 +49,8 @@
   --gray-900: #111827;
 
   // Typographie
-  --font-body: 'Open Sans', sans-serif;
-  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -81,17 +88,17 @@
   --space-24: 6rem;
 
   // Border radius
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
   --radius-full: 9999px;
 
   // Ombres
-  --shadow-sm: 0 1px 3px rgba(13, 33, 55, 0.08);
-  --shadow-md: 0 4px 12px rgba(13, 33, 55, 0.10);
-  --shadow-lg: 0 8px 24px rgba(13, 33, 55, 0.14);
-  --shadow-xl: 0 16px 40px rgba(13, 33, 55, 0.18);
+  --shadow-sm: 0 1px 3px rgba(11, 29, 58, 0.03);
+  --shadow-md: 0 2px 8px rgba(11, 29, 58, 0.04);
+  --shadow-lg: 0 4px 16px rgba(11, 29, 58, 0.05);
+  --shadow-xl: 0 8px 24px rgba(11, 29, 58, 0.06);
 
   // Transitions
   --transition-fast: 150ms ease;
@@ -943,11 +950,11 @@ select {
         top: 0 !important;
         position: relative;
       }
-      
+
       .pole2-hero {
         background: linear-gradient(90deg, #fff 54%, #000000 54%) !important;
       }
-      
+
       .section-split {
         display: flex;
         flex-direction: row;
@@ -958,4 +965,43 @@ select {
       display: block;
     }
   }
-}
+}
+
+// ============================================================
+// MINIMALIST THEME — Global Overrides
+// Applied uniformly to all pages. Do NOT override per-component.
+// ============================================================
+
+// --- Buttons: ghost on hover, 4px radius, no heavy shadow ---
+.btn--primary,
+.btn-primary,
+[class*="btn"]:not([class*="btn--secondary"]):not([class*="btn--outline"]):not(.btn-close):not(.btn-outline-brand) {
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+// --- Cards: flat, fine border, near-invisible shadow ---
+.card,
+[class*="-card"],
+[class*="card-"],
+.bento-card,
+.pole-card-modern,
+.vision-card,
+.pacte-scorecard {
+  box-shadow: 0 1px 4px rgba(11, 29, 58, 0.04) !important;
+  border: 1px solid rgba(11, 29, 58, 0.06) !important;
+  border-radius: 12px !important;
+}
+
+// --- Images on cards: subtle desaturation + slight contrast ---
+[class*="-card"] img,
+[class*="card-"] img,
+.pole-card-img,
+.bento-card img {
+  filter: saturate(0.82) contrast(1.06);
+}

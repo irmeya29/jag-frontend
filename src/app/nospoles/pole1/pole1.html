@@ -1,60 +1,55 @@
 <!-- ---- NOUVEAU HERO POLE 1 ---- -->
 <div class="home-page">
-    <section class="exact-hero">
+    <section class="split-hero">
+        <div class="split-left">
+            <div class="hero-content">
 
-        <!-- Background Layer (Image + Shapes) -->
-        <div class="hero-bg-layer">
-            <img src="/tomate.jpg" class="bg-img" alt="Agriculture" />
-            <div class="bg-shapes">
-
-            </div>
-        </div>
-
-
-
-        <!-- Main Hero Content -->
-        <div class="hero-main-content">
-            <div class="hero-left-col">
-                <div class="hero-badge-top">
-                    <i class="fa-solid fa-leaf"></i> EXPERTS AGRICOLES À VOS CÔTÉS
-                </div>
                 <h1 class="hero-title">
-                    Valoriser un terrain <span class="text-accent">avec un cadre clair</span>
+                    Valoriser un terrain<br />
+                    <span class="text-green">avec un cadre clair</span>
                 </h1>
+                <p class="hero-subtitle">
+                    Nous apportons le capital intellectuel et opérationnel pour valoriser votre terre à son plein
+                    potentiel.
+                </p>
+                <a href="#decouvrir" class="btn-primary">Découvrir le pôle</a>
             </div>
         </div>
-        <!-- Feuilles décoratives au premier plan (optionnel) -->
-        <div class="deco-leaf deco-left"></div>
-        <div class="deco-leaf deco-right"></div>
-
+        <div class="split-right">
+            <img src="/human_data_agri.png" alt="Humain & Data Agricole" class="hero-expert-img" />
+        </div>
     </section>
 
     <!-- ---- CIBLE & MISSION ---- -->
     <section id="decouvrir" class="jag-target-section">
         <div class="container">
             <div class="section-header text-center fade-in-up">
-                <span class="surtitle">Votre terrain, notre ambition</span>
+
                 <h2 class="title">À qui s'adresse ce pôle ?</h2>
             </div>
 
             <div class="poles-grid-modern">
                 <!-- Card 1 -->
                 <div class="pole-card-modern fade-in-up delay-1">
-                    <div class="pole-card-img" style="background-image: url('/ChatGPT Image 15 juil. 2026, 09_39_53.png');"></div>
+                    <div class="pole-card-img"
+                        style="background-image: url('/ChatGPT Image 15 juil. 2026, 09_39_53.png');"></div>
                     <div class="pole-card-body">
                         <span class="pole-number">01</span>
                         <h3>Vous avez le terrain et le capital</h3>
-                        <p>Mais vous manquez de temps, d'expertise technique, ou de présence sur place pour garantir la viabilité du projet.</p>
+                        <p>Mais vous manquez de temps, d'expertise technique, ou de présence sur place pour garantir la
+                            viabilité du projet.</p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="pole-card-modern fade-in-up delay-2">
-                    <div class="pole-card-img" style="background-image: url('/ChatGPT Image 15 juil. 2026, 09_43_30.png');"></div>
+                    <div class="pole-card-img"
+                        style="background-image: url('/ChatGPT Image 15 juil. 2026, 09_43_30.png');"></div>
                     <div class="pole-card-body">
                         <span class="pole-number">02</span>
                         <h3>Nous prenons le relais</h3>
-                        <p><strong class="text-green">Just Agro Group</strong> assure l'intégralité du pilotage opérationnel, de l'étude à la récolte.</p>
+                        <p><strong class="text-green">Just Agro Group</strong> assure l'intégralité du pilotage
+                            opérationnel, de l'étude à la récolte.</p>
                     </div>
                 </div>
             </div>
@@ -65,7 +60,6 @@
     <section class="jag-process-section">
         <div class="container">
             <div class="section-header fade-in-up">
-                <span class="surtitle">Excellence opérationnelle</span>
                 <h2 class="title">Du terrain au bilan de cycle.</h2>
                 <p class="subtitle">Une démarche simple : diagnostiquer, planifier, produire et rendre compte.</p>
             </div>
@@ -139,40 +133,51 @@
                 <p class="pacte-subtitle">Un alignement d'intérêts total. Nous gagnons quand vous gagnez.</p>
             </div>
 
-            <div class="pacte-container fade-in-up delay-1">
-                <div class="pacte-cards-wrapper">
-                    <!-- Client Card -->
-                    <div class="pacte-card client-card">
-                        <div class="card-top">
-                            <span class="role-badge">Vous financez</span>
-                            <h3>Le Client</h3>
-                        </div>
-                        <ul class="pacte-list">
-                            <li>Terrain, installation & eau</li>
-                            <li>Intrants & main-d'œuvre</li>
-                            <li>Charges d'exploitation validées</li>
-                        </ul>
-                    </div>
+            <!-- Score-card layout -->
+            <div class="pacte-scorecard fade-in-up delay-1">
 
-                    <!-- JAG Card -->
-                    <div class="pacte-card jag-card">
-                        <div class="card-top">
-                            <span class="role-badge jag-badge">Nous pilotons</span>
-                            <h3>Just Agro Group</h3>
-                        </div>
-                        <ul class="pacte-list">
-                            <li>Structuration technique du projet</li>
-                            <li>Organisation & supervision terrain</li>
-                            <li>Contrôle et reporting rigoureux</li>
-                        </ul>
+                <!-- Colonne Gauche : Client -->
+                <div class="pacte-col client-col">
+                    <div class="col-badge">Vous</div>
+                    <p class="col-role">Le Propriétaire</p>
+                    <ul class="col-contributions">
+                        <li><i class="fa-solid fa-check"></i> Terrain & installation</li>
+                        <li><i class="fa-solid fa-check"></i> Intrants & main-d'œuvre</li>
+                        <li><i class="fa-solid fa-check"></i> Charges d'exploitation</li>
+                    </ul>
+                    <div class="col-gain">
+                        <span class="gain-label">Vous percevez</span>
+                        <span class="gain-value">65%</span>
+                        <span class="gain-desc">du bénéfice net</span>
                     </div>
                 </div>
 
-                <div class="pacte-result">
-                    <div class="result-content">
-                        <strong>Rémunération :</strong> <span>25 % du bénéfice net (gestion) ou 35 % (gestion + commercialisation)</span>
+                <!-- Séparateur Central -->
+                <div class="pacte-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <!-- Colonne Droite : JAG -->
+                <div class="pacte-col jag-col">
+                    <div class="col-badge jag-badge">JAG</div>
+                    <p class="col-role">Just Agro Group</p>
+                    <ul class="col-contributions">
+                        <li><i class="fa-solid fa-check"></i> Structuration technique</li>
+                        <li><i class="fa-solid fa-check"></i> Supervision & pilotage</li>
+                        <li><i class="fa-solid fa-check"></i> Reporting rigoureux</li>
+                    </ul>
+                    <div class="col-gain">
+                        <span class="gain-label">JAG perçoit</span>
+                        <span class="gain-value">25%</span>
+                        <span class="gain-desc">gestion seule</span>
+                        <span class="gain-alt">ou <strong>35%</strong> avec commercialisation</span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
