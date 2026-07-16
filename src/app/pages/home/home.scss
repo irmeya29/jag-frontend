@@ -804,7 +804,7 @@ $bento-radius: 32px;
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 24px;
-      color: #fff;
+      color: var(--jag-white);
     }
 
     .premium-lead {
@@ -831,7 +831,7 @@ $bento-radius: 32px;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-left: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: var(--radius-xl);
-      padding: 30px;
+      padding: 15px;
       text-align: left;
       display: flex;
       align-items: center;
