@@ -1,1 +1,303 @@
-<p>monespacejust works!</p>
+<!-- =====================================================
+     PAGE : MON ESPACE JUST
+     ===================================================== -->
+<div class="mej-page">
+
+  <!-- ================================================
+       1. HERO — Split Layout
+       ================================================ -->
+  <section class="split-hero">
+    <div class="split-left">
+      <div class="hero-content">
+        <!-- Badge -->
+        <div class="mej-hero-badge fade-up">
+          Espace Partenaire Sécurisé
+        </div>
+
+        <h1 class="hero-title fade-up delay-1">Un accès sécurisé, <span class="mej-title-accent">selon votre
+            profil.</span></h1>
+
+        <p class="hero-subtitle fade-up delay-2">
+          Accédez à votre tableau de bord personnalisé, que vous soyez investisseur privé ou partenaire industriel, pour
+          suivre, analyser et piloter vos engagements avec Just Agro Group.
+        </p>
+
+        <!-- CTA double -->
+        <div class="mej-hero-cta fade-up delay-3">
+          <a href="https://espace.justagrogroup.com" target="_blank" rel="noopener noreferrer"
+            class="mej-btn mej-btn--primary" id="hero-cta-connexion">
+            Se connecter
+          </a>
+          <a href="#acces-form" class="mej-btn mej-btn--outline" id="hero-cta-demande" (click)="scrollToForm($event)">
+            Demander un accès
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="split-right">
+      <!-- Image d'illustration -->
+      <img src="/investisseur.png" alt="Espace Just Agro Group" class="hero-img" />
+    </div>
+  </section>
+
+  <!-- ================================================
+       2. SECTION FONCTIONNALITÉS DES ESPACES
+       ================================================ -->
+  <section class="mej-features section">
+    <div class="container">
+
+      <!-- En-tête de section -->
+      <div class="mej-features-header text-center scroll-reveal">
+        <h2 class="mej-section-title">
+          Un espace taillé selon<br>
+          <span class="mej-title-accent">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; votre profil.</span>
+        </h2>
+      </div>
+
+      <!-- Layout simplifié des espaces -->
+      <div class="mej-simple-spaces scroll-reveal">
+
+        <!-- Espace Investisseur Privé -->
+        <div class="mej-simple-space">
+          <div class="mej-simple-space-header">
+            <h3 class="space-title">Investisseurs Privés</h3>
+            <span class="space-status space-status--green">Disponible</span>
+          </div>
+          <p class="space-desc">
+            Suivez chaque étape de votre investissement agricole. Des données claires, transparentes et accessibles à
+            tout moment.
+          </p>
+          <ul class="space-list">
+            <li><strong>Vue du projet</strong> &ndash; Tableau de bord global avec avancement</li>
+            <li><strong>Rapports mensuels</strong> &ndash; Synthèses de performance</li>
+            <li><strong>Dépenses</strong> &ndash; Suivi transparent de toutes les charges</li>
+            <li><strong>Documents</strong> &ndash; Contrats et rapports centralisés</li>
+            <li><strong>Alertes</strong> &ndash; Notifications proactives</li>
+            <li><strong>Suivi visuel</strong> &ndash; Galerie terrain <span class="option-badge">Option</span></li>
+          </ul>
+        </div>
+
+        <!-- Espace Industriel -->
+        <div class="mej-simple-space">
+          <div class="mej-simple-space-header">
+            <h3 class="space-title">Industriels & Transformateurs</h3>
+            <span class="space-status space-status--blue">Disponible</span>
+          </div>
+          <p class="space-desc">
+            Gérez vos contrats d'approvisionnement, suivez vos volumes et garantissez la traçabilité de vos matières
+            premières.
+          </p>
+          <ul class="space-list">
+            <li><strong>Contrats</strong> &ndash; Lettres d'intention et contrats signés</li>
+            <li><strong>Volumes</strong> &ndash; Suivi des tonnages contractuels et réels</li>
+            <li><strong>Planning</strong> &ndash; Calendriers de livraison et échéances</li>
+            <li><strong>Qualité</strong> &ndash; Fiches d'analyse et certifications</li>
+            <li><strong>Traçabilité</strong> &ndash; Origine champ à la livraison</li>
+            <li><strong>Documentation</strong> &ndash; Bulletins et labels</li>
+          </ul>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       3. FORMULAIRE DE DEMANDE D'ACCÈS
+       ================================================ -->
+  <section class="mej-form-section" id="acces-form">
+    <div class="container">
+      <div class="mej-form-wrapper">
+
+        <!-- Panneau gauche d'info -->
+        <div class="mej-form-info scroll-reveal">
+          <span class="mej-section-badge">Accès sur Demande</span>
+          <h2 class="mej-form-title">
+            Rejoignez<br>
+            <span class="mej-title-accent">Mon Espace Just.</span>
+          </h2>
+          <p class="mej-form-desc">
+            Remplissez ce formulaire pour soumettre votre demande d'accès. Notre équipe l'étudiera et vous contactera
+            dans les 48 heures ouvrées.
+          </p>
+
+          <!-- Étapes du processus -->
+          <div class="mej-form-steps">
+            <div class="mej-step">
+              <div class="mej-step-number">01</div>
+              <div class="mej-step-info">
+                <strong>Soumission</strong>
+                <span>Complétez le formulaire ci-contre</span>
+              </div>
+            </div>
+            <div class="mej-step-line"></div>
+            <div class="mej-step">
+              <div class="mej-step-number">02</div>
+              <div class="mej-step-info">
+                <strong>Vérification</strong>
+                <span>Notre équipe valide votre profil</span>
+              </div>
+            </div>
+            <div class="mej-step-line"></div>
+            <div class="mej-step">
+              <div class="mej-step-number">03</div>
+              <div class="mej-step-info">
+                <strong>Activation</strong>
+                <span>Recevez vos identifiants par email</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact direct -->
+          <div class="mej-form-direct">
+            <p class="mej-form-direct-label">Besoin d'aide ?</p>
+            <a href="mailto:contact@justagrogroup.com" class="mej-form-email-link">
+              contact&#64;justagrogroup.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="mej-form-panel scroll-reveal">
+          <form class="mej-form" (ngSubmit)="onSubmit()" novalidate id="form-demande-acces">
+
+            <!-- Ligne 1 : Nom / Prénom -->
+            <div class="mej-form-row">
+              <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['nom']">
+                <label class="mej-form-label" for="input-nom">
+                  Nom <span class="mej-required">*</span>
+                </label>
+                <input id="input-nom" type="text" class="mej-form-control" placeholder="Votre nom"
+                  [(ngModel)]="formData.nom" name="nom" autocomplete="family-name" />
+                @if (formSubmitted && formErrors['nom']) {
+                <span class="mej-form-error">
+                  {{ formErrors['nom'] }}
+                </span>
+                }
+              </div>
+              <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['prenom']">
+                <label class="mej-form-label" for="input-prenom">
+                  Prénom <span class="mej-required">*</span>
+                </label>
+                <input id="input-prenom" type="text" class="mej-form-control" placeholder="Votre prénom"
+                  [(ngModel)]="formData.prenom" name="prenom" autocomplete="given-name" />
+                @if (formSubmitted && formErrors['prenom']) {
+                <span class="mej-form-error">
+                  {{ formErrors['prenom'] }}
+                </span>
+                }
+              </div>
+            </div>
+
+            <!-- Ligne 2 : Entreprise / Fonction -->
+            <div class="mej-form-row">
+              <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['entreprise']">
+                <label class="mej-form-label" for="input-entreprise">
+                  Entreprise <span class="mej-required">*</span>
+                </label>
+                <input id="input-entreprise" type="text" class="mej-form-control" placeholder="Nom de votre entreprise"
+                  [(ngModel)]="formData.entreprise" name="entreprise" autocomplete="organization" />
+                @if (formSubmitted && formErrors['entreprise']) {
+                <span class="mej-form-error">
+                  {{ formErrors['entreprise'] }}
+                </span>
+                }
+              </div>
+              <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['fonction']">
+                <label class="mej-form-label" for="input-fonction">
+                  Fonction <span class="mej-required">*</span>
+                </label>
+                <input id="input-fonction" type="text" class="mej-form-control" placeholder="Ex. Directeur Financier"
+                  [(ngModel)]="formData.fonction" name="fonction" />
+                @if (formSubmitted && formErrors['fonction']) {
+                <span class="mej-form-error">
+                  {{ formErrors['fonction'] }}
+                </span>
+                }
+              </div>
+            </div>
+
+            <!-- Ligne 3 : Email / Téléphone -->
+            <div class="mej-form-row">
+              <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['email']">
+                <label class="mej-form-label" for="input-email">
+                  Email <span class="mej-required">*</span>
+                </label>
+                <input id="input-email" type="email" class="mej-form-control" placeholder="votre@email.com"
+                  [(ngModel)]="formData.email" name="email" autocomplete="email" />
+                @if (formSubmitted && formErrors['email']) {
+                <span class="mej-form-error">
+                  {{ formErrors['email'] }}
+                </span>
+                }
+              </div>
+              <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['telephone']">
+                <label class="mej-form-label" for="input-telephone">
+                  Téléphone <span class="mej-required">*</span>
+                </label>
+                <input id="input-telephone" type="tel" class="mej-form-control" placeholder="+226 00 00 00 00"
+                  [(ngModel)]="formData.telephone" name="telephone" autocomplete="tel" />
+                @if (formSubmitted && formErrors['telephone']) {
+                <span class="mej-form-error">
+                  {{ formErrors['telephone'] }}
+                </span>
+                }
+              </div>
+            </div>
+
+            <!-- Type d'espace -->
+            <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['typeEspace']">
+              <label class="mej-form-label" for="input-type-espace">
+                Type d'espace demandé <span class="mej-required">*</span>
+              </label>
+              <div class="mej-select-wrapper">
+                <select id="input-type-espace" class="mej-form-control mej-form-select"
+                  [(ngModel)]="formData.typeEspace" name="typeEspace">
+                  <option value="" disabled>Sélectionnez votre type d'accès</option>
+                  <option value="Espace Investisseur Privé">Espace Investisseur Privé</option>
+                  <option value="Espace Industriel / Transformateur">Espace Industriel / Transformateur</option>
+                </select>
+              </div>
+              @if (formSubmitted && formErrors['typeEspace']) {
+              <span class="mej-form-error">
+                {{ formErrors['typeEspace'] }}
+              </span>
+              }
+            </div>
+
+            <!-- Message -->
+            <div class="mej-form-group" [class.mej-form-group--error]="formSubmitted && formErrors['message']">
+              <label class="mej-form-label" for="input-message">
+                Message <span class="mej-required">*</span>
+              </label>
+              <textarea id="input-message" class="mej-form-control mej-form-textarea"
+                placeholder="Décrivez brièvement votre projet ou vos attentes…" [(ngModel)]="formData.message"
+                name="message" rows="4"></textarea>
+              @if (formSubmitted && formErrors['message']) {
+              <span class="mej-form-error">
+                {{ formErrors['message'] }}
+              </span>
+              }
+            </div>
+
+            <!-- Bouton de soumission -->
+            <button type="submit" class="mej-btn-submit" id="btn-submit-demande">
+              Envoyer ma demande
+            </button>
+
+            <p class="mej-form-legal">
+              Vos données sont utilisées uniquement pour traiter votre demande d'accès et ne seront pas transmises à des
+              tiers.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

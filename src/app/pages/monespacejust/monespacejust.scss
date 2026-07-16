@@ -1,0 +1,867 @@
+// ============================================================
+// MON ESPACE JUST — Styles de page
+// ============================================================
+
+$ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+// ─── Animations globales ────────────────────────────────────
+@keyframes fadeUpAnim {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-60px) translateX(20px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseDot {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+@keyframes scrollBounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+// ─── Classes d'animation déclenchées à l'entrée ─────────────
+.fade-up {
+  opacity: 0;
+  transform: translateY(36px);
+  animation: fadeUpAnim 0.9s $ease-expo forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.35s;
+}
+
+.delay-4 {
+  animation-delay: 0.5s;
+}
+
+// Scroll-reveal (géré via IntersectionObserver natif dans les browsers modernes)
+// Appliqué via CSS + classe .is-visible ajoutée par JS si besoin,
+// mais ici on utilise une animation CSS delay pour la lisibilité
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  animation: fadeUpAnim 0.8s $ease-expo forwards;
+  animation-play-state: paused;
+}
+
+.mej-page:has(*) .scroll-reveal {
+  animation-play-state: running;
+}
+
+// ─── Wrapper général ─────────────────────────────────────────
+.mej-page {
+  font-family: var(--font-body);
+}
+
+
+// ============================================================
+// 1. SPLIT HERO
+// ============================================================
+.split-hero {
+  display: flex;
+  min-height: calc(100vh - var(--navbar-height, 81px));
+  background-color: #fff;
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+
+  .split-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 8%;
+    background-color: #fff;
+
+    .hero-content {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+
+      .mej-hero-badge {
+        display: inline-block;
+        color: var(--jag-green);
+        padding: 6px 18px;
+        border-radius: 4px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        margin-bottom: 24px;
+      }
+
+      .hero-title {
+        font-family: var(--font-display, 'Montserrat', sans-serif);
+        font-size: clamp(2.4rem, 4.5vw, 4rem);
+        font-weight: 900;
+        color: var(--jag-navy);
+        line-height: 1.1;
+        margin: 0 0 24px 0;
+      }
+
+      .hero-subtitle {
+        font-size: 1.15rem;
+        color: var(--gray-600);
+        line-height: 1.7;
+        margin: 0 0 40px 0;
+        max-width: 540px;
+      }
+
+      .mej-hero-cta {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .split-right {
+    flex: 1;
+    background-color: var(--jag-navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 992px) {
+      min-height: 400px;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center right;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Boutons du Hero
+.mej-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s $ease-smooth;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.mej-btn--primary {
+  background: var(--jag-green);
+  color: #ffffff;
+  border: 1px solid rgba(11, 29, 58, 0.05);
+  box-shadow: 0 4px 14px rgba(46, 170, 99, 0.2);
+
+  &:hover {
+    background: transparent;
+    color: var(--jag-green);
+    border-color: var(--jag-green);
+    transform: translateY(-2px);
+    box-shadow: none;
+  }
+}
+
+.mej-btn--outline {
+  background: transparent;
+  color: var(--jag-navy);
+  border: 2px solid var(--gray-200);
+
+  &:hover {
+    border-color: var(--jag-navy);
+    transform: translateY(-2px);
+  }
+}
+
+
+// ============================================================
+// 2. SECTION FONCTIONNALITÉS
+// ============================================================
+.mej-features {
+  background: #ffffff;
+  padding-block: var(--space-20);
+
+  @media (max-width: 768px) {
+    padding-block: var(--space-12);
+  }
+}
+
+// ─── En-tête de section ──────────────────────────────────────
+.mej-features-header {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeUpAnim 0.8s $ease-expo forwards;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.mej-section-badge {
+  display: inline-block;
+  color: var(--jag-green);
+  padding: 6px 18px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+}
+
+.mej-section-badge--light {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mej-section-title {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--jag-navy);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.mej-title-accent {
+  background: linear-gradient(var(--jag-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mej-section-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 620px;
+}
+
+// ─── Disposition simplifiée ──────────────────────────────────
+.mej-simple-spaces {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.mej-simple-space {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeUpAnim 0.8s $ease-expo forwards;
+  animation-delay: 0.15s;
+  opacity: 0;
+}
+
+.mej-simple-space-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--gray-200);
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+}
+
+.space-title {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--jag-navy);
+  margin: 0;
+}
+
+.space-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 4px;
+
+  &--green {
+    background: rgba(46, 170, 99, 0.1);
+    color: var(--jag-green);
+  }
+
+  &--blue {
+    background: rgba(30, 155, 215, 0.1);
+    color: var(--jag-blue);
+  }
+}
+
+.space-desc {
+  font-size: 1rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.space-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    font-size: 0.95rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      content: '•';
+      color: var(--jag-green);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+
+    strong {
+      color: var(--jag-navy);
+      font-weight: 600;
+    }
+  }
+}
+
+.option-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--gray-200);
+  color: var(--gray-600);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+// ─── CTA de la carte ─────────────────────────────────────────
+.mej-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s $ease-smooth;
+  margin-top: 4px;
+
+  svg {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(5px);
+  }
+
+  &--investor {
+    background: var(--jag-green);
+    color: #ffffff;
+    border: 2px solid var(--jag-green);
+
+    &:hover {
+      background: transparent;
+      color: var(--jag-green);
+      box-shadow: 0 4px 16px rgba(46, 170, 99, 0.25);
+    }
+  }
+
+  &--industrial {
+    background: var(--jag-blue);
+    color: #ffffff;
+    border: 2px solid var(--jag-blue);
+
+    &:hover {
+      background: transparent;
+      color: var(--jag-blue);
+      box-shadow: 0 4px 16px rgba(30, 155, 215, 0.25);
+    }
+  }
+}
+
+// ─── Bande de réassurance ────────────────────────────────────
+.mej-reassurance {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 24px 32px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  animation: fadeUpAnim 0.8s $ease-expo 0.4s forwards;
+  opacity: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+}
+
+.mej-reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--jag-navy);
+
+  svg {
+    color: var(--jag-green);
+    flex-shrink: 0;
+  }
+}
+
+.mej-reassurance-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--gray-300);
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 1px;
+  }
+}
+
+
+// ============================================================
+// 3. SECTION FORMULAIRE
+// ============================================================
+.mej-form-section {
+  position: relative;
+  background: var(--white);
+  padding-block: var(--space-12);
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding-block: var(--space-8);
+  }
+}
+
+// Cercles décoratifs d'arrière-plan
+.mej-form-bg-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+
+  &-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--jag-green) 0%, transparent 70%);
+    top: -200px;
+    right: -200px;
+  }
+
+  &-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--jag-blue) 0%, transparent 70%);
+    bottom: -150px;
+    left: -150px;
+  }
+}
+
+// ─── Wrapper deux colonnes ───────────────────────────────────
+.mej-form-wrapper {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+// ─── Panneau info gauche ─────────────────────────────────────
+.mej-form-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeUpAnim 0.8s $ease-expo 0.1s both;
+}
+
+.mej-form-title {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--jag-navy);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.mej-form-desc {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin: 0;
+}
+
+// Étapes du processus
+.mej-form-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mej-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mej-step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(46, 170, 99, 0.15);
+  border: 1.5px solid rgba(46, 170, 99, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--jag-green);
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.mej-step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 4px;
+
+  strong {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--jag-navy);
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+  }
+}
+
+.mej-step-line {
+  width: 1.5px;
+  height: 20px;
+  background: rgba(46, 170, 99, 0.2);
+  margin-left: 15px;
+}
+
+// Contact direct
+.mej-form-direct {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.mej-form-direct-label {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.mej-form-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--jag-navy);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  svg {
+    color: var(--jag-green);
+  }
+
+  &:hover {
+    color: var(--jag-green);
+  }
+}
+
+// ─── Panneau du formulaire ───────────────────────────────────
+.mej-form-panel {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 32px;
+  box-shadow: 0 16px 48px rgba(11, 29, 58, 0.08);
+  border: 1px solid var(--gray-200);
+  animation: fadeUpAnim 0.8s $ease-expo 0.2s both;
+
+  @media (max-width: 640px) {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+}
+
+// ─── Éléments de formulaire ──────────────────────────────────
+.mej-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mej-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mej-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+
+  &--error .mej-form-control {
+    border-color: var(--jag-orange);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  }
+}
+
+.mej-form-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--jag-navy);
+  letter-spacing: 0.2px;
+}
+
+.mej-required {
+  color: var(--jag-orange);
+  margin-left: 2px;
+}
+
+.mej-form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--jag-navy);
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  appearance: none;
+
+  &::placeholder {
+    color: var(--gray-400);
+    font-weight: 400;
+  }
+
+  &:focus {
+    border-color: var(--jag-green);
+    box-shadow: 0 0 0 3px rgba(46, 170, 99, 0.12);
+  }
+}
+
+.mej-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.6;
+}
+
+// Select personnalisé
+.mej-select-wrapper {
+  position: relative;
+}
+
+.mej-form-select {
+  cursor: pointer;
+  padding-right: 40px;
+
+  option[value=""][disabled] {
+    color: var(--gray-400);
+  }
+}
+
+.mej-select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  pointer-events: none;
+}
+
+// Messages d'erreur
+.mej-form-error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--jag-orange);
+  font-weight: 500;
+  animation: fadeUpAnim 0.3s ease forwards;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// ─── Bouton de soumission ────────────────────────────────────
+.mej-btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--jag-green);
+  color: #ffffff;
+  border: 2px solid var(--jag-green);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.3s $ease-smooth;
+  margin-top: 4px;
+
+  &:hover {
+    background: transparent;
+    color: var(--jag-green);
+    box-shadow: 0 6px 20px rgba(46, 170, 99, 0.25);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Texte légal
+.mej-form-legal {
+  font-size: 0.75rem !important;
+  color: var(--gray-400) !important;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+  margin-top: 4px;
+}

@@ -42,6 +42,15 @@ $blur: blur(20px);
         margin-bottom: 20px;
     }
 
+    .title-bilan {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-weight: 800;
+        color: var(--jag-navy);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
     .subtitle {
         font-size: 1.15rem;
         color: var(--jag-text);
@@ -89,6 +98,7 @@ $blur: blur(20px);
                 color: var(--jag-text);
                 line-height: 1.7;
                 margin-bottom: 40px;
+                text-align: justify;
             }
 
             .btn-primary {
@@ -103,12 +113,12 @@ $blur: blur(20px);
                 font-size: 1.05rem;
                 transition: transform 0.3s, box-shadow 0.3s;
                 box-shadow: var(--shadow-md);
-    border: 1px solid rgba(11, 29, 58, 0.05);
+                border: 1px solid rgba(11, 29, 58, 0.05);
 
                 &:hover {
                     transform: translateY(-3px);
                     box-shadow: var(--shadow-md);
-    border: 1px solid rgba(11, 29, 58, 0.05);
+                    border: 1px solid rgba(11, 29, 58, 0.05);
                 }
             }
         }
@@ -116,22 +126,22 @@ $blur: blur(20px);
 
     .split-right {
         flex: 1;
-        background-color: #000;
         display: flex;
         align-items: flex-end;
         justify-content: center;
         position: relative;
+        top: -90px;
 
         @media (max-width: 992px) {
             min-height: 400px;
         }
 
         .hero-expert-img {
-    filter: saturate(0.8) contrast(1.1);
+            filter: saturate(0.8) contrast(1.1);
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain;
-            object-position: bottom;
+            object-fit: cover;
+            object-position: center top;
         }
     }
 }
@@ -162,16 +172,16 @@ $blur: blur(20px);
     &:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-md);
-    border: 1px solid rgba(11, 29, 58, 0.05);
+        border: 1px solid rgba(11, 29, 58, 0.05);
 
         .pole-card-img {
-    filter: saturate(0.8) contrast(1.1);
+            filter: saturate(0.8) contrast(1.1);
             transform: scale(1.05);
         }
     }
 
     .pole-card-img {
-    filter: saturate(0.8) contrast(1.1);
+        filter: saturate(0.8) contrast(1.1);
         height: 250px;
         background-size: cover;
         background-position: center;
@@ -317,13 +327,13 @@ $blur: blur(20px);
             flex: 1;
 
             img {
-    filter: saturate(0.8) contrast(1.1);
+                filter: saturate(0.8) contrast(1.1);
                 width: 100%;
                 height: 250px;
                 object-fit: cover;
                 border-radius: var(--radius-xl);
                 box-shadow: var(--shadow-md);
-    border: 1px solid rgba(11, 29, 58, 0.05);
+                border: 1px solid rgba(11, 29, 58, 0.05);
             }
         }
 
@@ -577,7 +587,7 @@ $blur: blur(20px);
         font-size: 1.1rem;
         flex-shrink: 0;
         box-shadow: var(--shadow-md);
-    border: 1px solid rgba(11, 29, 58, 0.05);
+        border: 1px solid rgba(11, 29, 58, 0.05);
     }
 }
 
