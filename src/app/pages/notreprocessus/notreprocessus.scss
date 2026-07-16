@@ -147,13 +147,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     &.section-header--right {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        text-align: right;
+        text-align: center;
         margin-left: auto;
 
         .title {
@@ -195,7 +196,7 @@
 .proc-intro-section {
     position: relative;
     padding: 180px 24px;
-    background-color: #fff;
+    background-color: var(--jag-muted);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -205,8 +206,8 @@
 
 .proc-intro-branche {
     position: absolute;
-    left: -120px;
-    top: 50%;
+    left: -50px;
+    top: 70%;
     transform: translateY(-50%);
     width: 700px;
     max-width: none;

@@ -1,83 +1,92 @@
 /* ---- HERO ---- */
-.apropos-hero {
-    position: relative;
-    min-height: 82vh;
+.split-hero {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 140px 24px 100px;
-    overflow: hidden;
+    height: 100vh;
+    background-color: #fff;
+    overflow: visible;
 
-    @media (max-width: 768px) {
-        min-height: 70vh;
-        padding: 120px 18px 60px;
+    @media (max-width: 992px) {
+        flex-direction: column;
+    }
+
+    .split-left {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 60px 8%;
+        background-color: #fff;
+
+        .hero-content {
+            max-width: 600px;
+
+            .hero-title {
+                font-family: var(--font-display, 'Montserrat', sans-serif);
+                font-size: clamp(3rem, 5vw, 4.5rem);
+                font-weight: 900;
+                color: var(--jag-navy);
+                line-height: 1.1;
+                margin-bottom: 24px;
+
+                .text-green {
+                    color: var(--jag-green);
+                }
+            }
+
+            .hero-subtitle {
+                font-size: 1.15rem;
+                color: var(--jag-text);
+                line-height: 1.7;
+                margin-bottom: 40px;
+                text-align: justify;
+            }
+
+            .btn-primary {
+                display: inline-flex;
+                align-items: center;
+                background: var(--jag-green);
+                color: #fff;
+                padding: 16px 36px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.05rem;
+                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: var(--shadow-md);
+                border: 1px solid rgba(11, 29, 58, 0.05);
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: var(--shadow-md);
+                    border: 1px solid rgba(11, 29, 58, 0.05);
+                }
+            }
+        }
+    }
+
+    .split-right {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        top: -90px;
+        bottom: 0;
+
+        @media (max-width: 992px) {
+            min-height: 400px;
+        }
+
+        .hero-expert-img {
+            filter: saturate(0.8) contrast(1.1);
+            width: 100%;
+            height: 120%;
+            object-fit: cover;
+            object-position: center top;
+        }
     }
 }
 
-.apropos-hero-bg {
-    position: absolute;
-    inset: 0;
-    background-color: none;
-    background-image: url('/apropos2.jpg');
-    background-size: cover;
-    background-position: center;
-
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(160deg,
-                rgba(10, 61, 46, 0.05) 0%,
-                rgba(11, 29, 58, 0.02) 50%,
-                rgba(11, 29, 58, 0.02) 100%);
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image:
-            linear-gradient(rgba(15, 76, 58, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(15, 76, 58, 0.03) 1px, transparent 1px);
-        background-size: 60px 60px;
-        mask-image: radial-gradient(ellipse at center, black, transparent 80%);
-        -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
-    }
-}
-
-.apropos-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 860px;
-    text-align: center;
-}
-
-.apropos-hero-title {
-    margin: 0 0 24px;
-    font-family: var(--font-heading, 'Montserrat', sans-serif);
-    font-size: clamp(2.6rem, 5.2vw, 4.2rem);
-    font-weight: 800;
-    line-height: 1.05;
-    color: #ffffff;
-    letter-spacing: -1px;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.apropos-hero-text {
-    max-width: 620px;
-    margin: 0 auto 36px;
-    font-size: 1.1rem;
-    line-height: 1.85;
-    color: rgba(255, 255, 255, 0.82);
-}
-
-.apropos-hero-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 48px;
-}
 
 /* ---- NOS RACINES ---- */
 .racines-section {
@@ -124,11 +133,11 @@
     &.tag-green {
         color: var(--jag-green);
     }
-    
+
     &.tag-orange {
         color: var(--jag-orange);
     }
-    
+
     &.tag-blue {
         color: var(--jag-blue);
     }
@@ -367,7 +376,7 @@
     &:hover {
         transform: translateY(-6px);
         box-shadow: var(--shadow-md);
-    border: 1px solid rgba(11, 29, 58, 0.05);
+        border: 1px solid rgba(11, 29, 58, 0.05);
     }
 
     h3 {
