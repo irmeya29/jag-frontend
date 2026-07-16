@@ -64,6 +64,28 @@
         }
     }
 
+    .btn--green {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--jag-green);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 16px 36px;
+        border-radius: 4px;
+        text-decoration: none;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-md);
+        border: 1px solid rgba(11, 29, 58, 0.05);
+
+        &:hover {
+            background-color: transparent !important;
+            color: var(--jag-green) !important;
+            border-color: var(--jag-green) !important;
+        }
+    }
+
     .split-right {
         flex: 1;
         display: flex;
