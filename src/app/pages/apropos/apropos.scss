@@ -115,19 +115,23 @@
 .section-tag {
     display: inline-block;
     font-family: var(--font-heading, 'Montserrat', sans-serif);
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 7px 18px;
-    border-radius: 999px;
     margin-bottom: 20px;
-}
 
-.tag-green {
-    background: rgba(15, 76, 58, 0.15);
-    color: var(--jag-green);
-    border: 1px solid rgba(15, 76, 58, 0.25);
+    &.tag-green {
+        color: var(--jag-green);
+    }
+    
+    &.tag-orange {
+        color: var(--jag-orange);
+    }
+    
+    &.tag-blue {
+        color: var(--jag-blue);
+    }
 }
 
 .section-heading {
@@ -137,7 +141,7 @@
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.5px;
-    color: var(--jag-navy);
+    color: var(--jag-green);
 }
 
 .section-body {
@@ -237,10 +241,10 @@
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.5px;
-    color: #ffffff;
+    color: var(--jag-green);
 
     &--dark {
-        color: var(--jag-navy);
+        color: var(--jag-green);
     }
 }
 
@@ -318,7 +322,7 @@
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.5px;
-    color: var(--jag-navy);
+    color: var(--jag-green);
 }
 
 .text-green {
