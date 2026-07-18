@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AnchorScrollDirective } from '../../shared/anchor-scroll.directive';
 
 @Component({
   selector: 'app-apropos',
-  imports: [],
+  imports: [AnchorScrollDirective],
   templateUrl: './apropos.html',
   styleUrl: './apropos.scss',
 })

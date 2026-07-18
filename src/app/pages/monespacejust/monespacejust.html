@@ -28,7 +28,7 @@
             class="mej-btn mej-btn--primary" id="hero-cta-connexion">
             Se connecter
           </a>
-          <a href="#acces-form" class="mej-btn mej-btn--outline" id="hero-cta-demande" (click)="scrollToForm($event)">
+          <a href="#acces-form" class="mej-btn mej-btn--outline" id="hero-cta-demande">
             Demander un accès
           </a>
         </div>
@@ -36,7 +36,7 @@
     </div>
     <div class="split-right">
       <!-- Image d'illustration -->
-      <img src="/investisseur.png" alt="Espace Just Agro Group" class="hero-img" />
+      <img src="/conn.png" alt="Espace Just Agro Group" class="hero-img" />
     </div>
   </section>
 
@@ -170,7 +170,7 @@
                 <label class="mej-form-label" for="input-nom">
                   Nom <span class="mej-required">*</span>
                 </label>
-                <input id="input-nom" type="text" class="mej-form-control" placeholder="Votre nom"
+                <input id="input-nom" type="text" class="mej-form-control" placeholder="Sawadogo"
                   [(ngModel)]="formData.nom" name="nom" autocomplete="family-name" />
                 @if (formSubmitted && formErrors['nom']) {
                 <span class="mej-form-error">
@@ -182,7 +182,7 @@
                 <label class="mej-form-label" for="input-prenom">
                   Prénom <span class="mej-required">*</span>
                 </label>
-                <input id="input-prenom" type="text" class="mej-form-control" placeholder="Votre prénom"
+                <input id="input-prenom" type="text" class="mej-form-control" placeholder="Sidbewende"
                   [(ngModel)]="formData.prenom" name="prenom" autocomplete="given-name" />
                 @if (formSubmitted && formErrors['prenom']) {
                 <span class="mej-form-error">
@@ -238,7 +238,7 @@
                 <label class="mej-form-label" for="input-telephone">
                   Téléphone <span class="mej-required">*</span>
                 </label>
-                <input id="input-telephone" type="tel" class="mej-form-control" placeholder="+226 00 00 00 00"
+                <input id="input-telephone" type="tel" class="mej-form-control" placeholder="+226 64 54 83 55"
                   [(ngModel)]="formData.telephone" name="telephone" autocomplete="tel" />
                 @if (formSubmitted && formErrors['telephone']) {
                 <span class="mej-form-error">

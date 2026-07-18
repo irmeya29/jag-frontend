@@ -22,8 +22,7 @@ export const routes: Routes = [
   { path: 'nospoles/pole2', component: Pole2 },
 
   // Redirection par défaut
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-
+  
   // Redirection 404
   { path: '**', redirectTo: '/home' }
 ];

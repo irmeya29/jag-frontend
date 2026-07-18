@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AnchorScrollDirective } from '../../shared/anchor-scroll.directive';
 
 @Component({
   selector: 'app-monespacejust',
-  imports: [FormsModule],
+  imports: [FormsModule, AnchorScrollDirective],
   templateUrl: './monespacejust.html',
   styleUrl: './monespacejust.scss',
 })
@@ -86,13 +87,5 @@ export class Monespacejust {
     );
 
     window.location.href = `mailto:contact@justagrogroup.com?subject=${subject}&body=${body}`;
-  }
-
-  scrollToForm(event: Event): void {
-    event.preventDefault();
-    const el = document.getElementById('acces-form');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   }
 }
