@@ -14,15 +14,23 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        padding: 60px 8%;
+        padding: 60px 8% 60px 6%;
         background-color: #fff;
 
+        @media (max-width: 992px) {
+            padding: 40px 24px 30px;
+        }
+
         .hero-content {
-            max-width: 600px;
+            max-width: 480px;
+
+            @media (max-width: 992px) {
+                max-width: 100%;
+            }
 
             .hero-title {
                 font-family: var(--font-display, 'Montserrat', sans-serif);
-                font-size: clamp(3rem, 5vw, 4.5rem);
+                font-size: clamp(2.5rem, 5vw, 4.5rem);
                 font-weight: 900;
                 color: var(--jag-navy);
                 line-height: 1.1;
@@ -39,6 +47,11 @@
                 line-height: 1.7;
                 margin-bottom: 40px;
                 text-align: justify;
+
+                @media (max-width: 992px) {
+                    font-size: 1rem;
+                    margin-bottom: 28px;
+                }
             }
 
             .btn-primary {
@@ -79,6 +92,11 @@
         box-shadow: var(--shadow-md);
         border: 1px solid rgba(11, 29, 58, 0.05);
 
+        @media (max-width: 992px) {
+            padding: 14px 28px;
+            font-size: 0.95rem;
+        }
+
         &:hover {
             background-color: transparent !important;
             color: var(--jag-green) !important;
@@ -96,7 +114,9 @@
         bottom: 0;
 
         @media (max-width: 992px) {
-            min-height: 400px;
+            min-height: 280px;
+            max-height: 320px;
+            top: 0;
         }
 
         .hero-expert-img {
