@@ -1,8 +1,10 @@
 import { Component, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { AnchorScrollDirective } from '../../shared/anchor-scroll.directive';
 
 @Component({
   selector: 'app-notreprocessus',
-  imports: [],
+  imports: [RouterLink, AnchorScrollDirective],
   templateUrl: './notreprocessus.html',
   styleUrl: './notreprocessus.scss',
 })

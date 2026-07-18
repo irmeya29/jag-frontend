@@ -1,9 +1,11 @@
 import { Component, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { AnchorScrollDirective } from '../../shared/anchor-scroll.directive';
 
 @Component({
   selector: 'app-pole2',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, AnchorScrollDirective],
   templateUrl: './pole2.html',
   styleUrl: './pole2.scss'
 })
