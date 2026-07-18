@@ -1164,165 +1164,104 @@ $bento-radius: 32px;
 
 // 4. NOS POLES MODERN
 .poles-section {
-  padding: 80px 0;
+  padding: 100px 0;
   background-color: var(--white);
-}
-
-.poles-header {
-  max-width: 760px;
-  margin: 0 auto 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.poles-badge {
-  display: inline-block;
-  color: var(--jag-green);
-  padding: 4px 14px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border: 1px solid rgba(46, 170, 99, 0.25);
-  background: rgba(46, 170, 99, 0.05);
-}
-
-.poles-title {
-  font-family: var(--font-display, 'Montserrat', sans-serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: var(--jag-navy);
-  line-height: 1.15;
-  margin: 0;
-}
-
-.poles-title-accent {
-  color: var(--jag-green);
 }
 
 .poles-grid-modern {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
 
-  @media (max-width: 992px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 }
 
 .pole-card-modern {
   display: flex;
   flex-direction: column;
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--white);
   border: 1px solid var(--gray-200);
-  box-shadow: 0 10px 30px rgba(11, 29, 58, 0.04);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(11, 29, 58, 0.05);
   text-decoration: none;
-  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.4s $ease-out-expo;
 
   &:hover {
-    transform: translateY(-6px);
-    border-color: rgba(46, 170, 99, 0.25);
-    box-shadow: 0 16px 40px rgba(11, 29, 58, 0.08);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(11, 29, 58, 0.05);
 
     .pole-card-img {
-      transform: scale(1.03);
+      filter: saturate(0.8) contrast(1.1);
+      transform: scale(1.05);
     }
 
     .pole-link {
       color: var(--jag-green);
-      padding-left: 6px;
+      padding-left: 10px;
     }
   }
 
   .pole-card-img {
     filter: saturate(0.8) contrast(1.1);
-    height: 240px;
+    height: 250px;
     background-size: cover;
     background-position: center;
-    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.6s $ease-out-expo;
   }
 
   .pole-card-body {
-    padding: 32px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     flex-grow: 1;
+    position: relative;
     background: var(--white);
+    z-index: 2;
 
-    .pole-card-header {
+    .pole-number {
+      position: absolute;
+      top: -30px;
+      right: 40px;
+      background: var(--jag-navy);
+      color: var(--white);
+      width: 60px;
+      height: 60px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid var(--gray-100);
-      padding-bottom: 12px;
-      margin-bottom: 2px;
-    }
-
-    .card-title {
-      font-family: var(--font-display, 'Montserrat', sans-serif);
-      font-size: 1.25rem;
+      justify-content: center;
+      border-radius: var(--radius-xl);
+      font-size: 1.5rem;
       font-weight: 800;
+      font-family: var(--font-display);
+      border: 4px solid var(--white);
+    }
+
+    h3 {
+      font-size: 2rem;
       color: var(--jag-navy);
-      margin: 0;
+      margin-bottom: 15px;
     }
 
-    .card-desc {
-      font-size: 0.92rem;
-      color: var(--gray-600);
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .card-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-
-      li {
-        font-size: 0.88rem;
-        color: var(--gray-500);
-        line-height: 1.4;
-        position: relative;
-        padding-left: 18px;
-
-        &::before {
-          content: '•';
-          color: var(--jag-green);
-          position: absolute;
-          left: 0;
-          top: 0;
-          font-size: 1.1rem;
-          line-height: 1.1;
-        }
-
-        strong {
-          color: var(--jag-navy);
-          font-weight: 600;
-        }
-      }
+    p {
+      color: var(--jag-text);
+      line-height: 1.6;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      flex-grow: 1;
     }
 
     .pole-link {
       font-weight: 700;
       color: var(--jag-navy);
       text-transform: uppercase;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       letter-spacing: 1px;
-      margin-top: auto;
-      padding-top: 8px;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
     }
   }
 }
