@@ -914,156 +914,481 @@ $bento-radius: 32px;
   }
 }
 
-// 3. POURQUOI CHOISIR (Version épurée, style Mon Espace Just - Sans dégradé et allégée)
+/* ==========================================================
+   POURQUOI CHOISIR
+   Style Premium inspiré de PengMe
+   Adapté à JustAgroGroup
+========================================================== */
+
 .choisir-section {
-  padding: 60px 0;
-  background: var(--white);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 7rem 1.5rem;
+  min-height: 760px;
+  color: #fff;
+  background:
+    linear-gradient(rgba(7, 29, 43, .45), rgba(7, 29, 43, .45)),
+    url('/assets/images/femme1.png') center center / cover no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 28, 43, .28);
+    z-index: -1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
 }
 
-.choisir-header {
-  max-width: 760px;
-  margin: 0 auto 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+/* ==========================================================
+   HEADER
+========================================================== */
 
-  @media (max-width: 768px) {
-    margin-bottom: 30px;
-  }
+.choisir-header {
+  max-width: 720px;
+  margin-bottom: 4rem;
 }
 
 .choisir-section-badge {
   display: inline-block;
+  margin-bottom: .9rem;
+
   color: var(--jag-green);
-  padding: 4px 14px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
+
+  font-size: .78rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: .16em;
 }
 
 .choisir-section-title {
+  margin: 0 0 1rem;
+
+  color: #fff;
+
   font-family: var(--font-display, 'Montserrat', sans-serif);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
   font-weight: 800;
-  color: var(--jag-navy);
-  line-height: 1.15;
-  margin: 0;
+  letter-spacing: -.04em;
 }
 
 .choisir-title-accent {
   color: var(--jag-green);
 }
 
+.choisir-description {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, .82);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
 .choisir-simple-spaces {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+  gap: 1.2rem;
 }
 
-.choisir-simple-space {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  background: #ffffff;
-  border: 1px solid var(--gray-200);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 6px 20px rgba(11, 29, 58, 0.03);
-  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+/* ==========================================================
+   CARTES
+========================================================== */
+
+.pole-card-modern {
+
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  border: 1px solid rgba(255, 255, 255, .18);
+
+  background: rgba(255, 255, 255, .12);
+
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .12);
+
+  transition:
+    transform .35s cubic-bezier(.2, .8, .2, 1),
+    box-shadow .35s ease,
+    border-color .35s ease;
 
   &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(46, 170, 99, 0.25);
-    box-shadow: 0 12px 30px rgba(11, 29, 58, 0.06);
+
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 255, 255, .35);
+
+    box-shadow:
+      0 30px 70px rgba(0, 0, 0, .25),
+      inset 0 1px 0 rgba(255, 255, 255, .18);
+
   }
+
 }
 
+/* carte mise en avant */
+
+.pole-card-modern:nth-child(3) {
+
+  background: rgba(46, 170, 99, .16);
+
+}
+
+/* ==========================================================
+   NUMERO DECORATIF
+========================================================== */
+
+.pole-card-modern::after {
+
+  position: absolute;
+
+  top: 18px;
+
+  right: 22px;
+
+  font-size: 4rem;
+
+  font-weight: 800;
+
+  color: rgba(255, 255, 255, .10);
+
+  line-height: 1;
+
+}
+
+.pole-card-modern:nth-child(1)::after {
+
+  content: "01";
+
+}
+
+.pole-card-modern:nth-child(2)::after {
+
+  content: "02";
+
+}
+
+.pole-card-modern:nth-child(3)::after {
+
+  content: "03";
+
+}
+
+/* ==========================================================
+   CONTENU
+========================================================== */
+
+.pole-card-body {
+
+  position: relative;
+
+  padding: 2rem;
+
+  z-index: 2;
+
+}
+
+/* ==========================================================
+   ICONE
+========================================================== */
+
+.value-icon {
+
+  display: grid;
+
+  place-items: center;
+
+  width: 62px;
+
+  height: 62px;
+
+  margin-bottom: 2.5rem;
+
+  border-radius: 18px;
+
+  background: var(--jag-green);
+
+  color: #fff;
+
+  font-size: 1.6rem;
+
+  box-shadow: 0 12px 28px rgba(46, 170, 99, .25);
+
+}
+
+/* ==========================================================
+   HEADER DE LA CARTE
+========================================================== */
+
 .choisir-simple-space-header {
+
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
-  border-bottom: 2px solid var(--gray-100);
-  padding-bottom: 12px;
-  margin-bottom: 2px;
+
+  align-items: center;
+
+  margin-bottom: 1.4rem;
+
 }
 
 .space-title {
-  font-family: var(--font-display, 'Montserrat', sans-serif);
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--jag-navy);
+
   margin: 0;
+
+  color: #fff;
+
+  font-family: var(--font-display);
+
+  font-size: 1.45rem;
+
+  font-weight: 700;
+
 }
 
 .space-status {
-  font-size: 0.68rem;
+
+  padding: .45rem .8rem;
+
+  border-radius: 999px;
+
+  font-size: .68rem;
+
   font-weight: 700;
+
   text-transform: uppercase;
-  letter-spacing: 0.8px;
-  padding: 3px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
 
-  &--green {
-    color: var(--jag-green);
-  }
+  letter-spacing: .08em;
 
-  &--blue {
-    color: var(--jag-blue);
-  }
+  background: rgba(255, 255, 255, .12);
 
-  &--orange {
-    color: var(--jag-orange, #ff6b35);
-  }
+  border: 1px solid rgba(255, 255, 255, .15);
+
 }
+
+.space-status--green {
+
+  color: #74f0a4;
+
+}
+
+.space-status--blue {
+
+  color: #87d7ff;
+
+}
+
+.space-status--orange {
+
+  color: #ffd35f;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
 
 .space-desc {
-  font-size: 0.88rem;
-  color: var(--gray-600);
-  line-height: 1.5;
-  margin: 0;
+
+  margin-bottom: 1.7rem;
+
+  color: rgba(255, 255, 255, .82);
+
+  line-height: 1.65;
+
+  font-size: .96rem;
+
 }
 
+/* ==========================================================
+   LISTE
+========================================================== */
+
 .space-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
   display: flex;
+
   flex-direction: column;
-  gap: 10px;
 
-  li {
-    font-size: 0.85rem;
-    color: var(--gray-500);
-    line-height: 1.4;
-    position: relative;
-    padding-left: 18px;
+  gap: 1rem;
 
-    &::before {
-      content: '•';
-      color: var(--jag-green);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.1rem;
-      line-height: 1.1;
-    }
+  list-style: none;
 
-    strong {
-      color: var(--jag-navy);
-      font-weight: 600;
-    }
+  padding: 0;
+
+  margin: 0;
+
+}
+
+.space-list li {
+
+  position: relative;
+
+  padding-left: 1.3rem;
+
+  color: rgba(255, 255, 255, .80);
+
+  line-height: 1.6;
+
+  font-size: .92rem;
+
+}
+
+.space-list li::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: .55rem;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--jag-green);
+
+}
+
+.space-list strong {
+
+  color: #fff;
+
+  font-weight: 700;
+
+}
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+.pole-card-modern,
+.choisir-header {
+
+  transition: all .4s ease;
+
+}
+
+/* ==========================================================
+   RESPONSIVE TABLET
+========================================================== */
+
+@media(max-width:992px) {
+
+  .choisir-section {
+
+    min-height: auto;
+
+    padding: 5rem 1.5rem;
+
   }
+
+  .choisir-simple-spaces {
+
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+
+  }
+
+  .choisir-header {
+
+    margin-bottom: 3rem;
+
+  }
+
+}
+
+/* ==========================================================
+   RESPONSIVE MOBILE
+========================================================== */
+
+@media(max-width:768px) {
+
+  .choisir-section {
+
+    padding: 5rem 1rem;
+
+    background-position: 70% center;
+
+  }
+
+  .choisir-header {
+
+    text-align: center;
+
+  }
+
+  .choisir-section-title {
+
+    font-size: clamp(2rem, 10vw, 3rem);
+
+  }
+
+  .choisir-description {
+
+    font-size: .98rem;
+
+  }
+
+  .pole-card-body {
+
+    padding: 1.7rem;
+
+  }
+
+  .value-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin-bottom: 2rem;
+
+  }
+
+  .space-title {
+
+    font-size: 1.25rem;
+
+  }
+
+  .space-desc {
+
+    font-size: .92rem;
+
+  }
+
+  .space-list li {
+
+    font-size: .88rem;
+
+  }
+
 }
 
 // 3.5 BENTO BOX
@@ -1180,8 +1505,8 @@ $bento-radius: 32px;
   flex-direction: column;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: var(--jag-blue);
-  border: 1px solid rgba(11, 29, 58, 0.07);
+  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: 0 4px 24px rgba(11, 29, 58, 0.06);
   text-decoration: none;
   transition: all 0.4s $ease-out-expo;
