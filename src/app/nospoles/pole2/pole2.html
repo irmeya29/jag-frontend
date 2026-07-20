@@ -10,7 +10,7 @@
                     les prix. Bénéficiez d'offres fermes et d'une traçabilité totale.
                 </p>
                 <div class="pole2-hero-actions-left">
-                    <a href="#offre" class="btn--green">Découvrir notre offre <span class="arrow-down"></span></a>
+                    <a href="#" (click)="scrollTo('offre', $event)" class="btn--green">Découvrir notre offre <span class="arrow-down"></span></a>
                 </div>
             </div>
             <div class="pole2-hero-visual-content" data-reveal data-delay="120">
@@ -24,7 +24,7 @@
     <section class="pole2-section section-problematique" id="offre">
         <div class="container problem-grid">
             <div class="problem-right" data-reveal>
-                <img src="coffre.png" alt="Culture de maïs" class="problem-bg-img" loading="lazy">
+                <img src="/coffre.png" alt="Culture de maïs" class="problem-bg-img" loading="lazy">
             </div>
 
             <div class="problem-left" data-reveal data-delay="120">
@@ -118,7 +118,7 @@
     <section class="section-split section-transform">
         <div class="split-left" data-reveal>
             <span class="split-label split-label--navy">Nous produisons</span>
-            <img src="main-mais.png" alt="Maïs brut" class="split-img" loading="lazy">
+            <img src="/main-mais.png" alt="Maïs brut" class="split-img" loading="lazy">
         </div>
         <div class="split-right" data-reveal data-delay="120">
             <span class="split-label">Vous finalisez</span>
@@ -167,7 +167,7 @@
             <h2>Vous cherchez un approvisionnement structuré ? </h2>
             <p class="cta-subtitle">Nos processus de production sécurisent vos flux et matières premières pour garantir
                 l'activité de vos usines en continu.</p>
-            <a href="/contact" class="btn-premium btn-primary mt-8">
+            <a routerLink="/contact" class="btn-premium btn-primary mt-8">
                 <span class="btn-text">Sécuriser mon approvisionnement</span>
             </a>
         </div>

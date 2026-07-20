@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AnchorScrollDirective } from '../../shared/anchor-scroll.directive';
 
 @Component({
   selector: 'app-monespacejust',
-  imports: [FormsModule, AnchorScrollDirective],
+  imports: [FormsModule],
   templateUrl: './monespacejust.html',
   styleUrl: './monespacejust.scss',
 })
 export class Monespacejust {
+  scrollTo(id: string, event: Event): void {
+    event.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = id;
+    }
+  }
   formData = {
     nom: '',
     prenom: '',
