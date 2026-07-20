@@ -1,23 +1,31 @@
 import { Component, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AnchorScrollDirective } from '../../shared/anchor-scroll.directive';
 
 @Component({
   selector: 'app-pole2',
-  standalone: true,
-  imports: [RouterLink, AnchorScrollDirective],
+  imports: [RouterLink],
   templateUrl: './pole2.html',
   styleUrl: './pole2.scss'
 })
 export class Pole2 implements AfterViewInit, OnDestroy {
   private observer!: IntersectionObserver;
+  private snapTimer: ReturnType<typeof setTimeout> | null = null;
+
+  scrollTo(id: string, event: Event): void {
+    event.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = id;
+    }
+  }
 
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
     window.scrollTo(0, 0);
     this.initScrollReveal();
-    setTimeout(() => {
+    this.snapTimer = setTimeout(() => {
       document.documentElement.classList.add('snap-scroll-enabled');
     }, 50);
   }
@@ -48,6 +56,9 @@ export class Pole2 implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (this.snapTimer) {
+      clearTimeout(this.snapTimer);
+    }
     document.documentElement.classList.remove('snap-scroll-enabled');
     if (this.observer) this.observer.disconnect();
   }

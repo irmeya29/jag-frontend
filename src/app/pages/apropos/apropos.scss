@@ -165,7 +165,7 @@
 
 .section-tag {
     display: inline-block;
-    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-family: var(--font-display, 'Montserrat', sans-serif);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -187,7 +187,7 @@
 
 .section-heading {
     margin: 0 0 18px;
-    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-family: var(--font-display, 'Montserrat', sans-serif);
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 800;
     line-height: 1.05;
@@ -287,7 +287,7 @@
 
 .about-split-heading {
     margin: 0 0 20px;
-    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-family: var(--font-display, 'Montserrat', sans-serif);
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 800;
     line-height: 1.1;
@@ -324,7 +324,7 @@
 }
 
 .about-big-number {
-    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-family: var(--font-display, 'Montserrat', sans-serif);
     font-size: clamp(5rem, 12vw, 9rem);
     font-weight: 900;
     line-height: 1;
@@ -338,7 +338,7 @@
 }
 
 .about-big-label {
-    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-family: var(--font-display, 'Montserrat', sans-serif);
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -368,7 +368,7 @@
 
 .about-statement-text {
     margin: 24px 0 0;
-    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-family: var(--font-display, 'Montserrat', sans-serif);
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 800;
     line-height: 1.2;
@@ -423,7 +423,7 @@
 
     h3 {
         margin: 0 0 10px;
-        font-family: var(--font-heading, 'Montserrat', sans-serif);
+        font-family: var(--font-display, 'Montserrat', sans-serif);
         font-size: 1.2rem;
         font-weight: 700;
         color: var(--jag-navy);
