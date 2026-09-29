@@ -678,3 +678,19 @@
     padding: 18px 50px;
     font-size: 1.05rem;
 }
+
+// Herbe décorative juste avant le footer
+.proc-vege-footer {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    margin-bottom: -5px; // colle au footer sans gap
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+        user-select: none;
+    }
+}
