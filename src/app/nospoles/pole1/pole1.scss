@@ -467,21 +467,6 @@ $blur: blur(20px);
             font-weight: 700;
         }
     }
-
-    .bento-bg-icon {
-        position: absolute;
-        bottom: -30px;
-        right: -20px;
-        font-size: 180px;
-        color: rgba(11, 29, 58, 0.02);
-        z-index: 0;
-        transform: rotate(-15deg);
-        transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    &:hover .bento-bg-icon {
-        transform: rotate(0deg) scale(1.05);
-    }
 }
 
 // Spanning Logic
@@ -496,10 +481,6 @@ $blur: blur(20px);
     
     .bento-value {
         color: var(--jag-green);
-    }
-    
-    .bento-bg-icon {
-        color: rgba(46, 170, 99, 0.03);
     }
 }
 
@@ -525,41 +506,25 @@ $blur: blur(20px);
         margin: 0;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
+        gap: 30px;
 
         li {
             display: flex;
-            align-items: flex-start;
-            gap: 15px;
-
-            .icon-box {
-                width: 48px;
-                height: 48px;
-                border-radius: 12px;
-                background: rgba(11, 29, 58, 0.05);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--jag-navy);
-                font-size: 1.2rem;
-                flex-shrink: 0;
-
-                &.green {
-                    background: rgba(46, 170, 99, 0.1);
-                    color: var(--jag-green);
-                }
-            }
+            flex-direction: column;
+            border-left: 3px solid rgba(11, 29, 58, 0.1);
+            padding-left: 15px;
 
             span {
-                font-size: 1rem;
+                font-size: 1.05rem;
                 color: var(--jag-text);
-                line-height: 1.5;
+                line-height: 1.6;
 
                 strong {
                     display: block;
                     color: var(--jag-navy);
                     font-weight: 700;
-                    margin-bottom: 4px;
+                    margin-bottom: 8px;
+                    font-size: 1.1rem;
                 }
             }
         }
@@ -788,21 +753,68 @@ $blur: blur(20px);
     animation: fadeInUp 0.8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.delay-1 {
-    animation-delay: 0.1s;
+// BENTO SCROLL ANIMATIONS (Premium Smooth Style)
+.animate-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+    
+    // Initial states based on slide direction
+    &.bento-slide-left {
+        transform: translateX(-100px);
+    }
+    
+    &.bento-slide-right {
+        transform: translateX(100px);
+    }
+    
+    &.bento-slide-up {
+        transform: translateY(60px);
+    }
+
+    // When visible, trigger the animations
+    &.is-visible {
+        visibility: visible;
+        
+        &.bento-slide-left {
+            animation: bentoSlideLeft 0.9s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        &.bento-slide-right {
+            animation: bentoSlideRight 0.9s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        &.bento-slide-up {
+            animation: bentoSlideUp 0.9s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    }
 }
 
-.delay-2 {
-    animation-delay: 0.2s;
+// Keyframes
+@keyframes bentoSlideLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.delay-3 {
-    animation-delay: 0.3s;
+@keyframes bentoSlideRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.delay-4 {
-    animation-delay: 0.4s;
+@keyframes bentoSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
 
 @keyframes fadeInUp {
     to {
