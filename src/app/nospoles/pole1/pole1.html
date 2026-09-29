@@ -1,184 +1,146 @@
-<!-- ---- NOUVEAU HERO POLE 1 ---- -->
-<div class="home-page">
-    <section class="split-hero">
-        <div class="split-left">
-            <div class="hero-content">
+<main class="pole-page">
+  <!-- 1. HERO -->
+  <section class="pole-hero" aria-labelledby="hero-title">
+    <img class="hero__image" src="/hero_farmland.webp" alt="Terre agricole" />
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Délégation de gestion</p>
+      <h1 id="hero-title">Valoriser un terrain avec un cadre clair.</h1>
+      <p class="hero__description">Nous apportons le capital intellectuel et opérationnel pour valoriser votre terre à son plein potentiel.</p>
+      <a class="btn-premium" (click)="scrollTo('decouvrir', $event)">Découvrir le pôle</a>
+    </div>
+  </section>
 
-                <h1 class="hero-title">
-                    Valoriser un terrain avec<br />
-                    <span class="text-green"> un cadre clair</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Nous apportons le capital intellectuel et opérationnel pour valoriser votre terre à son plein
-                    potentiel.
-                </p>
-                <button type="button" (click)="scrollTo('decouvrir', $event)" class="btn--green">Découvrir le pôle <span
-                        class="arrow-down"></span></button>
-            </div>
-        </div>
-        <div class="split-right">
-            <img src="/hero_farmland.webp" alt="Humain & Data Agricole" class="hero-expert-img" />
-        </div>
-    </section>
-
-    <!-- ---- CIBLE & MISSION ---- -->
-    <section id="decouvrir" class="jag-target-section">
-        <div class="container">
-            <div class="section-header text-center fade-in-up">
-
-                <h2 class="title">À qui s'adresse ce pôle ?</h2>
-            </div>
-
-            <div class="poles-grid-modern">
-                <!-- Card 1 -->
-                <div class="pole-card-modern fade-in-up delay-1">
-                    <div class="pole-card-img" style="background-image: url('/equip.webp');"></div>
-                    <div class="pole-card-body">
-                        <span class="pole-number">01</span>
-                        <h3>Vous avez le terrain et le capital</h3>
-                        <p>Mais vous manquez de temps, d'expertise technique, ou de présence sur place pour garantir la
-                            viabilité du projet.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="pole-card-modern fade-in-up delay-2">
-                    <div class="pole-card-img" style="background-image: url('/relai.webp');"></div>
-                    <div class="pole-card-body">
-                        <span class="pole-number">02</span>
-                        <h3>Nous prenons le relais</h3>
-                        <p><strong class="text-green">Just Agro Group</strong> assure l'intégralité du pilotage
-                            opérationnel, de l'étude à la récolte.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ---- PROCESSUS INTERACTIF ---- -->
-    <section class="jag-process-section">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <h2 class="title-bilan">Du terrain au bilan de cycle.</h2>
-                <p class="subtitle">Une démarche simple : diagnostiquer, planifier, produire et rendre compte.</p>
-            </div>
-
-            <div class="modern-timeline animate-on-scroll">
-                <!-- Step 1 -->
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker">01</div>
-                    <div class="timeline-content">
-                        <div class="content-text">
-                            <h3>Diagnostic</h3>
-                            <p>Analyse du terrain, de l’eau et du potentiel agricole.</p>
-                        </div>
-                        <div class="content-visual">
-                            <img src="/ChatGPT Image 15 juil. 2026, 09_50_18.webp" alt="Diagnostic terrain délimité" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker">02</div>
-                    <div class="timeline-content reverse">
-                        <div class="content-text">
-                            <h3>Planification</h3>
-                            <p>Choix des cultures, calendrier, budget et organisation.</p>
-                        </div>
-                        <div class="content-visual">
-                            <img src="/plannificat.webp" alt="Planification" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker">03</div>
-                    <div class="timeline-content">
-                        <div class="content-text">
-                            <h3>Production</h3>
-                            <p>Mise en place, intrants, supervision et suivi terrain.</p>
-                        </div>
-                        <div class="content-visual">
-                            <img src="/produc.webp" alt="Production" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-marker">04</div>
-                    <div class="timeline-content reverse">
-                        <div class="content-text">
-                            <h3>Reporting</h3>
-                            <p>Rapports, photos, coûts et bilan de cycle.</p>
-                        </div>
-                        <div class="content-visual">
-                            <img src="/bil.webp" alt="Bilan et rapport de cycle" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ---- PARTAGE & REMUNERATION : SPLIT SCREEN ---- -->
-    <section class="jag-split-section" id="pacte">
-        <!-- HEADER -->
-        <div class="split-header animate-on-scroll">
-            <h2 class="pacte-title split-fade-up delay-1">Le Pacte de Rentabilité</h2>
-            <p class="pacte-subtitle split-fade-up delay-2">Un partenariat équilibré où nous gagnons quand vous gagnez.
-            </p>
+  <!-- 2. TARGET -->
+  <section id="decouvrir" class="premium-section target-section">
+    <div class="container">
+      <div class="section-heading animate-on-scroll fade-up">
+        <span class="kicker">À qui s'adresse ce pôle ?</span>
+        <h2>Votre terre,<br/>notre expertise.</h2>
+      </div>
+      
+      <div class="target-overlap-layout">
+        <div class="target-card-floating light-card animate-on-scroll slide-in-left">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <span class="num">01</span>
+          <h3>Vous avez le terrain et le capital</h3>
+          <p>Mais vous manquez de temps, d'expertise technique, ou de présence sur place pour garantir la viabilité de votre projet agricole.</p>
         </div>
 
-        <!-- SPLIT PANELS -->
-        <div class="split-panels animate-on-scroll">
-            <!-- LEFT : VOUS -->
-            <div class="split-panel panel-light split-fade-up delay-1">
-                <div class="panel-content">
-                    <span class="panel-label">Investisseur</span>
-                    <h3 class="panel-title">Vos Engagements</h3>
-                    <ul class="panel-list">
-                        <li>Mise à disposition du <strong>terrain et installation</strong></li>
-                        <li>Financement des <strong>intrants et main-d'œuvre</strong></li>
-                        <li>Prise en charge des <strong>charges d'exploitation</strong></li>
-                    </ul>
-                    <div class="panel-result">
-                        <div class="result-percent">65%</div>
-                        <div class="result-label">du bénéfice net de l'exploitation</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RIGHT : JAG -->
-            <div class="split-panel panel-dark split-fade-up delay-2">
-                <div class="panel-content">
-                    <span class="panel-label">Just Agro Group</span>
-                    <h3 class="panel-title">Notre Expertise</h3>
-                    <ul class="panel-list">
-                        <li><strong>Structuration technique</strong> du projet</li>
-                        <li><strong>Supervision et pilotage</strong> opérationnel</li>
-                        <li><strong>Reporting rigoureux</strong> et transparent</li>
-                    </ul>
-                    <div class="panel-result">
-                        <div class="result-percent">25%</div>
-                        <div class="result-label">en gestion seule. Ou <strong>35%</strong> avec commercialisation.
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="target-card-floating dark-card animate-on-scroll slide-in-right">
+          <div class="bg-img" style="background-image: url('/relai.webp');"></div>
+          <div class="dark-overlay"></div>
+          <div class="content-wrapper">
+            <span class="num text-green">02</span>
+            <h3>Nous prenons le relais</h3>
+            <p><strong>Just Agro Group</strong> assure l'intégralité du pilotage opérationnel : de la première étude de sol jusqu'à la récolte finale, en toute transparence.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ---- CTA PREMIUM (Identique Pôle 2) ---- -->
-    <section class="premium-cta">
-        <div class="container text-center fade-in-up">
-            <h2>Vous avez un terrain à valoriser ?</h2>
-            <p class="cta-subtitle">Présentez votre projet. Nos experts agronomes vous accompagnent pour structurer et
-                rentabiliser votre exploitation agricole clé en main.</p>
-            <a routerLink="/contact" class="btn-premium btn-primary mt-8">
-                <span class="btn-text">Demander une évaluation</span>
-            </a>
+  <!-- 3. PROCESS -->
+  <section class="premium-section process-section">
+    <div class="container">
+      <div class="section-heading animate-on-scroll fade-up">
+        <span class="kicker">Méthodologie</span>
+        <h2>Du terrain au bilan.</h2>
+        <p>Une démarche simple : diagnostiquer, planifier, produire et rendre compte.</p>
+      </div>
+      
+      <div class="sticky-stack">
+        <!-- Step 1 -->
+        <div class="stack-card animate-on-scroll fade-up" style="--index: 1;">
+          <div class="stack-img"><img src="/ChatGPT Image 15 juil. 2026, 09_50_18.webp" alt="Diagnostic"/></div>
+          <div class="stack-text">
+            <span class="step">Étape 01</span>
+            <h3>Diagnostic</h3>
+            <p>Analyse détaillée du terrain, des ressources en eau et du potentiel agronomique de votre domaine.</p>
+          </div>
         </div>
-    </section>
+        <!-- Step 2 -->
+        <div class="stack-card animate-on-scroll fade-up delay-1" style="--index: 2;">
+          <div class="stack-img"><img src="/plannificat.webp" alt="Planification"/></div>
+          <div class="stack-text">
+            <span class="step">Étape 02</span>
+            <h3>Planification</h3>
+            <p>Sélection des cultures adaptées, élaboration du calendrier, structuration du budget et organisation logistique.</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="stack-card animate-on-scroll fade-up delay-2" style="--index: 3;">
+          <div class="stack-img"><img src="/produc.webp" alt="Production"/></div>
+          <div class="stack-text">
+            <span class="step">Étape 03</span>
+            <h3>Production</h3>
+            <p>Déploiement des équipes, gestion des intrants, supervision quotidienne et suivi agronomique sur le terrain.</p>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="stack-card animate-on-scroll fade-up delay-3" style="--index: 4;">
+          <div class="stack-img"><img src="/bil.webp" alt="Reporting"/></div>
+          <div class="stack-text">
+            <span class="step">Étape 04</span>
+            <h3>Reporting</h3>
+            <p>Transmission de rapports réguliers, suivi photographique, contrôle des coûts et présentation du bilan de cycle final.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PACTE -->
+  <section class="premium-section pacte-section">
+    <div class="container">
+      <div class="section-heading text-center animate-on-scroll fade-up">
+        <span class="kicker">Le Pacte de Rentabilité</span>
+        <h2>Un partenariat équilibré</h2>
+        <p>Nous gagnons quand vous gagnez. C'est aussi simple que ça.</p>
+      </div>
+      <div class="pacte-grid">
+        <div class="pacte-card client animate-on-scroll zoom-in">
+          <div class="card-head">
+            <span class="badge">Investisseur</span>
+            <h3>Vos Engagements</h3>
+          </div>
+          <ul>
+            <li>Mise à disposition du <strong>terrain et installation</strong></li>
+            <li>Financement des <strong>intrants et main-d'œuvre</strong></li>
+            <li>Prise en charge des <strong>charges d'exploitation</strong></li>
+          </ul>
+          <div class="result">
+            <span class="percent">65%</span>
+            <span class="desc">du bénéfice net</span>
+          </div>
+        </div>
+        <div class="pacte-card jag animate-on-scroll zoom-in delay-2">
+          <div class="card-head">
+            <span class="badge badge-green">Just Agro Group</span>
+            <h3>Notre Expertise</h3>
+          </div>
+          <ul>
+            <li><strong>Structuration technique</strong> du projet</li>
+            <li><strong>Supervision et pilotage</strong> opérationnel</li>
+            <li><strong>Reporting rigoureux</strong> et transparent</li>
+          </ul>
+          <div class="result">
+            <span class="percent text-green">25%</span>
+            <span class="desc">en gestion seule (35% avec vente)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CLOSING CTA -->
+  <section class="closing-section animate-on-scroll fade-up">
+    <div class="container text-center">
+      <h2>Vous avez un terrain à valoriser ?</h2>
+      <p>Nos experts agronomes vous accompagnent pour structurer et rentabiliser votre exploitation agricole clé en main.</p>
+      <a routerLink="/contact" class="btn-premium btn-green">Demander une évaluation</a>
+    </div>
+  </section>
+</main>
