@@ -1006,3 +1006,12 @@ select {
 .bento-card img {
   filter: saturate(0.82) contrast(1.06);
 }
+
+body:has(app-hero1) .navbar {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+body:has(app-hero1) .main-content {
+  min-height: 100dvh;
+}

@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: 'realisations', loadComponent: () => import('./pages/realisations/realisations').then(m => m.Realisations) },
   { path: 'nospoles/pole1', loadComponent: () => import('./nospoles/pole1/pole1').then(m => m.Pole1) },
   { path: 'nospoles/pole2', loadComponent: () => import('./nospoles/pole2/pole2').then(m => m.Pole2) },
+  { path: 'hero1', loadComponent: () => import('./pages/hero1/hero1').then(m => m.Hero1) },
 
   // Redirection par défaut
   { path: '', redirectTo: '/home', pathMatch: 'full' },

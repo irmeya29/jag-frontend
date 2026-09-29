@@ -1,1 +1,144 @@
-<p>contact works!</p>
+<div class="contact-page">
+
+    <!-- HERO -->
+    <section class="split-hero">
+        <div class="split-left">
+            <div class="hero-content">
+                <span class="contact-badge fade-up">Contact</span>
+                <h1 class="hero-title fade-up delay-1">Parlons de <span class="text-accent">votre projet.</span></h1>
+                <p class="hero-subtitle fade-up delay-2">
+                    Notre équipe d'experts agronomes est à votre écoute pour structurer et rentabiliser votre exploitation agricole.
+                </p>
+            </div>
+        </div>
+        <div class="split-right">
+            <!-- Image d'illustration -->
+            <img src="/conn.webp" alt="Contact Just Agro Group" class="hero-img" />
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- LEFT: INFOS -->
+                <div class="contact-info fade-up">
+                    <h2 class="info-title">Restons connectés</h2>
+                    <p class="info-desc">Que vous soyez investisseur, propriétaire foncier ou partenaire potentiel, nous serions ravis d'échanger avec vous.</p>
+
+                    <div class="info-items">
+                        <!-- Adresse -->
+                        <div class="info-item">
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>Abidjan, Côte d'Ivoire<br>Cocody Riviera Palmeraie</p>
+                            </div>
+                        </div>
+
+                        <!-- Téléphone -->
+                        <div class="info-item">
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p>+225 07 07 07 07 07</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="info-item">
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact&#64;justagro.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Horaires -->
+                        <div class="info-item">
+                            <div>
+                                <h4>Horaires</h4>
+                                <p>Lun – Ven : 08h00 – 18h00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Socials -->
+                    <div class="info-socials">
+                        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: FORMULAIRE -->
+                <div class="contact-form-wrap fade-up delay-2">
+                    <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                        <h2 class="form-title">Envoyez-nous un message</h2>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required
+                                    [(ngModel)]="formData.firstName">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required
+                                    [(ngModel)]="formData.lastName">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="exemple@email.com" required
+                                [(ngModel)]="formData.email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+225 00 00 00 00"
+                                [(ngModel)]="formData.phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select id="subject" name="subject" [(ngModel)]="formData.subject">
+                                <option value="" disabled selected>Choisir un sujet</option>
+                                <option value="investissement">Investissement agricole</option>
+                                <option value="partenariat">Partenariat</option>
+                                <option value="accompagnement">Accompagnement technique</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre demande..." required
+                                [(ngModel)]="formData.message"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="contact-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15889.745036887045!2d-3.9913!3d5.3599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eb5c4e4b3b2d%3A0x1c9c8e46f94e74d5!2sCocody%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1696000000000!5m2!1sfr!2sci"
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation Just Agro Group">
+        </iframe>
+    </section>
+
+</div>
