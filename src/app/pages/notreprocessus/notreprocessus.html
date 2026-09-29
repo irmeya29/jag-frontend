@@ -5,14 +5,6 @@
         <div class="split-left">
             <div class="hero-content fade-up">
                 <h1 class="hero-title">Notre <span class="text-green">processus</span></h1>
-<<<<<<< HEAD
-                <p class="hero-subtitle">Une méthode claire avant chaque engagement.</p>
-                <button type="button" (click)="scrollTo('methode', $event)" class="btn--green">Découvrir la méthode <span class="arrow-down"></span></button>
-            </div>
-        </div>
-        <div class="split-right">
-            <img src="/process.webp" alt="Notre Processus" class="hero-expert-img" />
-=======
                 <p class="hero-subtitle fade-up delay-1">Une méthode claire avant chaque engagement.</p>
                 <a href="#" (click)="scrollTo('methode', $event)" class="btn--green fade-up delay-2">Découvrir la
                     méthode <span class="arrow-down"></span></a>
@@ -20,7 +12,6 @@
         </div>
         <div class="split-right">
             <img src="/process.png" alt="Notre Processus" class="hero-expert-img fade-up delay-1" />
->>>>>>> dfd6df4208a43f35fd6921e49417560291e494a6
         </div>
     </section>
 
@@ -45,47 +36,51 @@
                     cadrées.</p>
             </div>
 
-            <div class="modern-timeline">
+            <div class="process-premium-grid">
                 <!-- Step 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">01</div>
-                    <div class="timeline-content" data-reveal>
-                        <div class="content-text">
-                            <h3>Cadrer</h3>
-                            <p>Comprendre le besoin, le profil, les objectifs et les contraintes principales.</p>
+                <div class="process-premium-step fade-up delay-1">
+                    <div class="step-glass-card">
+                        <div class="step-number-glow">01</div>
+                        <h3 class="step-title">Cadrer</h3>
+                        <p class="step-desc">Comprendre le besoin, le profil, les objectifs et les contraintes principales.</p>
+                        <div class="step-icon-wrapper">
+                            <i class="fa-solid fa-crosshairs"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Step 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">02</div>
-                    <div class="timeline-content reverse" data-reveal data-delay="100">
-                        <div class="content-text">
-                            <h3>Vérifier</h3>
-                            <p>Analyser la faisabilité technique, agricole, foncière ou logistique.</p>
+                <div class="process-premium-step fade-up delay-2">
+                    <div class="step-glass-card">
+                        <div class="step-number-glow">02</div>
+                        <h3 class="step-title">Vérifier</h3>
+                        <p class="step-desc">Analyser la faisabilité technique, agricole, foncière ou logistique avec précision.</p>
+                        <div class="step-icon-wrapper">
+                            <i class="fa-solid fa-microscope"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">03</div>
-                    <div class="timeline-content" data-reveal data-delay="150">
-                        <div class="content-text">
-                            <h3>Structurer</h3>
-                            <p>Définir le cadre d'intervention, les responsabilités et les livrables.</p>
+                <div class="process-premium-step fade-up delay-3">
+                    <div class="step-glass-card">
+                        <div class="step-number-glow">03</div>
+                        <h3 class="step-title">Structurer</h3>
+                        <p class="step-desc">Définir le cadre d'intervention, les responsabilités, et valider les livrables cibles.</p>
+                        <div class="step-icon-wrapper">
+                            <i class="fa-solid fa-bezier-curve"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Step 4 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">04</div>
-                    <div class="timeline-content reverse" data-reveal data-delay="200">
-                        <div class="content-text">
-                            <h3>Suivre</h3>
-                            <p>Piloter l'exécution, documenter les étapes clés et produire un bilan.</p>
+                <div class="process-premium-step fade-up delay-4">
+                    <div class="step-glass-card">
+                        <div class="step-number-glow">04</div>
+                        <h3 class="step-title">Suivre</h3>
+                        <p class="step-desc">Piloter l'exécution, documenter chaque étape clé et produire un bilan opérationnel.</p>
+                        <div class="step-icon-wrapper">
+                            <i class="fa-solid fa-chart-line"></i>
                         </div>
                     </div>
                 </div>
@@ -101,23 +96,41 @@
                 <h2 class="title">Aucun projet n'avance sans base vérifiée.</h2>
             </div>
 
-            <div class="exec-card fade-up delay-1">
+            <div class="exec-card-premium fade-up delay-1">
                 <div class="exec-left">
-                    <span class="exec-eyebrow">Exécution</span>
-                    <h2 class="exec-title">Un processus utile seulement s'il reste lisible.</h2>
+                    <div class="exec-eyebrow-container">
+                        <span class="exec-eyebrow-dot"></span>
+                        <span class="exec-eyebrow">Engagement</span>
+                    </div>
+                    <h2 class="exec-title">Un processus utile<br>seulement s'il reste <span class="text-green">lisible.</span></h2>
                 </div>
                 <div class="exec-right">
-                    <div class="exec-step step-before fade-up delay-1">
-                        <h3 class="step-label">Avant</h3>
-                        <p class="step-desc">Le besoin est qualifié et les conditions de départ sont clarifiées.</p>
+                    <div class="exec-step-premium step-before fade-up delay-1">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-label">Avant</h3>
+                            <p class="step-desc">Le besoin est qualifié et les conditions de départ sont clarifiées avec rigueur.</p>
+                        </div>
                     </div>
-                    <div class="exec-step step-during fade-up delay-2">
-                        <h3 class="step-label">Pendant</h3>
-                        <p class="step-desc">Les opérations sont suivies avec des points de contrôle définis.</p>
+                    <div class="exec-step-premium step-during fade-up delay-2">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-label">Pendant</h3>
+                            <p class="step-desc">Les opérations sont suivies via des points de contrôle définis et traçables.</p>
+                        </div>
                     </div>
-                    <div class="exec-step step-after fade-up delay-3">
-                        <h3 class="step-label">Après</h3>
-                        <p class="step-desc">Les résultats sont consolidés dans un bilan exploitable.</p>
+                    <div class="exec-step-premium step-after fade-up delay-3">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-label">Après</h3>
+                            <p class="step-desc">Les résultats sont consolidés dans un bilan financier et opérationnel exploitable.</p>
+                        </div>
                     </div>
                 </div>
             </div>
