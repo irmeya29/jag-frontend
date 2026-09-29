@@ -12,52 +12,23 @@
           <p class="lead-text">Just Agro Group réinvente l'investissement agricole. Nous garantissons la
             transparence, l'expertise agronomique et la sécurité financière à toutes les étapes du projet.</p>
           <div class="hero-actions">
-            <a href="#" (click)="scrollTo('poles-section', $event)" class="btn-primary">
+            <button type="button" (click)="scrollTo('poles-section', $event)" class="btn-primary">
               <i class="fa-solid fa-leaf"></i> DÉCOUVRIR NOS PÔLES
-            </a>
+            </button>
           </div>
         </div>
         <div class="vision-images fade-up delay-2">
           <div class="img-wrapper main-img">
-            <img src="/vision_main.png" alt="Agriculture" />
+            <img src="/vision_main.webp" alt="Agriculture" />
           </div>
           <div class="img-wrapper floating-img">
-            <img src="/vision_tractor.png" alt="Culture" />
+            <img src="/vision_tractor.webp" alt="Culture" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ANCIENNE SECTION POUR COMPARAISON 
-  <section class="bento-section bg-muted">
-    <div class="container">
-      <div class="text-center mb-12 fade-up">
-        <h2 class="section-title-dark">Pourquoi nous choisir ?</h2>
-      </div>
-
-      <div class="bento-grid">
-        <div class="bento-card bento-large fade-up delay-1" style="background-image: url('/bento_managed.png');">
-          <div class="bento-overlay"></div>
-          <div class="bento-content">
-            <h3>Pilotage 100% Géré</h3>
-            <p>Pilotage agronomique complet, de l'étude de sol à la récolte. Nous déployons nos équipes directement sur
-              vos terres.</p>
-          </div>
-        </div>
-
-        <div class="bento-card bento-small fade-up delay-2" style="background-image: url('/tpe.jpg');">
-          <div class="bento-overlay"></div>
-          <div class="bento-content">
-            <h3>Vente Garantie</h3>
-            <p>Le marché est sécurisé auprès de nos partenaires industriels avant même la première graine plantée.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
 
   <!-- NOS POLES -->
   <section class="poles-section" id="poles-section">
@@ -72,25 +43,25 @@
       <div class="poles-grid-modern">
         <!-- Pole 1 -->
         <a routerLink="/nospoles/pole1" class="pole-card-modern fade-up delay-1">
-          <div class="pole-card-img" style="background-image: url('/terr.jpg');"></div>
+          <div class="pole-card-img" style="background-image: url('/terr.webp');"></div>
           <div class="pole-card-body">
             <span class="pole-number">01</span>
             <h3>Structuration</h3>
             <p>Pour les propriétaires fonciers. Vous possédez la terre, nous apportons le capital intellectuel et
               opérationnel pour la valoriser à son plein potentiel.</p>
-            <span class="pole-link" routerLink="/nospoles/pole1">Découvrir le Pôle 1 →</span>
+            <span class="pole-link">Découvrir le Pôle 1 →</span>
           </div>
         </a>
 
         <!-- Pole 2 -->
         <a routerLink="/nospoles/pole2" class="pole-card-modern fade-up delay-2">
-          <div class="pole-card-img" style="background-image: url('/mat-premi.jpg');"></div>
+          <div class="pole-card-img" style="background-image: url('/mat-premi.webp');"></div>
           <div class="pole-card-body">
             <span class="pole-number">02</span>
             <h3>Approvisionnement</h3>
             <p>Pour les industriels. Nous sécurisons vos approvisionnements en matières premières agricoles avec des
               normes de qualité et de traçabilité strictes.</p>
-            <span class="pole-link" routerLink="/nospoles/pole2">Découvrir le Pôle 2 →</span>
+            <span class="pole-link">Découvrir le Pôle 2 →</span>
           </div>
         </a>
       </div>
@@ -126,120 +97,39 @@
       <div class="choisir-simple-spaces">
 
         <!-- Carte 1 -->
-        <article class="pole-card-modern fade-up">
-
-          <div class="pole-card-body">
-
-            <div class="value-icon">
-              <i class="fa-solid fa-seedling"></i>
-            </div>
-
+        <article class="choisir-card fade-up">
+          <div class="choisir-card-body">
             <div class="choisir-simple-space-header">
-
-              <h3 class="space-title">
-                Pilotage Terrain
-              </h3>
-
-              <span class="space-status space-status--green">
-                Opérationnel
-              </span>
-
+              <h3 class="space-title">Pilotage Terrain</h3>
             </div>
-
             <p class="space-desc">
-              Prise en charge complète de vos cultures par nos ingénieurs agronomes sur le terrain.
+              Prise en charge de vos cultures par nos ingénieurs agronomes, de l'étude à la récolte, avec un déploiement permanent sur site.
             </p>
-
-            <ul class="space-list">
-              <li>
-                <strong>Déploiement permanent</strong> – Techniciens qualifiés sur vos terres.
-              </li>
-
-              <li>
-                <strong>Suivi scientifique</strong> – Analyse continue et rapports de croissance.
-              </li>
-            </ul>
-
           </div>
-
         </article>
 
         <!-- Carte 2 -->
-        <article class="pole-card-modern fade-up delay-1">
-
-          <div class="pole-card-body">
-
-            <div class="value-icon">
-              <i class="fa-solid fa-handshake"></i>
-            </div>
-
+        <article class="choisir-card fade-up delay-1">
+          <div class="choisir-card-body">
             <div class="choisir-simple-space-header">
-
-              <h3 class="space-title">
-                Vente Garantie
-              </h3>
-
-              <span class="space-status space-status--blue">
-                Sécurisé
-              </span>
-
+              <h3 class="space-title">Vente Garantie</h3>
             </div>
-
             <p class="space-desc">
-              Vente de toute la production de qualité sécurisée auprès de nos partenaires industriels.
+              Toute la production est sécurisée à l'avance par des contrats fermes auprès de nos partenaires industriels.
             </p>
-
-            <ul class="space-list">
-              <li>
-                <strong>Contrats fermes</strong> – Prix d'achat et volumes planifiés à l'avance.
-              </li>
-
-              <li>
-                <strong>Logistique intégrée</strong> – Gestion directe du transport et de la livraison.
-              </li>
-            </ul>
-
           </div>
-
         </article>
 
         <!-- Carte 3 -->
-        <article class="pole-card-modern fade-up delay-2">
-
-          <div class="pole-card-body">
-
-            <div class="value-icon">
-              <i class="fa-solid fa-chart-line"></i>
-            </div>
-
+        <article class="choisir-card fade-up delay-2">
+          <div class="choisir-card-body">
             <div class="choisir-simple-space-header">
-
-              <h3 class="space-title">
-                Transparence
-              </h3>
-
-              <span class="space-status space-status--orange">
-                100% Géré
-              </span>
-
+              <h3 class="space-title">Transparence</h3>
             </div>
-
             <p class="space-desc">
-              Suivi en temps réel de l'utilisation de vos fonds et de l'évolution de vos projets.
+              Suivi de l'évolution de vos projets en temps réel, avec une traçabilité financière totale et un impact local durable.
             </p>
-
-            <ul class="space-list">
-              <li>
-                <strong>Traçabilité financière</strong> – Rapports d'allocations de fonds réguliers.
-              </li>
-
-              <li>
-                <strong>Impact durable</strong> – Valorisation des sols et création d'emplois locaux.
-              </li>
-            </ul>
-
           </div>
-
         </article>
 
       </div>

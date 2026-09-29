@@ -12,11 +12,12 @@
                     Nous apportons le capital intellectuel et opérationnel pour valoriser votre terre à son plein
                     potentiel.
                 </p>
-                <a href="#" (click)="scrollTo('decouvrir', $event)" class="btn--green">Découvrir le pôle <span class="arrow-down"></span></a>
+                <button type="button" (click)="scrollTo('decouvrir', $event)" class="btn--green">Découvrir le pôle <span
+                        class="arrow-down"></span></button>
             </div>
         </div>
         <div class="split-right">
-            <img src="/hero_farmland.png" alt="Humain & Data Agricole" class="hero-expert-img" />
+            <img src="/hero_farmland.webp" alt="Humain & Data Agricole" class="hero-expert-img" />
         </div>
     </section>
 
@@ -31,7 +32,7 @@
             <div class="poles-grid-modern">
                 <!-- Card 1 -->
                 <div class="pole-card-modern fade-in-up delay-1">
-                    <div class="pole-card-img" style="background-image: url('/equip.png');"></div>
+                    <div class="pole-card-img" style="background-image: url('/equip.webp');"></div>
                     <div class="pole-card-body">
                         <span class="pole-number">01</span>
                         <h3>Vous avez le terrain et le capital</h3>
@@ -42,7 +43,7 @@
 
                 <!-- Card 2 -->
                 <div class="pole-card-modern fade-in-up delay-2">
-                    <div class="pole-card-img" style="background-image: url('/relai.png');"></div>
+                    <div class="pole-card-img" style="background-image: url('/relai.webp');"></div>
                     <div class="pole-card-body">
                         <span class="pole-number">02</span>
                         <h3>Nous prenons le relais</h3>
@@ -72,7 +73,7 @@
                             <p>Analyse du terrain, de l’eau et du potentiel agricole.</p>
                         </div>
                         <div class="content-visual">
-                            <img src="/ChatGPT Image 15 juil. 2026, 09_50_18.png" alt="Diagnostic terrain délimité" />
+                            <img src="/ChatGPT Image 15 juil. 2026, 09_50_18.webp" alt="Diagnostic terrain délimité" />
                         </div>
                     </div>
                 </div>
@@ -86,7 +87,7 @@
                             <p>Choix des cultures, calendrier, budget et organisation.</p>
                         </div>
                         <div class="content-visual">
-                            <img src="/plannificat.jpg" alt="Planification" />
+                            <img src="/plannificat.webp" alt="Planification" />
                         </div>
                     </div>
                 </div>
@@ -100,7 +101,7 @@
                             <p>Mise en place, intrants, supervision et suivi terrain.</p>
                         </div>
                         <div class="content-visual">
-                            <img src="/produc.png" alt="Production" />
+                            <img src="/produc.webp" alt="Production" />
                         </div>
                     </div>
                 </div>
@@ -114,7 +115,7 @@
                             <p>Rapports, photos, coûts et bilan de cycle.</p>
                         </div>
                         <div class="content-visual">
-                            <img src="/bil.jpeg" alt="Bilan et rapport de cycle" />
+                            <img src="/bil.webp" alt="Bilan et rapport de cycle" />
                         </div>
                     </div>
                 </div>
@@ -123,7 +124,7 @@
     </section>
 
     <!-- ---- PARTAGE & REMUNERATION ---- -->
-    /<section class="pacte-rentabilite-section">
+    <section class="pacte-rentabilite-section">
         <div class="container">
             <div class="pacte-header fade-in-up">
                 <span class="pacte-surtitle">Modèle d'Affaires</span>
@@ -161,8 +162,8 @@
 
                 <!-- Colonne Droite : JAG -->
                 <div class="pacte-col jag-col">
-                    <div class="col-badge jag-badge">JAG</div>
-                    <p class="col-role">Just Agro Group</p>
+                    <div class="col-badge jag-badge">Just Agro Group</div>
+
                     <ul class="col-contributions">
                         <li><i class="fa-solid fa-check"></i> Structuration technique</li>
                         <li><i class="fa-solid fa-check"></i> Supervision & pilotage</li>
@@ -180,23 +181,14 @@
         </div>
     </section>
 
-    <!-- ---- CTA ---- -->
-    <section class="jag-cta-section">
-        <div class="cta-bg-glow"></div>
-        <div class="container cta-container fade-in-up">
+    <!-- ---- CTA PREMIUM (Identique Pôle 2) ---- -->
+    <section class="premium-cta">
+        <div class="container text-center fade-in-up">
             <h2>Vous avez un terrain à valoriser ?</h2>
-            <p>Présentez votre projet. <strong class="text-green">Just Agro Group</strong> vous orientera après
-                qualification du terrain.</p>
-            <a routerLink="/contact" class="btn-jag btn-jag-primary cta-btn">
-                Demander une évaluation
-                <span class="btn-icon">→</span>
+            <p class="cta-subtitle">Présentez votre projet. Nos experts agronomes vous accompagnent pour structurer et
+                rentabiliser votre exploitation agricole clé en main.</p>
+            <a routerLink="/contact" class="btn-premium btn-primary mt-8">
+                <span class="btn-text">Demander une évaluation</span>
             </a>
-            <div class="cta-trust">
-                <span>✓ Réponse sous 48h</span>
-                <span class="dot">·</span>
-                <span>✓ Sans engagement</span>
-                <span class="dot">·</span>
-                <span>✓ Confidentiel</span>
-            </div>
         </div>
     </section>

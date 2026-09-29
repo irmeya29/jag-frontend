@@ -386,7 +386,7 @@ $blur: blur(20px);
     gap: 0;
     max-width: 1200px;
     margin: 0 auto;
-    background: linear-gradient(to right, #ffffff 50%, var(--jag-orange) 50%);
+    background: #ffffff;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
     border: 1px solid rgba(11, 29, 58, 0.05);
@@ -394,7 +394,6 @@ $blur: blur(20px);
 
     @media (max-width: 768px) {
         flex-direction: column;
-        background: linear-gradient(to bottom, #ffffff 50%, var(--jag-orange) 50%);
     }
 }
 
@@ -412,43 +411,44 @@ $blur: blur(20px);
 
     &.jag-col {
         background: transparent;
-        color: white;
+        color: var(--jag-navy);
 
         .col-role {
-            color: rgba(255, 255, 255, 0.95);
+            color: var(--jag-text);
         }
 
         .col-contributions li {
-            color: #ffffff;
-            border-bottom-color: rgba(255, 255, 255, 0.15);
+            color: var(--jag-text);
+            border-bottom-color: rgba(11, 29, 58, 0.08);
 
             i {
-                color: #a8e6c3;
+                color: var(--jag-orange);
             }
         }
 
         .col-gain {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(240, 105, 30, 0.06);
+            border: 1px solid rgba(240, 105, 30, 0.20);
         }
 
         .gain-label {
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--jag-text);
         }
 
         .gain-value {
-            color: #a8e6c3;
+            color: var(--jag-orange);
         }
 
         .gain-desc {
-            color: rgba(255, 255, 255, 0.95);
+            color: var(--jag-text);
         }
 
         .gain-alt {
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--jag-text);
+            opacity: 0.85;
 
             strong {
-                color: #ffffff;
+                color: var(--jag-orange);
                 font-weight: 800;
             }
         }
@@ -458,18 +458,21 @@ $blur: blur(20px);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
+        min-width: 56px;
+        height: 40px;
+        padding: 0 16px;
+        border-radius: 999px;
         background: var(--jag-muted);
         color: var(--jag-forest);
         font-weight: 900;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         margin-bottom: 12px;
+        white-space: nowrap;
 
         &.jag-badge {
-            background: var(--jag-green);
+            background: var(--jag-orange);
             color: white;
+            border: none;
         }
     }
 
@@ -597,58 +600,141 @@ $blur: blur(20px);
     }
 }
 
-// 5. CTA SECTION
-.jag-cta-section {
-    background: var(--jag-muted);
-    text-align: center;
-    position: relative;
+// 5. PREMIUM CTA (Identique au Pôle 2 & Home)
+.premium-cta {
+    background-color: #ffffff;
     padding: 120px 0;
+    text-align: center;
 
-    .cta-bg-glow {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, var(--jag-green-10) 0%, transparent 70%);
-        border-radius: 50%;
-        z-index: 0;
-    }
-
-    .cta-container {
-        position: relative;
-        z-index: 2;
-        max-width: 700px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     h2 {
+        font-family: var(--font-display, 'Montserrat', sans-serif);
         font-size: clamp(2rem, 3.5vw, 2.8rem);
+        color: var(--jag-navy, #0b1d3a);
+        font-weight: 800;
         margin-bottom: 20px;
+        line-height: 1.1;
+        max-width: 900px;
     }
 
-    p {
-        font-size: 1.1rem;
-        margin-bottom: 40px;
+    .cta-subtitle {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: var(--jag-text, #4b5563);
+        max-width: 600px;
+        margin: 0 auto 32px;
+    }
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 36px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--jag-green, #0f4c3a);
+    color: #ffffff;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(11, 29, 58, 0.05);
+
+    &:hover {
+        background-color: transparent !important;
+        color: var(--jag-green) !important;
+        border-color: var(--jag-green) !important;
+    }
+}
+
+.text-green {
+    color: var(--jag-green);
+}
+
+.btn--green {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--jag-green);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(11, 29, 58, 0.05);
+
+    &:hover {
+        background-color: transparent !important;
+        color: var(--jag-green) !important;
+        border-color: var(--jag-green) !important;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseBlob {
+    0% {
+        transform: scale(1) translate(0, 0);
     }
 
-    .cta-btn {
-        margin-bottom: 30px;
-        padding: 20px 50px;
-        font-size: 1.1rem;
+    100% {
+        transform: scale(1.1) translate(10px, 10px);
     }
+}
 
-    .cta-trust {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        font-size: 0.9rem;
-        color: var(--gray-500);
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-        .dot {
-            opacity: 0.5;
-        }
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
