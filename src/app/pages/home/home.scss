@@ -4,31 +4,24 @@ $bento-radius: 32px;
 
 // HERO (Removed pole2-hero styles, using premium-hero instead)
 
-// ANIMATIONS
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUpAnim 1s $ease-out-expo forwards;
-}
+// ANIMATIONS — Scroll-triggered via ScrollRevealService (global)
+// Le service ajoute `.is-revealed` quand l'élément entre dans le viewport.
+// Les styles d'animation sont définis dans styles.scss (reveal-init, is-revealed).
+// Les delay classes restent ici pour le stagger propre à la home.
 
 .delay-1 {
-  animation-delay: 0.1s;
+  transition-delay: 0.08s !important;
 }
 
 .delay-2 {
-  animation-delay: 0.2s;
+  transition-delay: 0.16s !important;
 }
 
 .delay-3 {
-  animation-delay: 0.3s;
+  transition-delay: 0.24s !important;
 }
 
-@keyframes fadeUpAnim {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 // UTILITAIRES COMMUNS
 .section-badge {
@@ -814,6 +807,14 @@ $bento-radius: 32px;
     .premium-title-accent {
       color: var(--jag-green);
     }
+
+    .premium-subtitle {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 16px;
+      max-width: 520px;
+      line-height: 1.6;
+    }
   }
 
   .vision-cards-wrapper {
@@ -955,6 +956,16 @@ $bento-radius: 32px;
 
 .choisir-title-accent {
   color: var(--jag-green);
+}
+
+.choisir-lead {
+  font-size: 1rem;
+  color: var(--jag-text);
+  margin-top: 12px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 .choisir-simple-spaces {

@@ -3,14 +3,15 @@
     <!-- HERO -->
     <section class="split-hero">
         <div class="split-left">
-            <div class="hero-content">
+            <div class="hero-content fade-up">
                 <h1 class="hero-title">Notre <span class="text-green">processus</span></h1>
-                <p class="hero-subtitle">Une méthode claire avant chaque engagement.</p>
-                <a href="#" (click)="scrollTo('methode', $event)" class="btn--green">Découvrir la méthode <span class="arrow-down"></span></a>
+                <p class="hero-subtitle fade-up delay-1">Une méthode claire avant chaque engagement.</p>
+                <a href="#" (click)="scrollTo('methode', $event)" class="btn--green fade-up delay-2">Découvrir la
+                    méthode <span class="arrow-down"></span></a>
             </div>
         </div>
         <div class="split-right">
-            <img src="/process.png" alt="Notre Processus" class="hero-expert-img" />
+            <img src="/process.png" alt="Notre Processus" class="hero-expert-img fade-up delay-1" />
         </div>
     </section>
 
@@ -18,7 +19,7 @@
     <section class="proc-intro-section">
         <img src="/plante3.png" alt="" class="proc-intro-branche" aria-hidden="true" />
         <div class="container">
-            <div class="section-header text-center fade-in-up">
+            <div class="section-header text-center fade-up">
                 <h2 class="title">Just Agro Group<br>analyse chaque besoin</h2>
             </div>
         </div>
@@ -27,10 +28,11 @@
     <!-- MÉTHODE D'INTERVENTION -->
     <section id="methode" class="proc-method-section">
         <div class="container">
-            <div class="section-header text-center fade-in-up">
+            <div class="section-header text-center fade-up">
                 <span class="surtitle">Méthode d'intervention</span>
                 <h2 class="title">Quatre étapes essentielles.</h2>
-                <p class="subtitle">Une démarche simple pour éviter les engagements flous et les productions mal
+                <p class="subtitle fade-up delay-1">Une démarche simple pour éviter les engagements flous et les
+                    productions mal
                     cadrées.</p>
             </div>
 
@@ -38,7 +40,7 @@
                 <!-- Step 1 -->
                 <div class="timeline-item">
                     <div class="timeline-marker">01</div>
-                    <div class="timeline-content" data-reveal data-delay="0">
+                    <div class="timeline-content" data-reveal>
                         <div class="content-text">
                             <h3>Cadrer</h3>
                             <p>Comprendre le besoin, le profil, les objectifs et les contraintes principales.</p>
@@ -49,7 +51,7 @@
                 <!-- Step 2 -->
                 <div class="timeline-item">
                     <div class="timeline-marker">02</div>
-                    <div class="timeline-content reverse" data-reveal data-delay="200">
+                    <div class="timeline-content reverse" data-reveal data-delay="100">
                         <div class="content-text">
                             <h3>Vérifier</h3>
                             <p>Analyser la faisabilité technique, agricole, foncière ou logistique.</p>
@@ -60,7 +62,7 @@
                 <!-- Step 3 -->
                 <div class="timeline-item">
                     <div class="timeline-marker">03</div>
-                    <div class="timeline-content" data-reveal data-delay="400">
+                    <div class="timeline-content" data-reveal data-delay="150">
                         <div class="content-text">
                             <h3>Structurer</h3>
                             <p>Définir le cadre d'intervention, les responsabilités et les livrables.</p>
@@ -71,7 +73,7 @@
                 <!-- Step 4 -->
                 <div class="timeline-item">
                     <div class="timeline-marker">04</div>
-                    <div class="timeline-content reverse" data-reveal data-delay="600">
+                    <div class="timeline-content reverse" data-reveal data-delay="200">
                         <div class="content-text">
                             <h3>Suivre</h3>
                             <p>Piloter l'exécution, documenter les étapes clés et produire un bilan.</p>
@@ -85,26 +87,26 @@
     <!-- NOTRE PRINCIPE -->
     <section class="proc-principle-section">
         <div class="container">
-            <div class="section-header text-center fade-in-up">
+            <div class="section-header text-center fade-up">
                 <span class="surtitle">Notre principe</span>
                 <h2 class="title">Aucun projet n'avance sans base vérifiée.</h2>
             </div>
 
-            <div class="exec-card fade-in-up">
+            <div class="exec-card fade-up delay-1">
                 <div class="exec-left">
                     <span class="exec-eyebrow">Exécution</span>
                     <h2 class="exec-title">Un processus utile seulement s'il reste lisible.</h2>
                 </div>
                 <div class="exec-right">
-                    <div class="exec-step step-before">
+                    <div class="exec-step step-before fade-up delay-1">
                         <h3 class="step-label">Avant</h3>
                         <p class="step-desc">Le besoin est qualifié et les conditions de départ sont clarifiées.</p>
                     </div>
-                    <div class="exec-step step-during">
+                    <div class="exec-step step-during fade-up delay-2">
                         <h3 class="step-label">Pendant</h3>
                         <p class="step-desc">Les opérations sont suivies avec des points de contrôle définis.</p>
                     </div>
-                    <div class="exec-step step-after">
+                    <div class="exec-step step-after fade-up delay-3">
                         <h3 class="step-label">Après</h3>
                         <p class="step-desc">Les résultats sont consolidés dans un bilan exploitable.</p>
                     </div>
@@ -116,10 +118,10 @@
     <!-- CTA -->
     <section class="jag-cta-section">
         <div class="cta-bg-glow"></div>
-        <div class="container cta-container fade-in-up">
+        <div class="container cta-container fade-up">
             <h2>Passer à l'action</h2>
-            <p>Parlons de votre projet. Sélectionnez le parcours adapté à votre profil.</p>
-            <div class="proc-cta-buttons">
+            <p class="fade-up delay-1">Parlons de votre projet. Sélectionnez le parcours adapté à votre profil.</p>
+            <div class="proc-cta-buttons fade-up delay-2">
                 <a routerLink="/nospoles/pole1" class="btn-jag btn-jag-primary cta-btn">
                     Investisseur <span class="btn-icon">→</span>
                 </a>
@@ -127,7 +129,7 @@
                     Industriel <span class="btn-icon">→</span>
                 </a>
             </div>
-            <div class="cta-trust">
+            <div class="cta-trust fade-up delay-3">
                 <span>✓ Réponse sous 48h</span>
                 <span class="dot">·</span>
                 <span>✓ Sans engagement</span>
