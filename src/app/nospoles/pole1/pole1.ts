@@ -14,7 +14,7 @@ export class Pole1 implements AfterViewInit, OnDestroy {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.15
+      threshold: 0.05
     };
 
     this.observer = new IntersectionObserver((entries) => {
