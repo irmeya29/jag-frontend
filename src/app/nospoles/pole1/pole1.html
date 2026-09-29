@@ -123,8 +123,8 @@
         </div>
     </section>
 
-    <!-- ---- PARTAGE & REMUNERATION ---- -->
-    <section class="pacte-rentabilite-section">
+    <!-- ---- PARTAGE & REMUNERATION : BENTO BOX ---- -->
+    <section class="jag-bento-pacte-section">
         <div class="container">
             <div class="pacte-header fade-in-up">
                 <span class="pacte-surtitle">Modèle d'Affaires</span>
@@ -132,49 +132,60 @@
                 <p class="pacte-subtitle">Un alignement d'intérêts total. Nous gagnons quand vous gagnez.</p>
             </div>
 
-            <!-- Score-card layout -->
-            <div class="pacte-scorecard fade-in-up delay-1">
-
-                <!-- Colonne Gauche : Client -->
-                <div class="pacte-col client-col">
-                    <div class="col-badge">Vous</div>
-                    <p class="col-role">Le Propriétaire</p>
-                    <ul class="col-contributions">
-                        <li><i class="fa-solid fa-check"></i> Terrain & installation</li>
-                        <li><i class="fa-solid fa-check"></i> Intrants & main-d'œuvre</li>
-                        <li><i class="fa-solid fa-check"></i> Charges d'exploitation</li>
-                    </ul>
-                    <div class="col-gain">
-                        <span class="gain-label">Vous percevez</span>
-                        <span class="gain-value">65%</span>
-                        <span class="gain-desc">du bénéfice net</span>
-                    </div>
+            <div class="bento-pacte-grid">
+                
+                <!-- BENTO 1 : Gain Client -->
+                <div class="bento-item bento-gain bento-client-gain fade-in-up delay-1">
+                    <div class="bento-badge">Vous</div>
+                    <div class="bento-value">65%</div>
+                    <p class="bento-desc">du bénéfice net de l'exploitation</p>
+                    <i class="fa-solid fa-leaf bento-bg-icon"></i>
                 </div>
 
-                <!-- Séparateur Central -->
-                <div class="pacte-divider">
-                    <div class="divider-line"></div>
-                    <div class="divider-icon">
-                        <i class="fa-solid fa-handshake"></i>
-                    </div>
-                    <div class="divider-line"></div>
+                <!-- BENTO 2 : Apports Client -->
+                <div class="bento-item bento-apports fade-in-up delay-2">
+                    <h3 class="bento-title">Vos engagements</h3>
+                    <ul class="bento-list">
+                        <li>
+                            <div class="icon-box"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <span>Mise à disposition du <strong>terrain et installation</strong></span>
+                        </li>
+                        <li>
+                            <div class="icon-box"><i class="fa-solid fa-seedling"></i></div>
+                            <span>Financement des <strong>intrants et de la main-d'œuvre</strong></span>
+                        </li>
+                        <li>
+                            <div class="icon-box"><i class="fa-solid fa-wallet"></i></div>
+                            <span>Prise en charge des <strong>charges d'exploitation</strong></span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Colonne Droite : JAG -->
-                <div class="pacte-col jag-col">
-                    <div class="col-badge jag-badge">Just Agro Group</div>
-
-                    <ul class="col-contributions">
-                        <li><i class="fa-solid fa-check"></i> Structuration technique</li>
-                        <li><i class="fa-solid fa-check"></i> Supervision & pilotage</li>
-                        <li><i class="fa-solid fa-check"></i> Reporting rigoureux</li>
+                <!-- BENTO 3 : Apports JAG -->
+                <div class="bento-item bento-apports fade-in-up delay-3">
+                    <h3 class="bento-title">Notre expertise</h3>
+                    <ul class="bento-list">
+                        <li>
+                            <div class="icon-box green"><i class="fa-solid fa-microscope"></i></div>
+                            <span><strong>Structuration technique</strong> du projet agricole</span>
+                        </li>
+                        <li>
+                            <div class="icon-box green"><i class="fa-solid fa-users-gear"></i></div>
+                            <span><strong>Supervision et pilotage</strong> opérationnel terrain</span>
+                        </li>
+                        <li>
+                            <div class="icon-box green"><i class="fa-solid fa-chart-pie"></i></div>
+                            <span><strong>Reporting rigoureux</strong> et transparent</span>
+                        </li>
                     </ul>
-                    <div class="col-gain">
-                        <span class="gain-label">JAG perçoit</span>
-                        <span class="gain-value">25%</span>
-                        <span class="gain-desc">gestion seule</span>
-                        <span class="gain-alt">ou <strong>35%</strong> avec commercialisation</span>
-                    </div>
+                </div>
+
+                <!-- BENTO 4 : Gain JAG -->
+                <div class="bento-item bento-gain bento-jag-gain fade-in-up delay-4">
+                    <div class="bento-badge jag">Just Agro Group</div>
+                    <div class="bento-value">25%</div>
+                    <p class="bento-desc">en gestion seule. Ou <strong>35%</strong> si nous assurons la commercialisation.</p>
+                    <i class="fa-solid fa-handshake bento-bg-icon"></i>
                 </div>
 
             </div>
