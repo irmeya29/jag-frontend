@@ -1,169 +1,183 @@
-<div class="proc-page">
-
-    <!-- HERO -->
-    <section class="split-hero">
-        <div class="split-left">
-            <div class="hero-content fade-up">
-                <h1 class="hero-title">Notre <span class="text-green">processus</span></h1>
-                <p class="hero-subtitle fade-up delay-1">Une méthode claire avant chaque engagement.</p>
-                <a href="#" (click)="scrollTo('methode', $event)" class="btn--green fade-up delay-2">Découvrir la
-                    méthode <span class="arrow-down"></span></a>
-            </div>
-        </div>
-        <div class="split-right">
-            <img src="/process.png" alt="Notre Processus" class="hero-expert-img fade-up delay-1" />
+<main class="pole-page pole2-page">
+    <!-- 1. HERO (Kept from pole1 - Approved by user) -->
+    <section class="pole-hero" aria-labelledby="hero-title">
+        <img class="hero__image" src="/process.webp" alt="Notre Processus" />
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <h1 id="hero-title">Notre <span class="text-green">processus</span></h1>
+            <p class="hero__description">Une méthode claire avant chaque engagement.</p>
+            <a class="btn-premium" (click)="scrollTo('methode', $event)">Découvrir la méthode</a>
         </div>
     </section>
 
-    <!-- INTRO -->
-    <section class="proc-intro-section">
+    <!-- 2. INTRO -->
+    <section class="premium-section intro-section"
+        style="padding: 10rem 0; position: relative; overflow: hidden; background: var(--bg-light);">
         <img src="/plante3.webp" alt="" class="proc-intro-branche" aria-hidden="true" />
         <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2 class="title">Just Agro Group<br>analyse chaque besoin</h2>
+            <div class="section-heading text-center auto-fade-up"
+                style="position: relative; z-index: 5; margin-bottom: 0;">
+                <span class="kicker">Analyse initiale</span>
+                <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); max-width: 800px; margin: 0 auto 1.5rem;">
+                    Just Agro Group<br />analyse chaque besoin.
+                </h2>
+                <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto;">
+                    Nous qualifions vos attentes avec précision avant tout engagement. Une démarche transparente pour
+                    éliminer les zones d'ombre.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- MÉTHODE D'INTERVENTION -->
-    <section id="methode" class="proc-method-section">
+    <!-- 3. PROCESS (Dark Sticky Stack from pole2) -->
+    <section id="methode" class="premium-section process-section dark-bg">
         <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="surtitle">Méthode d'intervention</span>
-                <h2 class="title">Quatre étapes essentielles.</h2>
-                <p class="subtitle fade-up delay-1">Une démarche simple pour éviter les engagements flous et les
-                    productions mal
-                    cadrées.</p>
+            <div class="section-heading text-center auto-fade-up">
+                <span class="kicker">Méthode d'intervention</span>
+                <h2 class="text-white">Quatre étapes essentielles.</h2>
+                <p class="text-light">Un parcours rigoureusement structuré pour maximiser la réussite de votre projet.
+                </p>
             </div>
 
-            <div class="process-premium-grid">
+            <div class="sticky-stack">
                 <!-- Step 1 -->
-                <div class="process-premium-step fade-up delay-1">
-                    <div class="step-glass-card">
-                        <div class="step-number-glow">01</div>
-                        <h3 class="step-title">Cadrer</h3>
-                        <p class="step-desc">Comprendre le besoin, le profil, les objectifs et les contraintes principales.</p>
-                        <div class="step-icon-wrapper">
-                            <i class="fa-solid fa-crosshairs"></i>
-                        </div>
+                <div class="stack-card dark-card auto-fade-up" style="--index: 1;">
+                    <div class="stack-img"><img src="/brief.webp" alt="Cadrer" /></div>
+                    <div class="stack-text">
+                        <span class="step">Étape 01</span>
+                        <h3>Cadrer</h3>
+                        <p>Comprendre le besoin, le profil, les objectifs et les contraintes principales de votre projet
+                            agricole.</p>
                     </div>
                 </div>
-
                 <!-- Step 2 -->
-                <div class="process-premium-step fade-up delay-2">
-                    <div class="step-glass-card">
-                        <div class="step-number-glow">02</div>
-                        <h3 class="step-title">Vérifier</h3>
-                        <p class="step-desc">Analyser la faisabilité technique, agricole, foncière ou logistique avec précision.</p>
-                        <div class="step-icon-wrapper">
-                            <i class="fa-solid fa-microscope"></i>
-                        </div>
+                <div class="stack-card dark-card auto-fade-up delay-1" style="--index: 2;">
+                    <div class="stack-img"><img src="/expertiset.webp" alt="Vérifier" /></div>
+                    <div class="stack-text">
+                        <span class="step">Étape 02</span>
+                        <h3>Vérifier</h3>
+                        <p>Analyser scrupuleusement la faisabilité technique, agricole, foncière et logistique de
+                            l'opération.</p>
                     </div>
                 </div>
-
                 <!-- Step 3 -->
-                <div class="process-premium-step fade-up delay-3">
-                    <div class="step-glass-card">
-                        <div class="step-number-glow">03</div>
-                        <h3 class="step-title">Structurer</h3>
-                        <p class="step-desc">Définir le cadre d'intervention, les responsabilités, et valider les livrables cibles.</p>
-                        <div class="step-icon-wrapper">
-                            <i class="fa-solid fa-bezier-curve"></i>
-                        </div>
+                <div class="stack-card dark-card auto-fade-up delay-2" style="--index: 3;">
+                    <div class="stack-img"><img src="/plannificat.webp" alt="Structurer" /></div>
+                    <div class="stack-text">
+                        <span class="step">Étape 03</span>
+                        <h3>Structurer</h3>
+                        <p>Définir le cadre précis d'intervention, répartir les responsabilités et valider les livrables
+                            cibles.</p>
                     </div>
                 </div>
-
                 <!-- Step 4 -->
-                <div class="process-premium-step fade-up delay-4">
-                    <div class="step-glass-card">
-                        <div class="step-number-glow">04</div>
-                        <h3 class="step-title">Suivre</h3>
-                        <p class="step-desc">Piloter l'exécution, documenter chaque étape clé et produire un bilan opérationnel.</p>
-                        <div class="step-icon-wrapper">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
+                <div class="stack-card dark-card auto-fade-up delay-3" style="--index: 4;">
+                    <div class="stack-img"><img src="/bilan.webp" alt="Suivre" /></div>
+                    <div class="stack-text">
+                        <span class="step">Étape 04</span>
+                        <h3>Suivre</h3>
+                        <p>Piloter l'exécution sur le terrain, documenter toutes les étapes clés et produire un bilan
+                            exploitable.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NOTRE PRINCIPE -->
-    <section class="proc-principle-section">
+    <!-- 4. NOTRE PRINCIPE (Cinematic Execution Flow adapted for 3 steps) -->
+    <section class="premium-section transform-cinematic-section"
+        style="background: var(--bg-light); padding-top: 10rem;">
         <div class="container">
-            <div class="section-header text-center fade-up">
-                <span class="surtitle">Notre principe</span>
-                <h2 class="title">Aucun projet n'avance sans base vérifiée.</h2>
+            <div class="section-heading text-center auto-fade-up">
+                <span class="kicker">Notre principe</span>
+                <h2>Aucun projet n'avance sans base vérifiée.</h2>
+                <p>Un processus utile seulement s'il reste lisible et traçable à chaque instant.</p>
             </div>
 
-            <div class="exec-card-premium fade-up delay-1">
-                <div class="exec-left">
-                    <div class="exec-eyebrow-container">
-                        <span class="exec-eyebrow-dot"></span>
-                        <span class="exec-eyebrow">Engagement</span>
+            <div class="cinematic-flow" style="display: flex; flex-direction: column; gap: 4rem;">
+
+                <!-- Avant -->
+                <div class="cine-card cine-left auto-fade-up">
+                    <div class="cine-visual">
+                        <img src="/road.webp" alt="Avant" />
+                        <div class="cine-overlay"></div>
+                        <div class="cine-tag">1. Avant</div>
                     </div>
-                    <h2 class="exec-title">Un processus utile<br>seulement s'il reste <span class="text-green">lisible.</span></h2>
-                </div>
-                <div class="exec-right">
-                    <div class="exec-step-premium step-before fade-up delay-1">
-                        <div class="step-icon">
-                            <i class="fa-solid fa-file-contract"></i>
-                        </div>
-                        <div class="step-content">
-                            <h3 class="step-label">Avant</h3>
-                            <p class="step-desc">Le besoin est qualifié et les conditions de départ sont clarifiées avec rigueur.</p>
-                        </div>
-                    </div>
-                    <div class="exec-step-premium step-during fade-up delay-2">
-                        <div class="step-icon">
-                            <i class="fa-solid fa-list-check"></i>
-                        </div>
-                        <div class="step-content">
-                            <h3 class="step-label">Pendant</h3>
-                            <p class="step-desc">Les opérations sont suivies via des points de contrôle définis et traçables.</p>
-                        </div>
-                    </div>
-                    <div class="exec-step-premium step-after fade-up delay-3">
-                        <div class="step-icon">
-                            <i class="fa-solid fa-chart-pie"></i>
-                        </div>
-                        <div class="step-content">
-                            <h3 class="step-label">Après</h3>
-                            <p class="step-desc">Les résultats sont consolidés dans un bilan financier et opérationnel exploitable.</p>
-                        </div>
+                    <div class="cine-content" style="color: var(--navy);">
+                        <h3>Préparation absolue</h3>
+                        <p>Le besoin est qualifié et les conditions de départ sont clarifiées. Nous éliminons les zones
+                            d'ombre pour garantir un démarrage serein.</p>
                     </div>
                 </div>
+
+                <!-- Pendant -->
+                <div class="cine-card cine-right auto-slide-right delay-1" style="flex-direction: row-reverse;">
+                    <div class="cine-visual">
+                        <img src="/culture.webp" alt="Pendant" />
+                        <div class="cine-overlay"></div>
+                        <div class="cine-tag tag-green">2. Pendant</div>
+                    </div>
+                    <div class="cine-content" style="color: var(--navy); text-align: right;">
+                        <h3>Suivi chirurgical</h3>
+                        <p>Les opérations sont suivies avec des points de contrôle définis. Notre supervision
+                            agronomique est continue pour garantir la qualité.</p>
+                    </div>
+                </div>
+
+                <!-- Après -->
+                <div class="cine-card cine-left auto-slide-left delay-2">
+                    <div class="cine-visual">
+                        <img src="/bilanp.webp" alt="Après" />
+                        <div class="cine-overlay"></div>
+                        <div class="cine-tag" style="background: var(--navy);">3. Après</div>
+                    </div>
+                    <div class="cine-content" style="color: var(--navy);">
+                        <h3>Résultats consolidés</h3>
+                        <p>Les résultats sont consolidés dans un bilan financier et opérationnel exploitable. La
+                            rentabilité est prouvée, sans surprise.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="jag-cta-section">
-        <div class="cta-bg-glow"></div>
-        <div class="container cta-container fade-up">
-            <h2>Passer à l'action</h2>
-            <p class="fade-up delay-1">Parlons de votre projet. Sélectionnez le parcours adapté à votre profil.</p>
-            <div class="proc-cta-buttons fade-up delay-2">
-                <a routerLink="/nospoles/pole1" class="btn-jag btn-jag-primary cta-btn">
-                    Investisseur <span class="btn-icon">→</span>
+    <!-- 5. CLOSING CTA: DUAL PATH -->
+    <section class="dual-cta-section auto-fade-up">
+        <div class="container text-center">
+            <span class="kicker">Votre parcours</span>
+            <h2 class="master-title" style="color: var(--navy); margin-bottom: 4rem;">Passer à l'action</h2>
+            
+            <div class="dual-cta-grid">
+                <!-- Investisseur Path -->
+                <a routerLink="/nospoles/pole1" class="dual-card invest-card">
+                    <div class="dual-bg" style="background-image: url('/boite-mais.webp');"></div>
+                    <div class="dual-overlay"></div>
+                    <div class="dual-content">
+                        <h3>Investisseur</h3>
+                        <p>Déléguez la gestion de votre terre et maximisez sa rentabilité avec un accompagnement clé en main.</p>
+                        <span class="dual-link">Découvrir le Pôle 1 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></span>
+                    </div>
                 </a>
-                <a routerLink="/nospoles/pole2" class="btn-jag btn-jag-primary cta-btn">
-                    Industriel <span class="btn-icon">→</span>
+
+                <!-- Industriel Path -->
+                <a routerLink="/nospoles/pole2" class="dual-card indust-card">
+                    <div class="dual-bg" style="background-image: url('/pop-corn.webp');"></div>
+                    <div class="dual-overlay"></div>
+                    <div class="dual-content">
+                        <h3>Industriel</h3>
+                        <p>Sécurisez votre approvisionnement avec des cultures programmées et une traçabilité sans faille.</p>
+                        <span class="dual-link">Découvrir le Pôle 2 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></span>
+                    </div>
                 </a>
-            </div>
-            <div class="cta-trust fade-up delay-3">
-                <span>✓ Réponse sous 48h</span>
-                <span class="dot">·</span>
-                <span>✓ Sans engagement</span>
-                <span class="dot">·</span>
-                <span>✓ Confidentiel</span>
             </div>
         </div>
     </section>
 
-    <!-- Herbe jaillissante avant le footer -->
-    <div class="proc-vege-footer">
-        <img src="/vege2.png" alt="" aria-hidden="true" />
+    <!-- Herbe jaillissante (vege2.png) sur le footer -->
+    <div class="proc-vege-footer auto-fade-up"
+        style="position: relative; text-align: center; margin-top: -120px; z-index: 10; pointer-events: none; overflow: hidden;">
+        <img src="/vege2.png" alt="" aria-hidden="true"
+            style="max-width: 100%; height: auto; transform: translateY(20px);" />
     </div>
-
-</div>
+</main>

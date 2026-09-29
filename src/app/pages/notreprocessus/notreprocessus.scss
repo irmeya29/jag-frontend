@@ -1,723 +1,527 @@
-// ============================================================
-// NOTRE PROCESSUS — SCSS
-// Uniformisé avec le DA de pole1 / pole2
-// ============================================================
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap');
 
-// ------------------------------------------------------------
-// ANIMATIONS
-// ------------------------------------------------------------
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+:host, .pole-page {
+  --green: #2eaa63;
+  --dark-green: #123b21;
+  --navy: #0d2137;
+  --light-navy: #112a46;
+  --bg-light: #f8fafc;
+  --bg-dark: #061021;
 }
 
-.delay-1 {
-    animation-delay: 0.1s;
+body {
+  background-color: var(--bg-light);
 }
 
-.delay-2 {
-    animation-delay: 0.2s;
+.pole-page {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background: var(--bg-light);
 }
 
-.delay-3 {
-    animation-delay: 0.3s;
+/* Typography Base */
+h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
+  font-family: 'Montserrat', sans-serif;
 }
 
-.delay-4 {
-    animation-delay: 0.4s;
+.text-white { color: #fff !important; }
+.text-light { color: rgba(255,255,255,0.7) !important; }
+.text-green { color: var(--green) !important; }
+
+/* =========================================
+   1. HERO SECTION
+   ========================================= */
+.pole-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+.hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.1) brightness(0.9);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: -1;
+  width: min(65%, 60rem);
+  background: linear-gradient(90deg, rgba(8, 33, 21, 0.85) 0%, rgba(8, 33, 21, 0.4) 70%, transparent 100%);
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    background: rgba(8, 33, 21, 0.65);
+  }
+}
+
+.hero__content {
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: clamp(2rem, 5.25vw, 5.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: clamp(1rem, 6vh, 4rem);
+}
+
+.hero__eyebrow {
+  margin: 0 0 .9rem;
+  color: var(--green);
+  font-size: .85rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-top: clamp(0.5rem, 3vh, 2rem);
+}
+
+.pole-hero h1 {
+  max-width: 12ch;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(3rem, 5.5vw, 5.55rem);
+  font-weight: 800;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.hero__description {
+  max-width: 32rem;
+  margin: 1.75rem 0 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding-inline: 2rem;
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background: #fff;
+    color: var(--green);
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+
+  &.btn-white {
+    background: #fff;
+    color: var(--navy);
+    border-color: #fff;
+    &:hover {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
     }
+  }
 }
 
-// ------------------------------------------------------------
-// UTILITAIRES LOCAUX
-// ------------------------------------------------------------
-.text-green {
-    color: var(--jag-green);
+/* =========================================
+   COMMON SECTION STYLES
+   ========================================= */
+.premium-section {
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  position: relative;
 }
 
-.text-center {
+.container {
+  width: min(100%, 80rem);
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 4rem;
+  max-width: 40rem;
+  
+  &.text-center {
     text-align: center;
+    margin: 0 auto 4rem;
+  }
 }
 
-.bg-muted {
-    background-color: var(--jag-muted);
+.kicker {
+  display: block;
+  color: var(--green);
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
 }
 
-// ------------------------------------------------------------
-// 1. SPLIT HERO  (identique à pole1)
-// ------------------------------------------------------------
-.split-hero {
-    display: flex;
-    min-height: calc(100vh - var(--navbar-height, 81px));
-    background-color: #fff;
-    overflow: hidden;
-
-    @media (max-width: 992px) {
-        flex-direction: column;
-        min-height: auto;
-    }
-
-    .split-left {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 60px 8%;
-        background-color: #fff;
-
-        @media (max-width: 992px) {
-            padding: 40px 24px 30px;
-        }
-
-        .hero-content {
-            max-width: 600px;
-
-            .hero-title {
-                font-family: var(--font-display);
-                font-size: clamp(2.2rem, 5vw, 4.5rem);
-                font-weight: 900;
-                color: var(--jag-navy);
-                line-height: 1.1;
-                margin-bottom: 24px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.15rem;
-                color: var(--jag-text);
-                line-height: 1.7;
-                margin-bottom: 40px;
-
-                @media (max-width: 992px) {
-                    font-size: 1rem;
-                    margin-bottom: 28px;
-                }
-            }
-
-            .btn-primary {
-                display: inline-flex;
-                align-items: center;
-                background: var(--jag-green);
-                color: #fff;
-                padding: 16px 36px;
-                border-radius: 4px;
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 1.05rem;
-                transition: transform 0.3s, box-shadow 0.3s;
-                box-shadow: var(--shadow-md);
-                border: 1px solid rgba(11, 29, 58, 0.05);
-
-                &:hover {
-                    transform: translateY(-3px);
-                    box-shadow: var(--shadow-lg);
-                }
-            }
-        }
-    }
-
-    .btn--green {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--jag-green);
-        color: #ffffff;
-        font-weight: 700;
-        padding: 16px 36px;
-        border-radius: 4px;
-        text-decoration: none;
-        border: none;
-        transition: all 0.3s ease;
-        box-shadow: var(--shadow-md);
-        border: 1px solid rgba(11, 29, 58, 0.05);
-
-        @media (max-width: 992px) {
-            padding: 14px 28px;
-            font-size: 0.95rem;
-        }
-
-        &:hover {
-            background-color: transparent !important;
-            color: var(--jag-green) !important;
-            border-color: var(--jag-green) !important;
-        }
-    }
-
-    .split-right {
-        flex: 1;
-        background-color: #000;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-
-        @media (max-width: 992px) {
-            min-height: 280px;
-            max-height: 320px;
-        }
-
-        .hero-expert-img {
-            filter: saturate(0.8) contrast(1.1);
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-            object-position: center;
-            width: 100%;
-            height: 100%;
-        }
-    }
+.section-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: var(--navy);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
 }
 
-// ------------------------------------------------------------
-// 2. SECTION HEADER (identique à pole1)
-// ------------------------------------------------------------
-.section-header {
-    margin-bottom: 60px;
-
-    &.text-center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    &.section-header--right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        text-align: center;
-        margin-left: auto;
-
-        .title {
-            max-width: 600px;
-        }
-    }
-
-    .surtitle {
-        display: inline-block;
-        color: var(--jag-green);
-        font-weight: 700;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 15px;
-    }
-
-    .title {
-        font-family: var(--font-display);
-        font-size: clamp(2rem, 3.5vw, 2.8rem);
-        font-weight: 800;
-        color: var(--jag-navy);
-        line-height: 1.15;
-        margin-bottom: 20px;
-        max-width: 800px;
-    }
-
-    .subtitle {
-        font-size: 1.15rem;
-        color: var(--jag-text);
-        max-width: 600px;
-        line-height: 1.7;
-    }
+.section-heading p {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.6;
 }
 
-// ------------------------------------------------------------
-// 3. INTRO (branchef)
-// ------------------------------------------------------------
-.proc-intro-section {
-    position: relative;
-    padding: 180px 24px;
-    background-color: var(--jag-muted);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 420px;
-}
-
+/* =========================================
+   DECORATIVE BRANCH (Plante 3)
+   ========================================= */
 .proc-intro-branche {
     position: absolute;
-    left: -50px;
-    top: 70%;
+    left: -100px;
+    top: 50%;
     transform: translateY(-50%);
-    width: 700px;
+    width: clamp(300px, 40vw, 700px);
     max-width: none;
     height: auto;
-    opacity: 0.92;
+    opacity: 1; /* Fully visible now! */
     pointer-events: none;
     user-select: none;
-    z-index: 0;
+    z-index: 1; /* Above background, behind text */
+    animation: swayBranch 6s ease-in-out infinite alternate;
+    filter: drop-shadow(10px 20px 30px rgba(0,0,0,0.1));
 
     @media (max-width: 1024px) {
-        width: 500px;
+        width: 400px;
         left: -80px;
     }
 
     @media (max-width: 768px) {
-        width: 300px;
-        left: -60px;
+        width: 250px;
+        left: -50px;
+        opacity: 0.5; /* Fade out slightly on mobile so it doesn't block text */
     }
 }
 
-.proc-intro-section .container {
-    position: relative;
-    z-index: 1;
+@keyframes swayBranch {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(4deg); }
 }
 
-// ------------------------------------------------------------
-// 4. MÉTHODE — PREMIUM PROCESS GRID
-// ------------------------------------------------------------
-.proc-method-section {
-    padding: 120px 0;
-    background-color: var(--jag-navy); // Fond sombre pour contraste premium
-    position: relative;
-    overflow: hidden;
-
-    .surtitle {
-        color: var(--jag-green);
-    }
-    .title {
-        color: var(--white);
-    }
-    .subtitle {
-        color: rgba(255, 255, 255, 0.7);
-    }
+/* =========================================
+   3. PROCESS (Dark Sticky Stack)
+   ========================================= */
+.dark-bg {
+  background: var(--bg-dark);
+  color: #fff;
 }
 
-.process-premium-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 60px;
-
-    @media (max-width: 1200px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-    }
+.sticky-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
 }
 
-.step-glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-xl);
-    padding: 40px 30px;
+.stack-card {
+  position: sticky;
+  top: 15vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  /* Overlap */
+  &:nth-child(1) { top: calc(10vh + 0rem); }
+  &:nth-child(2) { top: calc(10vh + 2rem); }
+  &:nth-child(3) { top: calc(10vh + 4rem); }
+  &:nth-child(4) { top: calc(10vh + 6rem); }
+
+  &.dark-card {
+    background: var(--light-navy);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: #fff;
+
+    h3 { color: #fff; }
+    p { color: rgba(255,255,255,0.8); }
+    .step { color: var(--green); }
+  }
+}
+
+.stack-img {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  
+  @media (min-width: 768px) {
+    height: 350px;
+  }
+
+  img {
+    width: 100%;
     height: 100%;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-
-    &:hover {
-        transform: translateY(-8px);
-        border-color: rgba(46, 170, 99, 0.4);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.05);
-
-        .step-number-glow {
-            color: rgba(255, 255, 255, 0.15);
-            transform: scale(1.1) translate(10px, -10px);
-        }
-
-        .step-icon-wrapper {
-            background: var(--jag-green);
-            color: var(--white);
-            transform: scale(1.1);
-        }
-    }
-
-    .step-number-glow {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        font-family: var(--font-display);
-        font-size: 8rem;
-        font-weight: 900;
-        color: rgba(255, 255, 255, 0.04);
-        line-height: 1;
-        transition: all 0.5s ease;
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    .step-icon-wrapper {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--jag-green);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        margin-bottom: 24px;
-        transition: all 0.4s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    .step-title {
-        font-size: 1.5rem;
-        color: var(--white);
-        font-weight: 800;
-        margin-bottom: 12px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .step-desc {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 1rem;
-        line-height: 1.6;
-        margin: 0;
-        position: relative;
-        z-index: 1;
-        flex-grow: 1;
-    }
+    object-fit: cover;
+  }
 }
 
-// ------------------------------------------------------------
-// 5. NOTRE PRINCIPE
-// ------------------------------------------------------------
-.proc-principle-section {
-    padding: 100px 0;
-    background-color: #fff;
-    position: relative;
-    overflow: hidden;
-}
-
-.proc-principle-steps {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
-.proc-principle-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 32px;
-    background: var(--jag-muted);
-    border-radius: var(--radius-xl);
-    border: 1px solid rgba(11, 29, 58, 0.06);
-    box-shadow: var(--shadow-sm);
-
-    span {
-        font-weight: 700;
-        color: var(--jag-navy);
-        font-size: 1.05rem;
-    }
-}
-
-.proc-principle-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--jag-green);
-    color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    flex-shrink: 0;
-}
-
-.proc-principle-arrow {
-    color: var(--jag-green);
+.stack-text {
+  .step {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
     font-size: 1.2rem;
-
-    @media (max-width: 768px) {
-        transform: rotate(90deg);
-    }
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
 }
 
-// ------------------------------------------------------------
-// 6. EXÉCUTION (CARTE MODERNE PREMIUM SANS IMAGE)
-// ------------------------------------------------------------
-.proc-exec-section {
-    padding: 120px 0;
-    background-color: var(--jag-muted);
-    position: relative;
-    overflow: hidden;
-}
 
-.exec-card-premium {
-    display: flex;
-    background: var(--jag-navy);
-    border-radius: 24px;
-    box-shadow: 0 24px 48px rgba(11, 29, 58, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 80px;
-    gap: 80px;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+/* =========================================
+   4. CINEMATIC FLOW (Execution)
+   ========================================= */
+.cinematic-flow {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 50%;
-        background: radial-gradient(circle at 100% 50%, rgba(46, 170, 99, 0.08) 0%, transparent 70%);
-        pointer-events: none;
-    }
-
-    @media (max-width: 992px) {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 40px;
-        gap: 50px;
-    }
-}
-
-.exec-left {
-    flex: 1.1;
-    position: relative;
-    z-index: 1;
-
-    .exec-eyebrow-container {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 24px;
-
-        .exec-eyebrow-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--jag-green);
-            border-radius: 50%;
-            box-shadow: 0 0 12px var(--jag-green);
-        }
-
-        .exec-eyebrow {
-            color: var(--jag-green);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-    }
-
-    .exec-title {
-        font-family: var(--font-display);
-        font-size: clamp(2rem, 3.5vw, 2.8rem);
-        font-weight: 800;
-        color: var(--white);
-        line-height: 1.2;
-        margin: 0;
-    }
-}
-
-.exec-right {
-    flex: 1;
+  .cine-card {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    position: relative;
-    z-index: 1;
-}
+    align-items: center;
+    gap: 3rem;
 
-.exec-step-premium {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    padding: 24px;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, background 0.3s ease;
-
-    &:hover {
-        transform: translateX(10px);
-        background: rgba(255, 255, 255, 0.06);
+    @media (min-width: 992px) {
+      flex-direction: row;
     }
 
-    .step-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        flex-shrink: 0;
-    }
+    .cine-visual {
+      flex: 1;
+      position: relative;
+      border-radius: 2rem;
+      overflow: hidden;
+      width: 100%;
+      height: 350px;
+      box-shadow: 0 30px 60px rgba(13,33,55,0.1);
 
-    &.step-before .step-icon {
-        background: rgba(46, 170, 99, 0.1);
-        color: var(--jag-green);
-    }
-
-    &.step-during .step-icon {
-        background: rgba(30, 155, 215, 0.1);
-        color: var(--jag-blue);
-    }
-
-    &.step-after .step-icon {
-        background: rgba(255, 107, 53, 0.1);
-        color: var(--jag-orange);
-    }
-
-    .step-content {
-        flex: 1;
-
-        .step-label {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--white);
-            margin: 0 0 8px;
-        }
-
-        .step-desc {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin: 0;
-            line-height: 1.6;
-        }
-    }
-}
-
-// ------------------------------------------------------------
-// 7. CTA SECTION (identique à pole1)
-// ------------------------------------------------------------
-.jag-cta-section {
-    background-color: #fff;
-    text-align: center;
-    position: relative;
-    padding: 120px 0;
-
-    .cta-bg-glow {
+      img {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, var(--jag-green-10) 0%, transparent 70%);
-        border-radius: 50%;
-        z-index: 0;
-    }
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      &:hover img { transform: scale(1.05); }
 
-    .cta-container {
-        position: relative;
-        z-index: 2;
-        max-width: 700px;
-    }
+      .cine-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(13,33,55,0.7), transparent);
+      }
 
-    h2 {
-        font-size: clamp(2rem, 3.5vw, 2.8rem);
-        margin-bottom: 20px;
-        color: var(--jag-navy);
-        font-family: var(--font-display);
+      .cine-tag {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        background: var(--green);
+        color: #fff;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 800;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        
+        &.tag-green { background: #fff; color: var(--green); }
+      }
+    }
+
+    .cine-content {
+      flex: 1;
+      padding: 2rem;
+
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+      }
+      p {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #555;
+      }
+    }
+  }
+}
+
+.dual-cta-section {
+  padding: 8rem 2rem;
+  background: var(--bg-light);
+  position: relative;
+  z-index: 5;
+
+  .master-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+}
+
+.dual-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.dual-card {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  min-height: 450px;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(13,33,55,0.1);
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(13,33,55,0.25);
+
+    .dual-bg {
+      transform: scale(1.08);
+    }
+
+    .dual-link {
+      color: var(--green);
+      transform: translateX(10px);
+    }
+  }
+
+  .dual-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dual-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,33,55,0.95) 0%, rgba(13,33,55,0.3) 100%);
+    z-index: 1;
+  }
+
+  .dual-content {
+    position: relative;
+    z-index: 2;
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: #fff;
     }
 
     p {
-        font-size: 1.1rem;
-        margin-bottom: 40px;
-        color: var(--jag-text);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
     }
 
-    .cta-trust {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        font-size: 0.9rem;
-        color: var(--gray-500);
-        margin-top: 30px;
+    .dual-link {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      transition: all 0.3s ease;
 
-        .dot {
-            opacity: 0.5;
-        }
-    }
-}
-
-.proc-cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-}
-
-// ------------------------------------------------------------
-// 8. BOUTONS JAG (identique à pole1)
-// ------------------------------------------------------------
-.btn-jag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 36px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-
-    .btn-icon {
-        margin-left: 10px;
+      i {
         transition: transform 0.3s ease;
+      }
     }
-
-    &:hover .btn-icon {
-        transform: translateX(5px);
-    }
+  }
 }
 
-.btn-jag-primary {
-    background: var(--jag-green);
-    color: #fff;
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(11, 29, 58, 0.05);
-
-    &:hover {
-        background-color: transparent !important;
-        color: var(--jag-green) !important;
-        border-color: var(--jag-green) !important;
-    }
+/* =========================================
+   6. AUTO ANIMATIONS
+   ========================================= */
+.auto-fade-up {
+    opacity: 0;
+    animation: autoFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.auto-slide-left {
+    opacity: 0;
+    animation: autoSlideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.auto-slide-right {
+    opacity: 0;
+    animation: autoSlideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.cta-btn {
-    padding: 18px 50px;
-    font-size: 1.05rem;
+@keyframes autoFadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes autoSlideLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes autoSlideRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
-// Herbe décorative juste avant le footer
-.proc-vege-footer {
-    display: block;
-    width: 100%;
-    line-height: 0;
-    margin-bottom: -5px; // colle au footer sans gap
-
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-        pointer-events: none;
-        user-select: none;
-    }
-}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }

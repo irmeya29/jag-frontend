@@ -669,27 +669,101 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
   }
 }
 
-/* =========================================
-   6. CLOSING
-   ========================================= */
-.closing-section {
-  padding: 8rem 2rem;
-  background: #fff;
+.cta-masterpiece {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: var(--navy);
+  overflow: hidden;
+  margin: 0 0 0 0;
+}
+
+.cta-master-bg {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  right: 0;
+  left: auto;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
   
-  h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--navy);
-    font-weight: 900;
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
+  @media (max-width: 992px) {
+    width: 100%;
+    clip-path: none;
   }
 
-  p {
+  .cta-master-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cta-master-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--navy) 0%, rgba(13,33,55,0.2) 100%);
+    
+    @media (max-width: 992px) {
+      background: linear-gradient(to top, var(--navy) 0%, rgba(13,33,55,0.4) 100%);
+    }
+  }
+}
+
+.cta-masterpiece:hover .cta-master-image {
+  transform: scale(1.08);
+}
+
+.cta-master-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.cta-master-left {
+  flex: 1;
+  min-width: 300px;
+  
+  .master-title {
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    margin: 0;
+    letter-spacing: -2px;
+  }
+}
+
+.cta-master-right {
+  flex: 1;
+  min-width: 300px;
+  padding: 3.5rem;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-left: 4px solid var(--green);
+  border-radius: 0 2rem 2rem 0;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+
+  @media (max-width: 992px) {
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border-left: none;
+    border-top: 4px solid var(--green);
+  }
+
+  .master-desc {
     font-size: 1.25rem;
-    color: #555;
-    max-width: 40rem;
-    margin: 0 auto 3rem;
-    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 3rem;
   }
 }
 
