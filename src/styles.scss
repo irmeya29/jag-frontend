@@ -1006,3 +1006,77 @@ select {
 .bento-card img {
   filter: saturate(0.82) contrast(1.06);
 }
+
+
+// ============================================================
+// SCROLL REVEAL — Fade in / Translate
+// Piloté par ScrollRevealService via IntersectionObserver
+// ============================================================
+
+// --- État initial (avant révélation) ---
+.reveal-init {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+// Directions de départ
+.reveal-init.reveal-from-bottom {
+  transform: translateY(36px);
+}
+
+.reveal-init.reveal-from-left {
+  transform: translateX(-40px);
+}
+
+.reveal-init.reveal-from-right {
+  transform: translateX(40px);
+}
+
+.reveal-init.reveal-from-top {
+  transform: translateY(-28px);
+}
+
+// --- État final (révélé) ---
+.reveal-init.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+// --- Classes historiques (compatibilité templates existants) ---
+// .fade-in-up et .fade-up sont sélectionnées par le service
+// et reçoivent dynamiquement .reveal-init → .is-revealed
+.fade-in-up,
+.fade-up {
+  // Styles appliqués via JS par le service — ne rien mettre ici
+}
+
+// --- Stagger enfants ---
+// Quand data-stagger est présent, les enfants héritent aussi de reveal-init
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-stagger] > *.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// --- Respect des préférences de réduction de mouvement ---
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init,
+  .reveal-init.reveal-from-bottom,
+  .reveal-init.reveal-from-left,
+  .reveal-init.reveal-from-right,
+  .reveal-init.reveal-from-top,
+  [data-stagger] > * {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+  }
+}
