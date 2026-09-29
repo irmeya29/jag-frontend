@@ -2,20 +2,20 @@
 <div class="home-page">
     <section class="split-hero">
         <div class="split-left">
-            <div class="hero-content">
+            <div class="hero-content fade-up">
                 <h1 class="hero-title">
                     Qui sommes-<span class="text-green">nous</span> ?
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle fade-up delay-1">
                     Depuis plus de 20 ans, nous construisons des chaînes d'approvisionnement agricoles solides, fiables
                     et durables.
                 </p>
-                <button type="button" (click)="scrollTo('racines', $event)" class="btn--green">Découvrir nos racines <span
-                        class="arrow-down"></span></button>
+                <a href="#" (click)="scrollTo('racines', $event)" class="btn--green fade-up delay-2">Découvrir nos
+                    racines <span class="arrow-down"></span></a>
             </div>
         </div>
         <div class="split-right">
-            <img src="/apropos2.webp" alt="Qui sommes-nous" class="hero-expert-img" />
+            <img src="/h2.png" alt="Qui sommes-nous" class="hero-expert-img fade-up delay-1" />
         </div>
     </section>
 </div>
@@ -23,15 +23,17 @@
 <!-- ---- NOS RACINES ---- -->
 <section id="racines" class="racines-section">
     <div class="container racines-grid">
-        <div class="racines-text" data-reveal>
-            <h2 class="section-heading">Nos racines</h2>
-            <p class="section-body"><strong>Un ancrage fort dans le territoire.</strong> Depuis plus de 20 ans, nous
+        <div class="racines-text fade-up">
+            <span class="about-badge">Notre histoire</span>
+            <h2 class="about-title">Nos racines</h2>
+            <p class="section-body fade-up delay-1"><strong>Un ancrage fort dans le territoire.</strong> Depuis plus de
+                20 ans, nous
                 travaillons main dans la main avec les producteurs
                 et les industriels pour construire des chaînes d'approvisionnement solides,
                 fiables et durables.</p>
         </div>
-        <div class="racines-visual">
-            <img src="/root.webp" alt="Nos racines" class="racines-img" loading="lazy">
+        <div class="racines-visual fade-up delay-1">
+            <img src="/root.png" alt="Nos racines" class="racines-img" loading="lazy">
         </div>
     </div>
 </section>
@@ -39,14 +41,15 @@
 <!-- ---- HISTOIRE ---- -->
 <section class="about-split about-split--navy">
     <div class="container about-split-grid">
-        <div class="about-split-content" data-reveal>
-            <h2 class="about-split-heading">01 — Histoire</h2>
-            <p class="about-split-body"><strong>Plus de 20 ans d'expertise industrielle.</strong> Fondée par des
+        <div class="about-split-content fade-up">
+            <span class="about-badge about-badge--light">Histoire</span>
+            <h2 class="about-title about-title--light">Plus de 20 ans d'expertise industrielle.</h2>
+            <p class="about-split-body fade-up delay-1">Fondée par des
                 professionnels du secteur agricole, JAG est née d'une conviction
                 : structurer le sourcing pour le rendre fiable, traçable et pérenne. Chaque année renforce notre
                 expertise et élargit notre réseau de producteurs partenaires.</p>
         </div>
-        <div class="about-split-visual" data-reveal data-delay="100">
+        <div class="about-split-visual fade-up delay-2">
             <span class="about-big-number">20+</span>
             <span class="about-big-label">ans d'expérience</span>
         </div>
@@ -55,12 +58,12 @@
 
 <!-- ---- VISION ---- -->
 <section class="about-statement">
-    <div class="container" data-reveal>
-        <h2 class="about-statement-text" style="margin-bottom: 20px;">02 — Vision</h2>
-        <p class="about-split-body"
-            style="color: var(--jag-navy); font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 600; max-width: 800px; margin: 0 auto; line-height: 1.4;">
-            Devenir le partenaire de référence
-            <span class="text-green">pour tout acheteur industriel</span>
+    <div class="container fade-up">
+        <span class="about-badge">Vision</span>
+        <h2 class="about-title">Devenir le partenaire de référence<br>
+            <span class="about-title-accent">pour tout acheteur industriel</span>
+        </h2>
+        <p class="about-statement-body fade-up delay-1">
             qui exige traçabilité, volume et régularité.
         </p>
     </div>
@@ -69,11 +72,12 @@
 <!-- ---- VALEURS ---- -->
 <section class="about-valeurs">
     <div class="container">
-        <div class="about-valeurs-header" data-reveal>
-            <h2 class="section-heading">03 — Valeurs</h2>
+        <div class="about-valeurs-header fade-up">
+            <span class="about-badge">Nos principes</span>
+            <h2 class="about-title">Des valeurs qui guidient chaque action.</h2>
         </div>
         <div class="about-valeurs-grid">
-            <div class="about-valeur-card" data-reveal>
+            <div class="about-valeur-card fade-up delay-1">
                 <div class="about-valeur-icon about-valeur-icon--green">
                     <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -83,7 +87,7 @@
                 <h3>Fiabilité</h3>
                 <p>Chaque engagement tenu, chaque volume confirmé, chaque livraison certifiée.</p>
             </div>
-            <div class="about-valeur-card" data-reveal data-delay="80">
+            <div class="about-valeur-card fade-up delay-2">
                 <div class="about-valeur-icon about-valeur-icon--navy">
                     <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -95,7 +99,7 @@
                 <h3>Transparence</h3>
                 <p>Une traçabilité totale de la ferme à l'usine, sans zone d'ombre.</p>
             </div>
-            <div class="about-valeur-card" data-reveal data-delay="160">
+            <div class="about-valeur-card fade-up delay-3">
                 <div class="about-valeur-icon about-valeur-icon--orange">
                     <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -112,14 +116,15 @@
 <!-- ---- EQUIPES ---- -->
 <section class="about-split about-split--white">
     <div class="container about-split-grid about-split-grid--reverse">
-        <div class="about-split-visual" data-reveal>
+        <div class="about-split-visual fade-up delay-2">
             <span class="about-big-number about-big-number--green">40+</span>
             <span class="about-big-label about-big-label--dark">experts dédiés</span>
         </div>
-        <div class="about-split-content" data-reveal data-delay="100">
-            <h2 class="about-split-heading about-split-heading--dark">04 — Équipes</h2>
-            <p class="about-split-body about-split-body--dark"><strong>Des spécialistes au cœur de vos
-                    opérations.</strong> Ingénieurs agronomes, logisticiens et chefs de projet
+        <div class="about-split-content fade-up delay-1">
+            <span class="about-badge">Équipe</span>
+            <h2 class="about-title">Des spécialistes au cœur de vos opérations.</h2>
+            <p class="about-split-body about-split-body--dark fade-up delay-2">Ingénieurs agronomes, logisticiens et
+                chefs de projet
                 travaillent ensemble pour piloter chaque programme de sourcing avec rigueur et proximité.</p>
         </div>
     </div>

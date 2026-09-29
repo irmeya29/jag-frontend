@@ -343,18 +343,19 @@
         justify-content: flex-start;
         align-items: center;
 
-        // Slide in from left animation
+        // Slide in from left animation (cartes de gauche)
         opacity: 0;
-        transform: translateX(-120px);
-        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateX(-80px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &.reverse {
+            justify-content: flex-end;
+            transform: translateX(80px); // Slide in from right pour les étapes paires
+        }
 
         &.is-visible {
             opacity: 1;
             transform: translateX(0);
-        }
-
-        &.reverse {
-            justify-content: flex-end;
         }
 
         @media (max-width: 768px) {
@@ -363,6 +364,14 @@
             align-items: flex-start;
             gap: 20px;
             transform: translateX(-40px);
+
+            &.reverse {
+                transform: translateX(-40px);
+            }
+
+            &.is-visible {
+                transform: translateX(0);
+            }
         }
 
         .content-text {
@@ -668,4 +677,20 @@
 .cta-btn {
     padding: 18px 50px;
     font-size: 1.05rem;
+}
+
+// Herbe décorative juste avant le footer
+.proc-vege-footer {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    margin-bottom: -5px; // colle au footer sans gap
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+        user-select: none;
+    }
 }

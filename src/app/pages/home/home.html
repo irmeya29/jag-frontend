@@ -9,11 +9,14 @@
           <h1>
             <span style="white-space: nowrap;">Cultivons l'avenir</span> <br> <span class="text-accent">ensemble </span>
           </h1>
-          <p class="lead-text">Just Agro Group réinvente l'investissement agricole. Nous garantissons la
+          <p class="lead-text fade-up delay-1">Just Agro Group réinvente l'investissement agricole. Nous garantissons la
             transparence, l'expertise agronomique et la sécurité financière à toutes les étapes du projet.</p>
           <div class="hero-actions">
             <button type="button" (click)="scrollTo('poles-section', $event)" class="btn-primary">
-              <i class="fa-solid fa-leaf"></i> DÉCOUVRIR NOS PÔLES
+
+              <div class="hero-actions fade-up delay-2">
+                <a href="#" (click)="scrollTo('poles-section', $event)" class="btn-primary">
+                  <i class="fa-solid fa-leaf"></i> DÉCOUVRIR NOS PÔLES
             </button>
           </div>
         </div>
@@ -144,9 +147,13 @@
   <section class="premium-cta">
     <div class="container text-center fade-up">
       <h2>Prêt à lancer votre projet agricole ?</h2>
-      <p class="cta-subtitle">Discutons de vos objectifs et trouvons ensemble le modèle qui vous convient.</p>
-      <a routerLink="/contact" class="btn-premium btn-primary mt-8">
+      <p class="cta-subtitle fade-up delay-1">Discutons de vos objectifs et trouvons ensemble le modèle qui vous
+        convient.
+      </p>
+      <a routerLink="/contact" class="btn-premium btn-primary mt-8 fade-up delay-2">
         <span class="btn-text">Contactez nos experts</span>
       </a>
     </div>
   </section>
+
+</div>

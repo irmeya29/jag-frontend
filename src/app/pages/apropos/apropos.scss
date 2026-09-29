@@ -1,28 +1,31 @@
 /* ---- HERO ---- */
 .split-hero {
     display: flex;
-    height: 100vh;
+    min-height: calc(100vh - var(--navbar-height, 81px));
     background-color: #fff;
-    overflow: visible;
+    overflow: hidden;
 
     @media (max-width: 992px) {
         flex-direction: column;
+        min-height: auto;
     }
 
     .split-left {
         flex: 1;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        padding: 60px 8% 60px 6%;
+        padding: 60px 8%;
         background-color: #fff;
+        z-index: 2;
 
         @media (max-width: 992px) {
             padding: 40px 24px 30px;
         }
 
         .hero-content {
-            max-width: 480px;
+            max-width: 560px;
+            width: 100%;
 
             @media (max-width: 992px) {
                 max-width: 100%;
@@ -110,25 +113,67 @@
         align-items: flex-end;
         justify-content: center;
         position: relative;
-        top: -90px;
-        bottom: 0;
+        overflow: hidden;
 
         @media (max-width: 992px) {
             min-height: 280px;
-            max-height: 320px;
-            top: 0;
+            max-height: 360px;
         }
 
         .hero-expert-img {
             filter: saturate(0.8) contrast(1.1);
             width: 100%;
-            height: 120%;
+            height: 100%;
             object-fit: cover;
             object-position: center top;
+            display: block;
         }
     }
 }
 
+
+/* ---- BADGE & TITLE (same hierarchy as home) ---- */
+.about-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    color: var(--jag-green);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+
+    &--light {
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+.about-title {
+    font-family: var(--font-display, 'Montserrat', sans-serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--jag-navy);
+    line-height: 1.1;
+    margin-bottom: 20px;
+
+    &--light {
+        color: #ffffff;
+    }
+}
+
+.about-title-accent {
+    color: var(--jag-green);
+}
+
+.about-statement-body {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+    color: var(--jag-navy);
+}
 
 /* ---- NOS RACINES ---- */
 .racines-section {
