@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal , ChangeDetectionStrategy} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-navbar',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',

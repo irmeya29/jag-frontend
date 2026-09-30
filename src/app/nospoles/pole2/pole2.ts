@@ -1,13 +1,23 @@
-import { Component, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  ChangeDetectionStrategy,
+  inject,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-pole2',
   imports: [RouterLink],
   templateUrl: './pole2.html',
-  styleUrl: './pole2.scss'
+  styleUrl: './pole2.scss',
 })
 export class Pole2 implements AfterViewInit, OnDestroy {
+  private el = inject(ElementRef);
+
   private observer!: IntersectionObserver;
   private snapTimer: ReturnType<typeof setTimeout> | null = null;
 
@@ -19,8 +29,6 @@ export class Pole2 implements AfterViewInit, OnDestroy {
       window.location.hash = id;
     }
   }
-
-  constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
     window.scrollTo(0, 0);
@@ -34,7 +42,7 @@ export class Pole2 implements AfterViewInit, OnDestroy {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px 0px -80px 0px',
-      threshold: 0.1
+      threshold: 0.1,
     };
 
     this.observer = new IntersectionObserver((entries) => {
@@ -63,4 +71,3 @@ export class Pole2 implements AfterViewInit, OnDestroy {
     if (this.observer) this.observer.disconnect();
   }
 }
-

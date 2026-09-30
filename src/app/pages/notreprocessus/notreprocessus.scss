@@ -54,14 +54,13 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
 
 .hero__overlay {
   position: absolute;
-  inset: 0 auto 0 0;
+  inset: 0;
   z-index: -1;
-  width: min(65%, 60rem);
-  background: linear-gradient(90deg, rgba(8, 33, 21, 0.85) 0%, rgba(8, 33, 21, 0.4) 70%, transparent 100%);
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.15) 70%);
   
   @media (max-width: 768px) {
-    width: 100%;
-    background: rgba(8, 33, 21, 0.65);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.15) 100%);
   }
 }
 

@@ -7,7 +7,7 @@
             <h1 id="hero-title">Qui sommes-<span class="text-green">nous</span> ?</h1>
             <p class="hero__description">Depuis plus de 20 ans, nous construisons des chaînes d'approvisionnement
                 agricoles solides, fiables et durables.</p>
-            <a class="btn-premium" (click)="scrollTo('racines', $event)">Découvrir nos racines</a>
+            <a class="btn-premium" tabindex="0" (click)="scrollTo('racines', $event)" (keyup.enter)="scrollTo('racines', $event)">Découvrir nos racines</a>
         </div>
     </section>
 

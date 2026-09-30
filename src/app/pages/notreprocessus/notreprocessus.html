@@ -1,12 +1,13 @@
 <main class="pole-page pole2-page">
     <!-- 1. HERO (Kept from pole1 - Approved by user) -->
     <section class="pole-hero" aria-labelledby="hero-title">
-        <img class="hero__image" src="/process.webp" alt="Notre Processus" />
+        <img class="hero__image" src="/notre_processus_hero.jpg" alt="Notre Processus" />
         <div class="hero__overlay"></div>
         <div class="hero__content">
             <h1 id="hero-title">Notre <span class="text-green">processus</span></h1>
             <p class="hero__description">Une méthode claire avant chaque engagement.</p>
-            <a class="btn-premium" (click)="scrollTo('methode', $event)">Découvrir la méthode</a>
+            <a class="btn-premium" tabindex="0" (click)="scrollTo('methode', $event)"
+                (keyup.enter)="scrollTo('methode', $event)">Découvrir la méthode</a>
         </div>
     </section>
 
@@ -52,7 +53,7 @@
                 </div>
                 <!-- Step 2 -->
                 <div class="stack-card dark-card auto-fade-up delay-1" style="--index: 2;">
-                    <div class="stack-img"><img src="/expertiset.webp" alt="Vérifier" /></div>
+                    <div class="stack-img"><img src="/verifier_etape.jpg" alt="Vérifier" /></div>
                     <div class="stack-text">
                         <span class="step">Étape 02</span>
                         <h3>Vérifier</h3>
@@ -62,7 +63,7 @@
                 </div>
                 <!-- Step 3 -->
                 <div class="stack-card dark-card auto-fade-up delay-2" style="--index: 3;">
-                    <div class="stack-img"><img src="/plannificat.webp" alt="Structurer" /></div>
+                    <div class="stack-img"><img src="/structurer_etape.jpg" alt="Structurer" /></div>
                     <div class="stack-text">
                         <span class="step">Étape 03</span>
                         <h3>Structurer</h3>
@@ -72,7 +73,7 @@
                 </div>
                 <!-- Step 4 -->
                 <div class="stack-card dark-card auto-fade-up delay-3" style="--index: 4;">
-                    <div class="stack-img"><img src="/bilan.webp" alt="Suivre" /></div>
+                    <div class="stack-img"><img src="/suivi_terrain.jpg" alt="Suivre" /></div>
                     <div class="stack-text">
                         <span class="step">Étape 04</span>
                         <h3>Suivre</h3>
@@ -127,7 +128,7 @@
                 <!-- Après -->
                 <div class="cine-card cine-left auto-slide-left delay-2">
                     <div class="cine-visual">
-                        <img src="/bilanp.webp" alt="Après" />
+                        <img src="/resultats_consolides.jpg" alt="Après" />
                         <div class="cine-overlay"></div>
                         <div class="cine-tag" style="background: var(--navy);">3. Après</div>
                     </div>
@@ -147,7 +148,7 @@
         <div class="container text-center">
             <span class="kicker">Votre parcours</span>
             <h2 class="master-title" style="color: var(--navy); margin-bottom: 4rem;">Passer à l'action</h2>
-            
+
             <div class="dual-cta-grid">
                 <!-- Investisseur Path -->
                 <a routerLink="/nospoles/pole1" class="dual-card invest-card">
@@ -155,8 +156,10 @@
                     <div class="dual-overlay"></div>
                     <div class="dual-content">
                         <h3>Investisseur</h3>
-                        <p>Déléguez la gestion de votre terre et maximisez sa rentabilité avec un accompagnement clé en main.</p>
-                        <span class="dual-link">Découvrir le Pôle 1 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></span>
+                        <p>Déléguez la gestion de votre terre et maximisez sa rentabilité avec un accompagnement clé en
+                            main.</p>
+                        <span class="dual-link">Découvrir le Pôle 1 <i class="fa-solid fa-arrow-right"
+                                style="margin-left: 8px;"></i></span>
                     </div>
                 </a>
 
@@ -166,18 +169,20 @@
                     <div class="dual-overlay"></div>
                     <div class="dual-content">
                         <h3>Industriel</h3>
-                        <p>Sécurisez votre approvisionnement avec des cultures programmées et une traçabilité sans faille.</p>
-                        <span class="dual-link">Découvrir le Pôle 2 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></span>
+                        <p>Sécurisez votre approvisionnement avec des cultures programmées et une traçabilité sans
+                            faille.</p>
+                        <span class="dual-link">Découvrir le Pôle 2 <i class="fa-solid fa-arrow-right"
+                                style="margin-left: 8px;"></i></span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Herbe jaillissante (vege2.png) sur le footer -->
+    <!-- Herbe jaillissante (branche.webp) sur le footer 
     <div class="proc-vege-footer auto-fade-up"
         style="position: relative; text-align: center; margin-top: -120px; z-index: 10; pointer-events: none; overflow: hidden;">
-        <img src="/vege2.png" alt="" aria-hidden="true"
+        <img src="/branche.webp" alt="" aria-hidden="true"
             style="max-width: 100%; height: auto; transform: translateY(20px);" />
-    </div>
+    </div> -->
 </main>

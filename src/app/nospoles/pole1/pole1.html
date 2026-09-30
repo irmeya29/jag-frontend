@@ -1,14 +1,14 @@
 <main class="pole-page">
     <!-- 1. HERO -->
     <section class="pole-hero" aria-labelledby="hero-title">
-        <img class="hero__image" src="/hero_farmland.webp" alt="Terre agricole" />
+        <img class="hero__image" src="/pole1hero.webp" alt="Terre agricole" />
         <div class="hero__overlay"></div>
         <div class="hero__content">
             <p class="hero__eyebrow">Délégation de gestion</p>
             <h1 id="hero-title">Valoriser un terrain avec un cadre clair.</h1>
             <p class="hero__description">Nous apportons le capital intellectuel et opérationnel pour valoriser votre
                 terre à son plein potentiel.</p>
-            <a class="btn-premium" (click)="scrollTo('decouvrir', $event)">Découvrir le pôle</a>
+            <a class="btn-premium" tabindex="0" (click)="scrollTo('decouvrir', $event)" (keyup.enter)="scrollTo('decouvrir', $event)">Découvrir le pôle</a>
         </div>
     </section>
 
@@ -153,7 +153,7 @@
     <!-- 5. CLOSING CTA MASTERPIECE -->
     <section class="cta-masterpiece animate-on-scroll fade-up">
         <div class="cta-master-bg">
-            <div class="cta-master-image" style="background-image: url('/hero_farmland.webp');"></div>
+            <div class="cta-master-image" style="background-image: url('/pole1hero.webp');"></div>
             <div class="cta-master-overlay"></div>
         </div>
         

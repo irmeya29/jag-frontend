@@ -72,11 +72,11 @@ h4,
   inset: 0;
   z-index: -1;
   width: 100%;
-  /* Very light gradient just behind the text, leaving the rest of the image fully visible */
-  background: linear-gradient(90deg, rgba(8, 33, 21, 0.7) 0%, rgba(8, 33, 21, 0) 55%);
+  /* Classic soft dark gradient to improve readability without tinting the image */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.15) 70%);
 
   @media (max-width: 768px) {
-    background: linear-gradient(0deg, rgba(8, 33, 21, 0.7) 0%, rgba(8, 33, 21, 0.2) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.15) 100%);
   }
 }
 

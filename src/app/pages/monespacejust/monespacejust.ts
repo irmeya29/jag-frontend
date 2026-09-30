@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component , ChangeDetectionStrategy} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-monespacejust',
   imports: [FormsModule],
   templateUrl: './monespacejust.html',
@@ -27,7 +28,7 @@ export class Monespacejust {
     message: '',
   };
 
-  formErrors: { [key: string]: string } = {};
+  formErrors: Record<string, string> = {};
   formSubmitted = false;
 
   validateForm(): boolean {

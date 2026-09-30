@@ -1,13 +1,23 @@
-import { Component, AfterViewInit, OnDestroy, ElementRef } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  ChangeDetectionStrategy,
+  inject,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-notreprocessus',
   imports: [RouterLink],
   templateUrl: './notreprocessus.html',
   styleUrl: './notreprocessus.scss',
 })
 export class Notreprocessus implements AfterViewInit, OnDestroy {
+  private el = inject(ElementRef);
+
   private observer!: IntersectionObserver;
 
   scrollTo(id: string, event: Event): void {
@@ -19,8 +29,6 @@ export class Notreprocessus implements AfterViewInit, OnDestroy {
     }
   }
 
-  constructor(private el: ElementRef) {}
-
   ngAfterViewInit(): void {
     this.initScrollReveal();
   }
@@ -29,7 +37,7 @@ export class Notreprocessus implements AfterViewInit, OnDestroy {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px 0px -80px 0px',
-      threshold: 0.1
+      threshold: 0.1,
     };
 
     this.observer = new IntersectionObserver((entries) => {

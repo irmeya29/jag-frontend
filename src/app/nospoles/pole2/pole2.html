@@ -8,7 +8,7 @@
         <p class="hero__eyebrow">Sourcing Industriel</p>
         <h1 id="hero-title">Une production lancée sur<br /><span class="text-green">besoin confirmé.</span></h1>
         <p class="hero__description">Nous bâtissons des programmes de cultures programmées pour éliminer l'incertitude sur les volumes et les prix. Bénéficiez d'offres fermes et d'une traçabilité totale.</p>
-        <a class="btn-premium btn-green" (click)="scrollTo('offre', $event)">Découvrir notre offre</a>
+        <a class="btn-premium btn-green" tabindex="0" (click)="scrollTo('offre', $event)" (keyup.enter)="scrollTo('offre', $event)">Découvrir notre offre</a>
     </div>
   </section>
 
@@ -56,7 +56,7 @@
       <div class="sticky-stack">
         <!-- Step 1 -->
         <div class="stack-card dark-card" style="--index: 1;" data-reveal>
-          <div class="stack-img"><img src="/brief.webp" alt="Cadrage Industriel" /></div>
+          <div class="stack-img"><img src="/cadrage_industriel.jpg" alt="Cadrage Industriel" /></div>
           <div class="stack-text">
             <span class="step">Étape 01</span>
             <h3>Cadrage industriel</h3>
@@ -76,7 +76,7 @@
         </div>
         <!-- Step 3 -->
         <div class="stack-card dark-card" style="--index: 3;" data-reveal data-delay="300">
-          <div class="stack-img"><img src="/terre.webp" alt="Supervision terrain" /></div>
+          <div class="stack-img"><img src="/terre-nue.webp" alt="Supervision terrain" /></div>
           <div class="stack-text">
             <span class="step">Étape 03</span>
             <h3>Supervision terrain</h3>
@@ -85,7 +85,7 @@
         </div>
         <!-- Step 4 -->
         <div class="stack-card dark-card" style="--index: 4;" data-reveal data-delay="450">
-          <div class="stack-img"><img src="/livraison.webp" alt="Livraison certifiée" /></div>
+          <div class="stack-img"><img src="/livraison_certifiee.jpg" alt="Livraison certifiée" /></div>
           <div class="stack-text">
             <span class="step">Étape 04</span>
             <h3>Livraison certifiée</h3>
@@ -175,7 +175,7 @@
         </div>
 
         <div class="target-card-floating dark-card" data-reveal data-delay="200">
-          <div class="bg-img" style="background-image: url('/femme2.webp');"></div>
+          <div class="bg-img" style="background-image: url('/dame2.webp');"></div>
           <div class="dark-overlay"></div>
           <div class="content-wrapper">
             <span class="num text-green">02</span>

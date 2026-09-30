@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
@@ -19,21 +19,19 @@ import { Subscription } from 'rxjs';
  */
 @Injectable({ providedIn: 'root' })
 export class ScrollRevealService implements OnDestroy {
+  private router = inject(Router);
+
   private observer: IntersectionObserver | null = null;
   private sub!: Subscription;
-
-  constructor(private router: Router) {}
 
   /** À appeler une seule fois depuis AppComponent.ngAfterViewInit */
   init(): void {
     this.setupObserver();
 
     // Ré-observe après chaque navigation (nouvelle page)
-    this.sub = this.router.events
-      .pipe(filter((e) => e instanceof NavigationEnd))
-      .subscribe(() => {
-        setTimeout(() => this.observeAll(), 120);
-      });
+    this.sub = this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => {
+      setTimeout(() => this.observeAll(), 120);
+    });
   }
 
   private setupObserver(): void {
@@ -49,10 +47,7 @@ export class ScrollRevealService implements OnDestroy {
 
               // Stagger sur les enfants si demandé
               if (el.hasAttribute('data-stagger')) {
-                const staggerDelay = parseInt(
-                  el.dataset['staggerDelay'] || '80',
-                  10
-                );
+                const staggerDelay = parseInt(el.dataset['staggerDelay'] || '80', 10);
                 Array.from(el.children).forEach((child, i) => {
                   (child as HTMLElement).style.transitionDelay = `${i * staggerDelay}ms`;
                   (child as HTMLElement).classList.add('is-revealed');
@@ -66,9 +61,9 @@ export class ScrollRevealService implements OnDestroy {
         });
       },
       {
-        threshold: 0.12,       // déclenche quand 12% de l'élément est visible
+        threshold: 0.12, // déclenche quand 12% de l'élément est visible
         rootMargin: '0px 0px -40px 0px', // légèrement avant d'arriver au bord
-      }
+      },
     );
 
     this.observeAll();
