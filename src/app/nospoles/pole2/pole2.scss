@@ -109,23 +109,26 @@ h4,
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 3.5rem;
-    padding-inline: 2rem;
-    border: 1px solid var(--green);
+    gap: 10px;
     background: var(--green);
-    color: var(--dark-green);
-    font-size: 1rem;
-    font-weight: 800;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 50px;
+    color: #fff;
+    padding: 16px 32px;
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
     &:hover {
-        background: var(--navy);
-        border-color: var(--navy);
-        color: #fff;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+        background: #fff;
+        color: var(--green);
+        border-color: #fff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 }
 
