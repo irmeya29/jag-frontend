@@ -1,3 +1,24 @@
+@if (isLoading()) {
+  <div class="global-loader" [class.fade-out]="isFadingOut()">
+    <div class="loader-content">
+      
+      <div class="center-reveal-container">
+        <!-- Logo hidden behind curtain -->
+        <img src="/logo.webp" alt="Just Agro Group Logo" class="loader-logo" />
+
+        <!-- Farakanlabs Curtain Effect -->
+        <div class="curtain left-curtain"></div>
+        <div class="curtain right-curtain"></div>
+      </div>
+      
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+      </div>
+      
+    </div>
+  </div>
+}
+
 <app-navbar></app-navbar>
 
 <main class="main-content">

@@ -5,10 +5,11 @@
     <img class="hero__image" src="/industriel_africain.jpg" alt="Sourcing Industriel" />
     <div class="hero__overlay"></div>
     <div class="hero__content">
-        <p class="hero__eyebrow">Sourcing Industriel</p>
-        <h1 id="hero-title">Une production lancée sur<br /><span class="text-green">besoin confirmé.</span></h1>
-        <p class="hero__description">Nous bâtissons des programmes de cultures programmées pour éliminer l'incertitude sur les volumes et les prix. Bénéficiez d'offres fermes et d'une traçabilité totale.</p>
-        <a class="btn-premium btn-green" tabindex="0" (click)="scrollTo('offre', $event)" (keyup.enter)="scrollTo('offre', $event)">Découvrir notre offre</a>
+      <h1 id="hero-title">Une production lancée sur<br /><span class="text-green">besoin confirmé.</span></h1>
+      <p class="hero__description">Nous bâtissons des programmes de cultures programmées pour éliminer l'incertitude sur
+        les volumes et les prix. Bénéficiez d'offres fermes et d'une traçabilité totale.</p>
+      <a class="btn-premium btn-green" tabindex="0" (click)="scrollTo('offre', $event)"
+        (keyup.enter)="scrollTo('offre', $event)">Découvrir notre offre</a>
     </div>
   </section>
 
@@ -189,21 +190,23 @@
   </section>
 
   <!-- 6. CLOSING CTA MASTERPIECE -->
-  <section class="cta-masterpiece" data-reveal>
-      <div class="cta-master-bg">
-          <div class="cta-master-image" style="background-image: url('/industrie.webp');"></div>
-          <div class="cta-master-overlay"></div>
+  <section class="cta-masterpiece animate-on-scroll fade-up">
+    <div class="cta-master-bg">
+      <div class="cta-master-image" style="background-image: url('/industrie.webp');"></div>
+      <div class="cta-master-overlay"></div>
+    </div>
+
+    <div class="container cta-master-content">
+      <div class="cta-master-left">
+        <span class="kicker text-green"
+          style="margin-bottom: 1.5rem; display: block; font-size: 1rem; letter-spacing: 3px;">SÉCURISEZ VOS FLUX</span>
+        <h2 class="master-title">Un besoin <br />à <span class="text-green">garantir ?</span></h2>
       </div>
-      
-      <div class="container cta-master-content">
-          <div class="cta-master-left">
-              <span class="kicker text-green" style="margin-bottom: 1.5rem; display: block; font-size: 1rem; letter-spacing: 3px;">SÉCURISEZ VOS FLUX</span>
-              <h2 class="master-title">Un besoin <br/>à <span class="text-green">garantir ?</span></h2>
-          </div>
-          <div class="cta-master-right">
-              <p class="master-desc">Nos processus de production sécurisent vos flux et matières premières pour garantir l'activité de vos usines en continu. Ne laissez plus la qualité ou les volumes au hasard.</p>
-              <a routerLink="/contact" class="btn-cta-global">Sécuriser mon approvisionnement</a>
-          </div>
+      <div class="cta-master-right">
+        <p class="master-desc">Nos processus de production sécurisent vos flux et matières premières pour garantir
+          l'activité de vos usines en continu. Ne laissez plus la qualité ou les volumes au hasard.</p>
+        <a routerLink="/contact" class="btn-cta-global">Sécuriser mon approvisionnement</a>
       </div>
+    </div>
   </section>
 </main>

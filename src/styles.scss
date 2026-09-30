@@ -938,7 +938,7 @@ select {
     scroll-padding-top: var(--navbar-height, 81px);
 
     .pole2-page {
-      section {
+      section:not(.cta-masterpiece) {
         scroll-snap-align: start;
         height: auto;
         min-height: calc(100vh - var(--navbar-height, 81px));
@@ -961,9 +961,11 @@ select {
         flex-direction: row;
       }
     }
+    .cta-masterpiece { scroll-snap-align: start; }
 
     app-footer {
       display: block;
+      scroll-snap-align: end;
     }
   }
 }

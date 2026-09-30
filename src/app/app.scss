@@ -6,3 +6,119 @@
   // de body::before (patt1.png) s'afficher en transparence.
   background-color: transparent;
 }
+
+/* GLOBAL LOADER - LOGO REVEAL */
+.global-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff; /* White background to match the logo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
+  will-change: transform;
+
+  &.fade-out {
+    transform: translateY(-100%);
+  }
+
+  .loader-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    animation: slideUpContent 0.8s cubic-bezier(0.77, 0, 0.175, 1) 2.2s forwards;
+  }
+
+  .center-reveal-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    overflow: hidden; /* hides the curtains when they slide out */
+  }
+
+  .loader-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: revealLogo 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+  }
+
+  .curtain {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #ffffff;
+    background-image: repeating-linear-gradient(
+      90deg, 
+      var(--green) 0px, 
+      var(--green) 3px, 
+      transparent 3px, 
+      transparent 10px
+    );
+    z-index: 10;
+  }
+
+  .left-curtain {
+    left: 0;
+    transform-origin: left;
+    animation: openCurtainLeft 1s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;
+  }
+
+  .right-curtain {
+    right: 0;
+    transform-origin: right;
+    animation: openCurtainRight 1s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;
+  }
+
+  .progress-track {
+    width: 250px;
+    height: 3px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    
+    .progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--green);
+      width: 0%;
+      animation: loadProgressFarakan 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    }
+  }
+}
+
+@keyframes openCurtainLeft {
+  to { transform: translateX(-101%); }
+}
+
+@keyframes openCurtainRight {
+  to { transform: translateX(101%); }
+}
+
+@keyframes revealLogo {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUpContent {
+  to { transform: translateY(-40px); opacity: 0; }
+}
+
+@keyframes loadProgressFarakan {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
