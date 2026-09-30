@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Optionnel: pointez vers votre sitemap lorsque vous en aurez un
+# Sitemap: https://justagrogroup.com/sitemap.xml

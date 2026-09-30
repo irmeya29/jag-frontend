@@ -143,6 +143,7 @@
 }
 
 html {
+  overflow-x: hidden;
   font-size: 16px;
   scroll-behavior: smooth;
   scroll-padding-top: 81px;
@@ -150,6 +151,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-family: var(--font-body);
   font-size: var(--text-base);
   font-weight: var(--fw-regular);
@@ -314,7 +316,8 @@ select {
     color var(--transition-fast),
     box-shadow var(--transition-fast),
     transform var(--transition-fast);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   cursor: pointer;
   text-decoration: none;
   user-select: none;
@@ -806,7 +809,8 @@ select {
   height: 1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
 }
 
 
@@ -1040,7 +1044,8 @@ body:has(app-hero1) .main-content {
   color: var(--white, #fff);
   box-shadow: 0 4px 10px rgba(15, 76, 58, 0.2);
   transition: all var(--transition-base, 0.3s ease);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
 
@@ -1052,3 +1057,28 @@ body:has(app-hero1) .main-content {
     box-shadow: 0 6px 15px rgba(46, 170, 99, 0.15);
   }
 }
+
+/* SCROLL REVEAL ANIMATIONS */
+.fade-up, .fade-in-up, [data-reveal] {
+  opacity: 0;
+}
+
+.reveal-init {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-from-bottom { transform: translateY(30px); }
+.reveal-from-left { transform: translateX(-30px); }
+.reveal-from-right { transform: translateX(30px); }
+.reveal-from-top { transform: translateY(-30px); }
+
+.is-revealed {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+.delay-1 { transition-delay: 0.15s !important; }
+.delay-2 { transition-delay: 0.3s !important; }
+.delay-3 { transition-delay: 0.45s !important; }

@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap');
 
-<<<<<<< HEAD .hero-page {
+.hero-page {
     min-height: 100dvh;
     background: #fff;
-}
-
-=======.hero-page {
-    min-height: 100dvh;
-    background: #fff;
+    overflow-x: hidden;
 }
 
 .hero {
@@ -134,7 +130,7 @@ h1 {
     writing-mode: vertical-rl;
 }
 
->>>>>>>eb3ef35bccb957da12cf19e0571bc5048b14ae26 .hero {
+.hero {
     position: relative;
     isolation: isolate;
     min-height: 100dvh;
@@ -142,7 +138,7 @@ h1 {
     color: #fff;
 }
 
-<<<<<<< HEAD .hero__image {
+.hero__image {
     position: absolute;
     inset: 0;
     z-index: -2;
@@ -152,7 +148,7 @@ h1 {
     object-position: center;
 }
 
-=======.pathways {
+.pathways {
     padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 7vw, 8rem);
     background: #fff;
 }
@@ -227,8 +223,11 @@ h1 {
 .commitment-list h3 {
     margin: 0;
     color: #fff;
-    font-size: clamp(1.8rem, 2.5vw, 2.65rem);
+    font-size: clamp(1.4rem, 4vw, 2.65rem);
     font-weight: 800;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .pathway p,
@@ -248,7 +247,7 @@ h1 {
     color: #2eaa63;
 }
 
->>>>>>>eb3ef35bccb957da12cf19e0571bc5048b14ae26 .hero__scrim {
+.hero__scrim {
     position: absolute;
     inset: 0 auto 0 0;
     z-index: -1;
@@ -442,6 +441,7 @@ h1 {
 .pathways {
     padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 7vw, 8rem);
     background: #fff;
+    overflow-x: hidden;
 }
 
 .pathways__heading {
@@ -456,12 +456,18 @@ h1 {
 
 .pathway {
     display: grid;
-    grid-template-columns: 1.15fr .85fr;
+    grid-template-columns: 1fr;
     width: min(100%, 76rem);
-    min-height: 32rem;
+    min-height: auto;
     margin: 0 auto;
     background: #123b21;
     color: #fff;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1.15fr .85fr;
+        min-height: 32rem;
+    }
 }
 
 .pathway+.pathway {
@@ -469,8 +475,11 @@ h1 {
 }
 
 .pathway--reverse {
-    grid-template-columns: .85fr 1.15fr;
     background: #0d2137;
+
+    @media (min-width: 768px) {
+        grid-template-columns: .85fr 1.15fr;
+    }
 }
 
 .pathway--reverse img {
@@ -514,8 +523,11 @@ h1 {
 .commitment-list h3 {
     margin: 0;
     color: #fff;
-    font-size: clamp(1.8rem, 2.5vw, 2.65rem);
+    font-size: clamp(1.4rem, 4vw, 2.65rem);
     font-weight: 800;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .pathway p,
@@ -596,13 +608,13 @@ h1 {
 .commitment-accordion {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     width: min(100%, 84rem);
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    height: 65vh;
-    min-height: 500px;
+    height: auto;
+    min-height: auto;
 
     @media (min-width: 992px) {
         flex-direction: row;
@@ -614,12 +626,18 @@ h1 {
 .accordion-item {
     flex: 1;
     position: relative;
-    border-radius: 30px;
+    border-radius: 20px;
     overflow: hidden;
     transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     background: #112a46;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    min-height: 220px;
+
+    @media (min-width: 992px) {
+        border-radius: 30px;
+        min-height: auto;
+    }
 
     @media (min-width: 992px) {
         &:hover {
@@ -679,7 +697,7 @@ h1 {
     .item-content {
         position: relative;
         z-index: 2;
-        padding: 3rem 2.5rem;
+        padding: clamp(1.5rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2.5rem);
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -701,10 +719,9 @@ h1 {
 
         h3 {
             color: #fff;
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
             font-weight: 700;
             margin: 0;
-            white-space: nowrap;
         }
     }
 
@@ -751,10 +768,6 @@ h1 {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
-        }
-
-        h3 {
-            white-space: normal;
         }
     }
 }
@@ -845,7 +858,7 @@ h1 {
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 767px) {
     .hero__image {
         object-position: 62% center;
     }
@@ -873,9 +886,6 @@ h1 {
         display: none;
     }
 
-    .manifesto,
-    .pathway,
-    .pathway--reverse,
     .closing {
         grid-template-columns: 1fr;
     }

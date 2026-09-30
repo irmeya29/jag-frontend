@@ -1,157 +1,225 @@
 <main class="mej-page pole-page">
 
-  <!-- 1. HERO (Premium Dark) -->
-  <section class="mej-hero-premium" aria-labelledby="mej-title">
-      <img class="hero__image" src="/portail_africain.jpg" alt="Mon Espace Just" />
-      <div class="hero__overlay"></div>
-      
-      <div class="hero__container container">
-          <div class="hero__glass-card auto-fade-up">
-              <span class="kicker text-green">Portail Partenaire</span>
-              <h1 id="mej-title" class="mej-title">
-                  Un accès sécurisé, <br><span class="text-green">selon votre profil.</span>
-              </h1>
-              <p class="mej-desc">
-                  Accédez à votre tableau de bord personnalisé. Suivez, analysez et pilotez vos engagements avec Just Agro Group en toute transparence.
-              </p>
-              
-              <div class="mej-cta-group" style="margin-top: 2rem;">
-                  <a href="https://justagrogroup.com/mon-espace-just/login" target="_blank" rel="noopener noreferrer" class="btn btn--danger btn-espace">
-                      SE CONNECTER
-                  </a>
-                  <button type="button" (click)="scrollTo('acces-info', $event)" class="btn-outline-premium">
-                      Comment y accéder ?
-                  </button>
-              </div>
-          </div>
-      </div>
-  </section>
+    <!-- 1. HERO (PROFESSIONAL CORPORATE PORTAL) -->
+    <section class="mej-hero-pro">
+        <div class="container h-100">
+            <div class="hero-split">
+                <!-- Left Content -->
+                <div class="hero-content auto-fade-up">
+                    <div class="badge-pro">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Accès Restreint
+                    </div>
+                    <h1 class="hero-title">
+                        Espace <br><span class="text-green">Partenaire</span>
+                    </h1>
+                    <p class="hero-desc">
+                        L'interface exclusive dédiée à nos investisseurs privés et partenaires industriels. Suivez vos
+                        performances, vos volumes et vos contrats en temps réel.
+                    </p>
+                    <div class="cta-group">
+                        <a href="https://justagrogroup.com/mon-espace-just/login" target="_blank"
+                            rel="noopener noreferrer" class="btn-premium">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px;">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                <polyline points="10 17 15 12 10 7" />
+                                <line x1="15" y1="12" x2="3" y2="12" />
+                            </svg>
+                            Se connecter
+                        </a>
+                        <button type="button" (click)="scrollTo('acces-info', $event)" class="btn-outline-pro">
+                            Comment y accéder ?
+                        </button>
+                    </div>
+                </div>
 
-  <!-- 2. ESPACES (Ultra-Minimalist Typographic Split) -->
-  <section class="premium-section mej-typo-section" style="background: var(--navy); padding: 8rem 0;">
-      <div class="container">
-          <div class="section-heading text-center auto-fade-up" style="margin-bottom: 6rem;">
-              <span class="kicker text-green" style="letter-spacing: 3px; font-size: 0.85rem;">VOS TABLEAUX DE BORD</span>
-              <h2 class="text-white" style="font-size: clamp(2.5rem, 4vw, 3.5rem);">Un espace taillé sur mesure.</h2>
-          </div>
+                <!-- Right Image Layout -->
+                <div class="hero-visual auto-slide-right delay-1">
+                    <div class="visual-wrapper">
+                        <img src="/conn.webp" alt="Interface et résultats Just Agro Group" class="hero-image" />
+                        <div class="visual-overlay"></div>
 
-          <div class="typo-split-grid">
-              
-              <!-- Left: Investisseur -->
-              <div class="typo-column auto-slide-left delay-1">
-                  <div class="typo-header">
-                      <span class="typo-badge text-green">01</span>
-                      <h3>Investisseurs Privés</h3>
-                  </div>
-                  <p class="typo-desc">
-                      Suivez chaque étape de votre investissement en temps réel. Des données claires, transparentes et accessibles à tout moment.
-                  </p>
-                  
-                  <div class="typo-list">
-                      <div class="typo-item">
-                          <h4>Vue du projet</h4>
-                          <p>Tableau de bord global avec avancement terrain et KPIs.</p>
-                      </div>
-                      <div class="typo-item">
-                          <h4>Performance</h4>
-                          <p>Synthèses financières et rapports de rendement mensuels.</p>
-                      </div>
-                      <div class="typo-item">
-                          <h4>Transparence</h4>
-                          <p>Suivi détaillé et documenté de l'ensemble des charges.</p>
-                      </div>
-                  </div>
-              </div>
+                        <!-- Subtle Info Card overlaid on the image -->
+                        <div class="info-card">
+                            <div class="info-header">
+                                <span class="dot"></span>
+                                Connexion chiffrée
+                            </div>
+                            <p>Votre portail de données est sécurisé de bout en bout pour garantir la confidentialité de
+                                vos opérations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-              <!-- Right: Industriel -->
-              <div class="typo-column auto-slide-right delay-2">
-                  <div class="typo-header">
-                      <span class="typo-badge" style="color: #0da2e3;">02</span>
-                      <h3>Industriels & Transformateurs</h3>
-                  </div>
-                  <p class="typo-desc">
-                      Gérez vos approvisionnements avec précision. Suivez vos volumes programmés et garantissez une traçabilité sans faille.
-                  </p>
-                  
-                  <div class="typo-list">
-                      <div class="typo-item">
-                          <h4>Contrats</h4>
-                          <p>Accords, lettres d'intention et documents centralisés.</p>
-                      </div>
-                      <div class="typo-item">
-                          <h4>Approvisionnement</h4>
-                          <p>Suivi strict des tonnages contractuels et des plannings.</p>
-                      </div>
-                      <div class="typo-item">
-                          <h4>Traçabilité totale</h4>
-                          <p>Origine champ certifiée jusqu'à la livraison finale.</p>
-                      </div>
-                  </div>
-              </div>
+    <!-- 2. ESPACES (Alternating Magazine Layout) -->
+    <section class="premium-section mej-typo-section" style="background: #ffffff; overflow-x: hidden;">
+        <div class="container">
+            <div class="section-heading text-center auto-fade-up" style="margin-bottom: clamp(3rem, 8vw, 8rem);">
+                <span class="kicker text-green" style="letter-spacing: 3px; font-size: 0.85rem;">VOS TABLEAUX DE BORD</span>
+                <h2 class="text-navy" style="font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 900; letter-spacing: -1px;">Un espace taillé sur mesure.</h2>
+            </div>
 
-          </div>
-      </div>
-  </section>
+            <!-- Block 1: Investisseur -->
+            <div class="magazine-block">
+                <div class="mag-content auto-slide-left delay-1">
+                    <div class="typo-header">
+                        <span class="typo-badge text-green">01</span>
+                        <h3 style="font-size: clamp(1.8rem, 6vw, 2.5rem); color: var(--navy); margin-bottom: 1rem; font-weight: 800;">Investisseurs Privés</h3>
+                    </div>
+                    <p class="typo-desc" style="font-size: 1.15rem; line-height: 1.7; color: rgba(17,42,70,0.7); margin-bottom: 3rem;">
+                        Suivez chaque étape de votre investissement en temps réel. Des données claires, transparentes et accessibles à tout moment.
+                    </p>
 
-  <!-- 3. INFORMATION D'ACCÈS (Premium Roles Split) -->
-  <section id="acces-info" class="premium-section mej-roles-section" style="position: relative; background: var(--bg-dark); padding: 10rem 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05);">
-      <div class="container">
-          <div class="roles-split-grid">
-              
-              <!-- Left: The Statement -->
-              <div class="roles-statement auto-slide-left">
-                  <span class="kicker text-green" style="letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 1.5rem; display: block;">PROCESSUS D'ACCÈS</span>
-                  <h2 class="text-white" style="font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 900; margin-bottom: 2rem; line-height: 1.1;">
-                      La sécurité au<br><span class="text-green">premier plan.</span>
-                  </h2>
-                  <p style="color: rgba(255,255,255,0.7); font-size: 1.25rem; line-height: 1.8; margin-bottom: 2.5rem;">
-                      Les accès sont créés <strong>exclusivement</strong> par l'administration Just Agro Group. 
-                      Après l'ouverture de votre compte, vous serez redirigé automatiquement vers l'environnement correspondant à votre profil.
-                  </p>
-                  <a routerLink="/contact" class="btn btn-green">Nous contacter pour l'ouverture d'un compte</a>
-              </div>
+                    <div class="editorial-list">
+                        <div class="ed-item">
+                            <span class="ed-num text-green">01.</span>
+                            <div class="ed-text">
+                                <h4>Vue du projet</h4>
+                                <p>Tableau de bord global avec avancement terrain et KPIs.</p>
+                            </div>
+                        </div>
+                        <div class="ed-item">
+                            <span class="ed-num text-green">02.</span>
+                            <div class="ed-text">
+                                <h4>Performance</h4>
+                                <p>Synthèses financières et rapports de rendement mensuels.</p>
+                            </div>
+                        </div>
+                        <div class="ed-item">
+                            <span class="ed-num text-green">03.</span>
+                            <div class="ed-text">
+                                <h4>Transparence</h4>
+                                <p>Suivi détaillé et documenté de l'ensemble des charges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mag-visual auto-slide-right delay-2">
+                    <img src="/suivi_terrain.jpg" alt="Investisseur" class="mag-img">
+                </div>
+            </div>
 
-              <!-- Right: The Roles -->
-              <div class="roles-list-wrapper auto-slide-right delay-1">
-                  <div class="roles-glass-box">
-                      <h4 style="color: #fff; font-size: 1.2rem; margin-top: 0; margin-bottom: 2rem; font-family: 'Montserrat', sans-serif;">Tableaux de bord dédiés :</h4>
-                      
-                      <div class="role-item">
-                          <div class="role-icon" style="background: rgba(46, 170, 99, 0.15); color: var(--green);">01</div>
-                          <div class="role-text">
-                              <h5>Investisseur Privé</h5>
-                              <span>Vue financière et suivi des opérations</span>
-                          </div>
-                      </div>
-                      
-                      <div class="role-item">
-                          <div class="role-icon" style="background: rgba(13, 162, 227, 0.15); color: #0da2e3;">02</div>
-                          <div class="role-text">
-                              <h5>Industriel / Transformateur</h5>
-                              <span>Contrats, volumes et traçabilité</span>
-                          </div>
-                      </div>
-                      
-                      <div class="role-item">
-                          <div class="role-icon" style="background: rgba(255, 255, 255, 0.05); color: #fff;">03</div>
-                          <div class="role-text">
-                              <h5>Éditeur</h5>
-                              <span>Gestion des contenus et des rapports</span>
-                          </div>
-                      </div>
+            <!-- Block 2: Industriel -->
+            <div class="magazine-block reverse-block" style="margin-top: clamp(3rem, 8vw, 8rem);">
+                <div class="mag-content auto-slide-right delay-1">
+                    <div class="typo-header">
+                        <span class="typo-badge" style="color: #0da2e3;">02</span>
+                        <h3 style="font-size: clamp(1.8rem, 6vw, 2.5rem); color: var(--navy); margin-bottom: 1rem; font-weight: 800;">Industriels & Transformateurs</h3>
+                    </div>
+                    <p class="typo-desc" style="font-size: 1.15rem; line-height: 1.7; color: rgba(17,42,70,0.7); margin-bottom: 3rem;">
+                        Gérez vos approvisionnements avec précision. Suivez vos volumes programmés et garantissez une traçabilité sans faille.
+                    </p>
 
-                      <div class="role-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-                          <div class="role-icon" style="background: rgba(255, 255, 255, 0.05); color: #fff;">04</div>
-                          <div class="role-text">
-                              <h5>Administrateur</h5>
-                              <span>Configuration et gestion des accès</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                    <div class="editorial-list">
+                        <div class="ed-item">
+                            <span class="ed-num" style="color: #0da2e3;">01.</span>
+                            <div class="ed-text">
+                                <h4>Contrats</h4>
+                                <p>Accords, lettres d'intention et documents centralisés.</p>
+                            </div>
+                        </div>
+                        <div class="ed-item">
+                            <span class="ed-num" style="color: #0da2e3;">02.</span>
+                            <div class="ed-text">
+                                <h4>Approvisionnement</h4>
+                                <p>Suivi strict des tonnages contractuels et des plannings.</p>
+                            </div>
+                        </div>
+                        <div class="ed-item">
+                            <span class="ed-num" style="color: #0da2e3;">03.</span>
+                            <div class="ed-text">
+                                <h4>Traçabilité totale</h4>
+                                <p>Origine champ certifiée jusqu'à la livraison finale.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mag-visual auto-slide-left delay-2">
+                    <img src="/livraison_certifiee.jpg" alt="Industriel" class="mag-img">
+                </div>
+            </div>
 
-          </div>
-      </div>
-  </section>
+        </div>
+    </section>
+
+    <!-- 3. INFORMATION D'ACCÈS (Premium Roles Split) -->
+    <section id="acces-info" class="premium-section mej-roles-section"
+        style="position: relative; background: var(--bg-dark); overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="roles-split-grid">
+
+                <!-- Left: The Statement -->
+                <div class="roles-statement auto-slide-left">
+                    <span class="kicker text-green"
+                        style="letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 1.5rem; display: block;">PROCESSUS
+                        D'ACCÈS</span>
+                    <h2 class="text-white"
+                        style="font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 900; margin-bottom: 2rem; line-height: 1.1; word-wrap: break-word; hyphens: auto;">
+                        La sécurité au<br><span class="text-green">premier plan.</span>
+                    </h2>
+                    <p
+                        style="color: rgba(255,255,255,0.7); font-size: clamp(1rem, 3.5vw, 1.25rem); line-height: 1.8; margin-bottom: 2.5rem;">
+                        Les accès sont créés <strong>exclusivement</strong> par l'administration Just Agro Group.
+                        Après l'ouverture de votre compte, vous serez redirigé automatiquement vers l'environnement
+                        correspondant à votre profil.
+                    </p>
+                    <a routerLink="/contact" class="btn btn-green" style="display: inline-flex; text-align: center; white-space: normal; height: auto; padding: 12px 24px;">Nous contacter pour l'ouverture d'un compte</a>
+                </div>
+
+                <!-- Right: The Roles -->
+                <div class="roles-list-wrapper auto-slide-right delay-1">
+                    <div class="roles-glass-box">
+                        <h4
+                            style="color: #fff; font-size: 1.2rem; margin-top: 0; margin-bottom: 2rem; font-family: 'Montserrat', sans-serif;">
+                            Tableaux de bord dédiés :</h4>
+
+                        <div class="role-item">
+                            <div class="role-icon" style="background: rgba(46, 170, 99, 0.15); color: var(--green);">01
+                            </div>
+                            <div class="role-text">
+                                <h5>Investisseur Privé</h5>
+                                <span>Vue financière et suivi des opérations</span>
+                            </div>
+                        </div>
+
+                        <div class="role-item">
+                            <div class="role-icon" style="background: rgba(13, 162, 227, 0.15); color: #0da2e3;">02
+                            </div>
+                            <div class="role-text">
+                                <h5>Industriel / Transformateur</h5>
+                                <span>Contrats, volumes et traçabilité</span>
+                            </div>
+                        </div>
+
+                        <div class="role-item">
+                            <div class="role-icon" style="background: rgba(255, 255, 255, 0.05); color: #fff;">03</div>
+                            <div class="role-text">
+                                <h5>Éditeur</h5>
+                                <span>Gestion des contenus et des rapports</span>
+                            </div>
+                        </div>
+
+                        <div class="role-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                            <div class="role-icon" style="background: rgba(255, 255, 255, 0.05); color: #fff;">04</div>
+                            <div class="role-text">
+                                <h5>Administrateur</h5>
+                                <span>Configuration et gestion des accès</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 </main>

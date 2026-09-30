@@ -1,16 +1,29 @@
 @if (isLoading()) {
-  <div class="global-loader" [class.fade-out]="isFadingOut()">
-    <div class="loader-content">
-      
-      <!-- Logo revealed through CSS mask animation -->
-      <img src="/logo.webp" alt="Just Agro Group Logo" class="loader-logo" />
-      
+<div class="global-loader premium-loader" [class.fade-out]="isFadingOut()">
+  <div class="loader-content">
+
+    <div class="brand-reveal">
+      <div class="side-text left">JUST</div>
+
+      <div class="center-reveal-container">
+        <img src="/logo.webp" alt="Just Agro Group Logo" class="loader-logo" />
+
+        <!-- Minimalist Curtain -->
+        <div class="curtain left-curtain"></div>
+        <div class="curtain right-curtain"></div>
+      </div>
+
+      <div class="side-text right">GROUP</div>
+    </div>
+
+    <div class="progress-container">
       <div class="progress-track">
         <div class="progress-fill"></div>
       </div>
-      
     </div>
+
   </div>
+</div>
 }
 
 <app-navbar></app-navbar>
