@@ -7,12 +7,12 @@
   background-color: transparent;
 }
 
-/* GLOBAL LOADER - LOGO REVEAL */
+/* GLOBAL LOADER - MASK REVEAL */
 .global-loader {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #ffffff; /* White background to match the logo */
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,6 +20,14 @@
   pointer-events: none;
   transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
   will-change: transform;
+
+  &::before {
+    content: \'\';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(46, 170, 99, 0.05) 0%, transparent 70%);
+    z-index: 0;
+  }
 
   &.fade-out {
     transform: translateY(-100%);
@@ -32,60 +40,29 @@
     flex-direction: column;
     align-items: center;
     gap: 4rem;
-    animation: slideUpContent 0.8s cubic-bezier(0.77, 0, 0.175, 1) 2.2s forwards;
-  }
-
-  .center-reveal-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 300px;
-    overflow: hidden; /* hides the curtains when they slide out */
+    animation: slideUpContent 0.8s cubic-bezier(0.77, 0, 0.175, 1) 2.6s forwards;
   }
 
   .loader-logo {
-    width: 100%;
+    width: 220px;
     height: auto;
     object-fit: contain;
-    opacity: 0;
-    transform: scale(0.9);
-    animation: revealLogo 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
-  }
-
-  .curtain {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background-color: #ffffff;
-    background-image: repeating-linear-gradient(
-      90deg, 
-      var(--green) 0px, 
-      var(--green) 3px, 
-      transparent 3px, 
-      transparent 10px
-    );
-    z-index: 10;
-  }
-
-  .left-curtain {
-    left: 0;
-    transform-origin: left;
-    animation: openCurtainLeft 1s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;
-  }
-
-  .right-curtain {
-    right: 0;
-    transform-origin: right;
-    animation: openCurtainRight 1s cubic-bezier(0.77, 0, 0.175, 1) 0.8s forwards;
+    
+    /* The Farakanlabs Slice Mask Effect */
+    -webkit-mask-image: repeating-linear-gradient(90deg, black 0%, black 50%, transparent 50%, transparent 100%);
+    -webkit-mask-size: 8px 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: repeat;
+    
+    animation: 
+      expandMask 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards,
+      floatLogo 3s ease-in-out infinite alternate;
   }
 
   .progress-track {
-    width: 250px;
+    width: 200px;
     height: 3px;
-    background: rgba(0,0,0,0.05);
+    background: rgba(46, 170, 99, 0.1);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
@@ -96,22 +73,22 @@
       left: 0;
       height: 100%;
       background: var(--green);
+      box-shadow: 0 0 10px rgba(46, 170, 99, 0.5);
       width: 0%;
-      animation: loadProgressFarakan 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      animation: loadProgressFarakan 2.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
     }
   }
 }
 
-@keyframes openCurtainLeft {
-  to { transform: translateX(-101%); }
+@keyframes expandMask {
+  0% { -webkit-mask-size: 8px 100%; }
+  40% { -webkit-mask-size: 8px 100%; } /* Hold the sliced effect briefly */
+  100% { -webkit-mask-size: 3000px 100%; }
 }
 
-@keyframes openCurtainRight {
-  to { transform: translateX(101%); }
-}
-
-@keyframes revealLogo {
-  to { opacity: 1; transform: scale(1); }
+@keyframes floatLogo {
+  0% { transform: translateY(0px) scale(0.95); }
+  100% { transform: translateY(-10px) scale(1); }
 }
 
 @keyframes slideUpContent {

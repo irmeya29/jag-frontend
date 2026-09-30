@@ -5,11 +5,18 @@
     <img class="hero__image" src="/industriel_africain.jpg" alt="Sourcing Industriel" />
     <div class="hero__overlay"></div>
     <div class="hero__content">
+<<<<<<< HEAD
       <h1 id="hero-title">Une production lancée sur<br /><span class="text-green">besoin confirmé.</span></h1>
       <p class="hero__description">Nous bâtissons des programmes de cultures programmées pour éliminer l'incertitude sur
         les volumes et les prix. Bénéficiez d'offres fermes et d'une traçabilité totale.</p>
       <a class="btn-premium btn-green" tabindex="0" (click)="scrollTo('offre', $event)"
         (keyup.enter)="scrollTo('offre', $event)">Découvrir notre offre</a>
+=======
+      <p class="hero__eyebrow">Sourcing Industriel</p>
+      <h1 id="hero-title">Une production lancée sur<br /><span class="text-green">besoin confirmé.</span></h1>
+      <p class="hero__description">Nous bâtissons des programmes de cultures programmées pour éliminer l'incertitude sur les volumes et les prix. Bénéficiez d'offres fermes et d'une traçabilité totale.</p>
+      <a class="btn-premium btn-green" tabindex="0" (click)="scrollTo('offre', $event)" (keyup.enter)="scrollTo('offre', $event)">Découvrir notre offre</a>
+>>>>>>> eb3ef35bccb957da12cf19e0571bc5048b14ae26
     </div>
   </section>
 
@@ -20,8 +27,7 @@
         <div class="box-text">
           <span class="kicker">Le défi</span>
           <h2>Sécurisez vos flux<br />à la source.</h2>
-          <p>Nous bâtissons des programmes de cultures programmées pour éliminer l'incertitude sur les volumes et les
-            prix.</p>
+          <p>Nous bâtissons des programmes de cultures programmées pour éliminer l'incertitude sur les volumes et les prix.</p>
           <ul class="check-list">
             <li>
               <div class="icon-check">✓</div>
@@ -50,8 +56,7 @@
       <div class="section-heading text-center" data-reveal>
         <span class="kicker">Méthodologie</span>
         <h2 class="text-white">Les 4 étapes de la culture planifiée</h2>
-        <p class="text-light">De la qualification du besoin à la livraison certifiée, un parcours structuré et traçable.
-        </p>
+        <p class="text-light">De la qualification du besoin à la livraison certifiée, un parcours structuré et traçable.</p>
       </div>
 
       <div class="sticky-stack">
@@ -61,8 +66,7 @@
           <div class="stack-text">
             <span class="step">Étape 01</span>
             <h3>Cadrage industriel</h3>
-            <p>Recueil précis des besoins, volumes et contraintes de production spécifiques à votre cahier des charges.
-            </p>
+            <p>Recueil précis des besoins, volumes et contraintes de production spécifiques à votre cahier des charges.</p>
           </div>
         </div>
         <!-- Step 2 -->
@@ -71,8 +75,7 @@
           <div class="stack-text">
             <span class="step">Étape 02</span>
             <h3>Planification</h3>
-            <p>Plan d'achat, allocation des ressources et calendrier de cultures rigoureusement verrouillés par contrat.
-            </p>
+            <p>Plan d'achat, allocation des ressources et calendrier de cultures rigoureusement verrouillés par contrat.</p>
           </div>
         </div>
         <!-- Step 3 -->
@@ -90,60 +93,45 @@
           <div class="stack-text">
             <span class="step">Étape 04</span>
             <h3>Livraison certifiée</h3>
-            <p>Réception qualifiée, pesée validée et transmission d'un dossier de traçabilité complet de bout en bout.
-            </p>
+            <p>Réception qualifiée, pesée validée et transmission d'un dossier de traçabilité complet de bout en bout.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. TRANSFORM SPLIT (Cinematic Flow) -->
+  <!-- 4. TRANSFORM SPLIT (Split-Screen Cinématique Continu) -->
   <section class="premium-section transform-cinematic-section">
-    <div class="container">
+    <div class="container-fluid px-0">
       <div class="section-heading text-center" data-reveal>
         <span class="kicker">La Synergie</span>
         <h2 class="text-white">Un partenariat industriel parfait.</h2>
+        <p class="synergy-subtitle text-white-70">Une chaîne de valeur fluide et sécurisée, de la culture en plein champ jusqu'au produit fini.</p>
       </div>
 
-      <div class="cinematic-flow">
-        <!-- Left: JAG -->
-        <div class="cine-card cine-left" data-reveal>
-          <div class="cine-visual">
-            <img src="/main-mais.webp" alt="Matière première brute" />
-            <div class="cine-overlay"></div>
-            <div class="cine-tag">1. Notre Rôle</div>
-          </div>
-          <div class="cine-content">
+      <div class="cinematic-split-viewport" data-reveal>
+        <!-- Côté Gauche : Champ agricole -->
+        <div class="split-pane split-pane-left">
+          <div class="split-image" style="background-image: url('/champ.jpg');"></div>
+          <div class="split-overlay"></div>
+          <div class="split-content">
+            <span class="split-tag">1. Notre Rôle</span>
             <h3>La matière brute</h3>
-            <p>Culture, supervision agronomique et récolte. Nous vous livrons une matière première d'une qualité
-              irréprochable.</p>
+            <p>Culture, supervision agronomique et récolte. Nous vous livrons une matière première d'une qualité irréprochable.</p>
           </div>
         </div>
 
-        <!-- Center Glowing Connection -->
-        <div class="cine-connector" data-reveal data-delay="150">
-          <div class="pulse-line">
-            <div class="pulse-dot"></div>
-          </div>
-          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </div>
+        <!-- Fine ligne verticale blanche élégante -->
+        <div class="split-divider-line" aria-hidden="true"></div>
 
-        <!-- Right: Client -->
-        <div class="cine-card cine-right" data-reveal data-delay="300">
-          <div class="cine-visual">
-            <img src="/industrie.webp" alt="Produit industriel transformé" />
-            <div class="cine-overlay"></div>
-            <div class="cine-tag tag-green">2. Votre Rôle</div>
-          </div>
-          <div class="cine-content">
+        <!-- Côté Droit : Industrie -->
+        <div class="split-pane split-pane-right">
+          <div class="split-image" style="background-image: url('/industrie.webp');"></div>
+          <div class="split-overlay"></div>
+          <div class="split-content">
+            <span class="split-tag tag-green">2. Votre Rôle</span>
             <h3>Le produit transformé</h3>
-            <p>Transformation industrielle, packaging et distribution. Vous vous concentrez sereinement sur votre cœur
-              de métier.</p>
+            <p>Transformation industrielle, packaging et distribution. Vous vous concentrez sereinement sur votre cœur de métier.</p>
           </div>
         </div>
       </div>
@@ -156,8 +144,7 @@
       <div class="section-heading text-center" data-reveal>
         <span class="kicker">Tableau de bord</span>
         <h2>Contrôlez vos flux agricoles<br />en un clic.</h2>
-        <p>Une vision centralisée de vos volumes, de vos fermes partenaires et de la performance de chaque livraison.
-        </p>
+        <p>Une vision centralisée de vos volumes, de vos fermes partenaires et de la performance de chaque livraison.</p>
       </div>
 
       <div class="target-overlap-layout">
@@ -171,8 +158,7 @@
           </div>
           <span class="num">01</span>
           <h3>100% Piloté</h3>
-          <p>Planification des approvisionnements, gestion des engagements producteurs et visibilité en temps réel sur
-            chaque lot.</p>
+          <p>Planification des approvisionnements, gestion des engagements producteurs et visibilité en temps réel sur chaque lot.</p>
         </div>
 
         <div class="target-card-floating dark-card" data-reveal data-delay="200">
@@ -181,8 +167,7 @@
           <div class="content-wrapper">
             <span class="num text-green">02</span>
             <h3>Vente Garantie</h3>
-            <p>Offres fermes, accès prioritaire aux volumes disponibles et communication proactive à chaque étape de la
-              production.</p>
+            <p>Offres fermes, accès prioritaire aux volumes disponibles et communication proactive à chaque étape de la production.</p>
           </div>
         </div>
       </div>
@@ -190,7 +175,11 @@
   </section>
 
   <!-- 6. CLOSING CTA MASTERPIECE -->
+<<<<<<< HEAD
   <section class="cta-masterpiece animate-on-scroll fade-up">
+=======
+  <section class="cta-masterpiece" data-reveal>
+>>>>>>> eb3ef35bccb957da12cf19e0571bc5048b14ae26
     <div class="cta-master-bg">
       <div class="cta-master-image" style="background-image: url('/industrie.webp');"></div>
       <div class="cta-master-overlay"></div>
@@ -198,6 +187,7 @@
 
     <div class="container cta-master-content">
       <div class="cta-master-left">
+<<<<<<< HEAD
         <span class="kicker text-green"
           style="margin-bottom: 1.5rem; display: block; font-size: 1rem; letter-spacing: 3px;">SÉCURISEZ VOS FLUX</span>
         <h2 class="master-title">Un besoin <br />à <span class="text-green">garantir ?</span></h2>
@@ -205,8 +195,16 @@
       <div class="cta-master-right">
         <p class="master-desc">Nos processus de production sécurisent vos flux et matières premières pour garantir
           l'activité de vos usines en continu. Ne laissez plus la qualité ou les volumes au hasard.</p>
+=======
+        <span class="kicker text-green" style="margin-bottom: 1.5rem; display: block; font-size: 1rem; letter-spacing: 3px;">SÉCURISEZ VOS FLUX</span>
+        <h2 class="master-title">Un besoin <br />à <span class="text-green">garantir ?</span></h2>
+      </div>
+      <div class="cta-master-right">
+        <p class="master-desc">Nos processus de production sécurisent vos flux et matières premières pour garantir l'activité de vos usines en continu. Ne laissez plus la qualité ou les volumes au hasard.</p>
+>>>>>>> eb3ef35bccb957da12cf19e0571bc5048b14ae26
         <a routerLink="/contact" class="btn-cta-global">Sécuriser mon approvisionnement</a>
       </div>
     </div>
   </section>
+
 </main>

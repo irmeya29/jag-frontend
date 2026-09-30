@@ -2,14 +2,8 @@
   <div class="global-loader" [class.fade-out]="isFadingOut()">
     <div class="loader-content">
       
-      <div class="center-reveal-container">
-        <!-- Logo hidden behind curtain -->
-        <img src="/logo.webp" alt="Just Agro Group Logo" class="loader-logo" />
-
-        <!-- Farakanlabs Curtain Effect -->
-        <div class="curtain left-curtain"></div>
-        <div class="curtain right-curtain"></div>
-      </div>
+      <!-- Logo revealed through CSS mask animation -->
+      <img src="/logo.webp" alt="Just Agro Group Logo" class="loader-logo" />
       
       <div class="progress-track">
         <div class="progress-fill"></div>
