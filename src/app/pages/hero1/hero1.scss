@@ -161,8 +161,8 @@ h1 { max-width: 10ch; margin: 0; color: #fff; font-size: clamp(3rem, 5.3vw, 5.55
     }
 
     &.item-1 .item-bg { background-image: url('/hero_farmland.webp'); }
-    &.item-2 .item-bg { background: linear-gradient(135deg, #194a31, #0f2e1f); }
-    &.item-3 .item-bg { background: linear-gradient(135deg, #2eaa63, #1c7240); }
+    &.item-2 .item-bg { background-image: url('/coffre.webp'); }
+    &.item-3 .item-bg { background-image: url('/femme2.webp'); }
 
     .item-overlay {
         position: absolute;
