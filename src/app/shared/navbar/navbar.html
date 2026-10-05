@@ -1,66 +1,72 @@
 <nav class="navbar animate-fadeIn">
   <div class="container navbar-container">
-    <!-- Logo -->
-    <a routerLink="/" class="logo-link" (click)="closeMenu()">
-      <img src="/logo.webp" alt="Just Agro Group Logo" class="logo-img" />
-    </a>
-
-    <!-- Mobile Menu Button -->
+    
+    <!-- Mobile Menu Button (Left on Mobile) -->
     <button class="mobile-toggle" [class.is-active]="isMenuOpen()" (click)="toggleMenu()" aria-label="Toggle menu">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
     </button>
 
-    <!-- Nav Links -->
-    <div class="nav-menu" [class.is-open]="isMenuOpen()">
+    <!-- Left Nav Links -->
+    <div class="nav-menu nav-menu-left" [class.is-open]="isMenuOpen()">
       <ul class="nav-list">
         <li class="nav-item">
-          <a routerLink="/hero1" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Accueil</a>
+          <a routerLink="/hero1" routerLinkActive="active" class="nav-link" (click)="closeMenu()">
+            <span class="link-text">Accueil</span>
+          </a>
         </li>
         <li class="nav-item has-dropdown" [class.is-active]="isDropdownOpen()">
           <a class="nav-link dropdown-toggle" tabindex="0" (click)="toggleDropdown($event)" (keyup.enter)="toggleDropdown($event)">
-            Nos Pôles
+            <span class="link-text">Nos Pôles</span>
             <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </a>
           <ul class="dropdown-menu">
             <li><a routerLink="/nospoles/pole1" routerLinkActive="active" class="dropdown-link"
-                (click)="closeMenu()">Maîtrise d’Ouvrage Agricole </a></li>
+                (click)="closeMenu()">Maîtrise d’Ouvrage</a></li>
             <li><a routerLink="/nospoles/pole2" routerLinkActive="active" class="dropdown-link"
-                (click)="closeMenu()">Fournisseur Contractuel Industriel </a></li>
+                (click)="closeMenu()">Fournisseur Industriel</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a routerLink="/notre-processus" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Notre
-            Processus</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/realisations" routerLinkActive="active" class="nav-link"
-            (click)="closeMenu()">Réalisations</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/actualites" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Actualités</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="closeMenu()">Contact</a>
+          <a routerLink="/notre-processus" routerLinkActive="active" class="nav-link" (click)="closeMenu()">
+            <span class="link-text">Processus</span>
+          </a>
         </li>
       </ul>
+    </div>
 
-      <!-- Mobile CTA (Only visible inside drawer on mobile) -->
-      <div class="mobile-cta-only">
-        <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace btn--block" (click)="closeMenu()">
-          MON ESPACE JUST
+    <!-- Centered Logo -->
+    <div class="nav-center-brand">
+      <a routerLink="/" class="logo-link" (click)="closeMenu()">
+        <img src="/logo.webp" alt="Just Agro Group Logo" class="logo-img" />
+      </a>
+    </div>
+
+    <!-- Right Nav Links & CTA -->
+    <div class="nav-menu nav-menu-right" [class.is-open]="isMenuOpen()">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a routerLink="/realisations" routerLinkActive="active" class="nav-link" (click)="closeMenu()">
+            <span class="link-text">Réalisations</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/actualites" routerLinkActive="active" class="nav-link" (click)="closeMenu()">
+            <span class="link-text">Actualités</span>
+          </a>
+        </li>
+      </ul>
+      
+      <!-- CTA inside the right menu for perfect alignment -->
+      <div class="nav-cta">
+        <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace" (click)="closeMenu()">
+          ESPACE JUST
         </a>
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="nav-cta">
-      <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace" (click)="closeMenu()">
-        MON ESPACE JUST
-      </a>
-    </div>
   </div>
 </nav>
