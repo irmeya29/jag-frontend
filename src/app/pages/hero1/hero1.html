@@ -1,95 +1,251 @@
-<main class="hero-split-page">
-    <!-- SPLIT SCREEN HERO -->
-    <section class="split-hero">
-        
-        <!-- Central Element: Bold Branding -->
-        <div class="split-hero__center-badge">
-            <div class="brand-name">JUST AGRO GROUP</div>
-            <div class="brand-tagline">Excellence & Audace</div>
+<main class="pole-page hero1-page">
+
+    <!-- =====================================
+         1. CINEMATIC SWITCHER HERO (Intact)
+         ===================================== -->
+    <section class="pole-hero cinematic-hero" [class.is-pole2]="activeTab() === 'pole2'">
+
+        <!-- Crazy Ambient Glows -->
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+
+        <div class="hero-bg-container">
+            <img src="/drones-maïs.jpg" alt="Terres agricoles" class="bg-img bg-pole1" />
+            <img src="/drones.jpg" alt="Matières premières" class="bg-img bg-pole2" />
+            <div class="section-overlay gradient-overlay"></div>
+            <!-- Dust Particles (Subtle dots) -->
+            <div class="particles-overlay"></div>
         </div>
 
-        <!-- LEFT PANEL: PROPRIETAIRES -->
-        <div class="split-panel panel-left">
-            <div class="panel-bg" style="background-image: url('/terr.webp');"></div>
-            <div class="panel-overlay"></div>
-            
-            <div class="panel-content">
-                <span class="panel-eyebrow">Pôle 01</span>
-                <h1 class="panel-title">Propriétaires<br>Fonciers</h1>
-                <div class="panel-reveal">
-                    <p class="panel-desc">
-                        Vous possédez la terre, nous y imposons la rentabilité. 
-                        Notre ingénierie agronomique de pointe valorise votre patrimoine sans compromis.
-                    </p>
-                    <a routerLink="/nospoles/pole1" class="panel-cta">
-                        Libérer le potentiel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="container hero-content">
+
+            <!-- MISSION STATEMENT -->
+
+
+            <div class="audience-switcher-wrap fade-up delay-1">
+                <div class="audience-switcher magnetic-hover">
+                    <button class="switcher-btn" [class.active]="activeTab() === 'pole1'" (click)="setTab('pole1')">
+                        Propriétaires Fonciers
+                    </button>
+                    <button class="switcher-btn" [class.active]="activeTab() === 'pole2'" (click)="setTab('pole2')">
+                        Partenaires Industriels
+                    </button>
+                    <div class="switcher-pill"></div>
+                </div>
+            </div>
+
+            <!-- POLE 1 TEXT -->
+            <div class="hero-text-block text-pole1">
+                <div class="badge-wrap fade-up delay-2">
+                    <!--<span class="badge badge--green glow-badge">Pôle 01</span>-->
+                </div>
+                <h1 class="hero-title text-white fade-up delay-3">
+                    Nous cultivons votre terre.<br><span class="text-gradient-green">Vous récoltez les profits.</span>
+                </h1>
+                <p class="hero-desc fade-up delay-4">
+                    Nous prenons le contrôle opérationnel de vos terres avec une ingénierie agronomique de pointe. Une
+                    rentabilité maximale, garantie et sans compromis.
+                </p>
+                <div class="fade-up delay-5 magnetic-btn">
+                    <a routerLink="/nospoles/pole1" class="btn-premium btn-premium--green btn-glow">
+                        Découvrir notre approche
+                    </a>
+                </div>
+            </div>
+
+            <!-- POLE 2 TEXT -->
+            <div class="hero-text-block text-pole2">
+                <div class="badge-wrap fade-up delay-2">
+                    <!-- <span class="badge badge--blue glow-badge">Pôle 02</span> -->
+                </div>
+                <h1 class="hero-title text-white fade-up delay-3">
+                    Nous produisons vos volumes.<br><span class="text-gradient-blue">Vous sécurisez votre usine.</span>
+                </h1>
+                <p class="hero-desc fade-up delay-4">
+                    Sécurisez vos lignes de production avec un sourcing agricole rigoureusement tracé, certifié et
+                    garanti par des contrats fermes.
+                </p>
+                <div class="fade-up delay-5 magnetic-btn">
+                    <a routerLink="/nospoles/pole2" class="btn-premium btn-premium--blue btn-glow">
+                        Sécuriser vos approvisionnements
                     </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- RIGHT PANEL: INDUSTRIELS -->
-        <div class="split-panel panel-right">
-            <div class="panel-bg" style="background-image: url('/mat-premi.webp');"></div>
-            <div class="panel-overlay panel-overlay--alt"></div>
-            
-            <div class="panel-content">
-                <span class="panel-eyebrow">Pôle 02</span>
-                <h1 class="panel-title">Partenaires<br>Industriels</h1>
-                <div class="panel-reveal">
-                    <p class="panel-desc">
-                        Sécurisez vos flux d'approvisionnement. 
-                        Une traçabilité absolue, une qualité constante et une production rigoureusement contrôlée.
-                    </p>
-                    <a routerLink="/nospoles/pole2" class="panel-cta panel-cta--alt">
-                        Sécuriser vos flux <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
+    <!-- =====================================
+         2. NOTRE PROMESSE (Premium Section)
+         ===================================== -->
+    <section class="premium-section promise-section light-bg">
+        <img src="/plante3.webp" alt="" class="proc-intro-branche parallax-branch" aria-hidden="true" />
+
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="kicker fade-up">Notre promesse</span>
+                <h2 class="text-navy fade-up delay-1">Nous structurons, exploitons et sécurisons vos projets agricoles.
+                </h2>
+                <p class="fade-up delay-2">De l'étude de sol à la livraison industrielle, nous déployons une expertise
+                    millimétrée pour garantir chaque rendement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE INFINIE (Dinguess) -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span>RENDEMENT MAXIMAL</span> <span class="dot">•</span>
+            <span>TRAÇABILITÉ ABSOLUE</span> <span class="dot">•</span>
+            <span>SÉCURITÉ INDUSTRIELLE</span> <span class="dot">•</span>
+            <span>EXPERTISE AGRONOMIQUE</span> <span class="dot">•</span>
+            <span>INNOVATION TERRAIN</span> <span class="dot">•</span>
+            <!-- Duplicate for infinite effect -->
+            <span>RENDEMENT MAXIMAL</span> <span class="dot">•</span>
+            <span>TRAÇABILITÉ ABSOLUE</span> <span class="dot">•</span>
+            <span>SÉCURITÉ INDUSTRIELLE</span> <span class="dot">•</span>
+            <span>EXPERTISE AGRONOMIQUE</span> <span class="dot">•</span>
+            <span>INNOVATION TERRAIN</span> <span class="dot">•</span>
+        </div>
+    </div>
+
+    <!-- =====================================
+         3. POUR QUI ? (Overlap Layout)
+         ===================================== -->
+    <section class="premium-section target-section dark-bg">
+        <div class="ambient-glow glow-3"></div>
+
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="kicker fade-up">Une approche ciblée</span>
+                <h2 class="text-white fade-up delay-1">Nous concevons des solutions sur-mesure pour chaque acteur.</h2>
+            </div>
+
+            <div class="target-overlap-layout">
+                <!-- Investisseur Path -->
+                <div class="target-card-floating fade-up card-3d">
+                    <span class="num fade-up">01</span>
+                    <div class="bg-img" style="background-image: url('/drone_agriculture.jpg');"></div>
+                    <div class="dark-overlay"></div>
+                    <div class="content-wrapper">
+                        <h3>Nous valorisons votre capital foncier.</h3>
+                        <p>Déléguez la gestion de votre domaine. Nous apportons le savoir-faire agronomique et
+                            opérationnel
+                            pour maximiser votre rentabilité.</p>
+                        <a routerLink="/nospoles/pole1" class="btn-premium btn-premium--green magnetic-btn"
+                            style="margin-top: 1rem;">
+                            Découvrir le Pôle 1 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Industriel Path -->
+                <div class="target-card-floating fade-up delay-1 card-3d">
+                    <span class="num fade-up">02</span>
+                    <div class="bg-img" style="background-image: url('/cadrage_industriel.jpg');"></div>
+                    <div class="dark-overlay"></div>
+                    <div class="content-wrapper">
+                        <h3>Nous garantissons votre approvisionnement.</h3>
+                        <p>Ne subissez plus les aléas du marché. Nous planifions et contrôlons la production de vos
+                            matières premières de A à Z.</p>
+                        <a routerLink="/nospoles/pole2" class="btn-premium btn-premium--blue magnetic-btn"
+                            style="margin-top: 1rem;">
+                            Découvrir le Pôle 2 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2 : LA PREUVE DE MAÎTRISE -->
-    <section class="mastery-section">
-        <div class="mastery-header" data-aos="fade-up">
-            <h2>Pas de promesses.<br><span>Que des résultats.</span></h2>
-            <p>Notre jeunesse est le moteur de notre intransigeance. L'amateurisme n'a pas sa place sur nos terres.</p>
-        </div>
+    <!-- =====================================
+         4. EXPERTISE (Sticky Stack)
+         ===================================== -->
+    <section class="premium-section process-section light-bg">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="kicker fade-up">Notre méthode</span>
+                <h2 class="text-navy fade-up delay-1">Nous diagnostiquons, planifions et exécutons sur le terrain.</h2>
+            </div>
 
-        <div class="mastery-grid">
-            <article class="mastery-card glassmorphism" data-aos="fade-up" data-aos-delay="0">
-                <div class="mastery-icon">01</div>
-                <h3>Pilotage Terrain Expert</h3>
-                <p>Nos ingénieurs agronomes déploient des méthodes de pointe. Une surveillance et un contrôle strict de l'étude de sol jusqu'à la récolte finale.</p>
-            </article>
-
-            <article class="mastery-card glassmorphism" data-aos="fade-up" data-aos-delay="100">
-                <div class="mastery-icon">02</div>
-                <h3>Sécurisation Financière</h3>
-                <p>Le risque est maîtrisé. L'intégralité de notre production est adossée à des contrats fermes auprès d'industriels de premier plan.</p>
-            </article>
-
-            <article class="mastery-card glassmorphism" data-aos="fade-up" data-aos-delay="200">
-                <div class="mastery-icon">03</div>
-                <h3>Transparence Totale</h3>
-                <p>Aucune zone d'ombre. Un accès direct et en temps réel aux données de vos projets pour un suivi limpide de nos performances.</p>
-            </article>
+            <div class="sticky-stack">
+                <!-- Valeur 1 -->
+                <div class="stack-card card-3d fade-up">
+                    <div class="stack-img img-reveal">
+                        <img src="/dom1.jpeg" alt="Pilotage">
+                        <div class="img-overlay-mask"></div>
+                    </div>
+                    <div class="stack-text">
+                        <span class="step fade-up">Étape 01</span>
+                        <h3 class="fade-up delay-1">Pilotage Chirurgical</h3>
+                        <p class="fade-up delay-2">Nos ingénieurs dirigent chaque opération sur place. Aucune
+                            approximation, que du résultat.</p>
+                    </div>
+                </div>
+                <!-- Valeur 2 -->
+                <div class="stack-card card-3d fade-up">
+                    <div class="stack-img img-reveal">
+                        <img src="/dom2.jpeg" alt="Sécurité">
+                        <div class="img-overlay-mask"></div>
+                    </div>
+                    <div class="stack-text">
+                        <span class="step fade-up">Étape 02</span>
+                        <h3 class="fade-up delay-1">Sécurité Absolue</h3>
+                        <p class="fade-up delay-2">Vos volumes et vos rendements sont verrouillés très en amont par des
+                            contrats d'exploitation stricts.</p>
+                    </div>
+                </div>
+                <!-- Valeur 3 -->
+                <div class="stack-card card-3d fade-up">
+                    <div class="stack-img img-reveal">
+                        <img src="/dom3.jpeg" alt="Transparence">
+                        <div class="img-overlay-mask"></div>
+                    </div>
+                    <div class="stack-text">
+                        <span class="step fade-up">Étape 03</span>
+                        <h3 class="fade-up delay-1">Transparence Totale</h3>
+                        <p class="fade-up delay-2">Vous suivez la valorisation de vos actifs en temps réel grâce à nos
+                            reportings millimétrés.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CLOSING CALL TO ACTION -->
-    <section class="closing-split">
-        <div class="closing-split__bg">
-            <img src="/vision_tractor.webp" alt="Tracteur vision" />
-            <div class="closing-split__overlay"></div>
+    <!-- =====================================
+         FLOATING CONTACT (Visible sans scroller)
+         ===================================== -->
+    <div class="floating-contact">
+        <a href="tel:+2250707070707" class="btn-floating magnetic-btn hover-glow">
+            <div class="pulse-ring"></div>
+            <i class="fa-solid fa-phone"></i>
+            <span class="fc-text">Appeler JAG</span>
+        </a>
+    </div>
+
+
+    <!-- Moved from Footer -->
+    <div class="container" style="padding-bottom: 80px;">
+        <div class="footer-cta">
+            <div class="cta-bg-image" style="background-image: url('/dom2.jpeg');"></div>
+            <div class="cta-overlay"></div>
+    
+            <div class="cta-content cta-split">
+                <div class="cta-text-col">
+                    <span class="cta-subtitle">Passez à l'échelle supérieure</span>
+                    <h2 class="footer-cta-title">Prêt à transformer<br>votre capital agricole ?</h2>
+                </div>
+                <div class="cta-action-col">
+                    <p class="cta-desc">Rejoignez les leaders de l'agrobusiness qui nous font confiance pour structurer et
+                        rentabiliser leurs exploitations avec une précision industrielle.</p>
+                    <a routerLink="/contact" class="btn-premium magnetic-btn">
+                        Démarrer un projet <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"
+                        height="16" style="margin-left: 10px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="closing-split__content" data-aos="zoom-in">
-            <h2>L'excellence n'a pas d'âge.</h2>
-            <p>Prêt à bousculer les standards de l'investissement agricole ?</p>
-            <a routerLink="/contact" class="btn-massive">
-                Prendre contact
-                <span class="btn-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </a>
-        </div>
-    </section>
+    </div>
+
 </main>

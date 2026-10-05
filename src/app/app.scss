@@ -7,24 +7,38 @@
   background-color: transparent;
 }
 
-/* GLOBAL LOADER - AWWWARDS LEVEL REVEAL */
+/* GLOBAL LOADER - CINEMATIC EDITION */
 .global-loader {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #061021;
+  background: #081529; /* Deep navy */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
-  will-change: transform;
+  transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
 
   &.fade-out {
-    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  .loader-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(5rem, 15vw, 15rem);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
   }
 
   .loader-content {
@@ -33,158 +47,92 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
-    animation: slideUpContent 0.8s cubic-bezier(0.77, 0, 0.175, 1) 2.2s forwards;
+    gap: 3rem;
   }
 
-  .brand-reveal {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-
-    @media (max-width: 480px) {
-      gap: 0.5rem;
-    }
-  }
-
-  .side-text {
-    width: clamp(80px, 20vw, 180px); /* Equal widths to perfectly center the logo */
-    display: flex;
-    font-size: clamp(1.5rem, 6vw, 3.5rem);
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-    opacity: 0;
-    transform: translateY(20px);
-    
-    &.left {
-      justify-content: flex-end;
-      animation: fadeUpText 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-    }
-    &.right {
-      justify-content: flex-start;
-      animation: fadeUpText 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-    }
-  }
-
-  .center-reveal-container {
+  .loader-logo-wrapper {
     position: relative;
+    width: 150px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
     background: #ffffff;
-    box-shadow: 0 0 50px rgba(46, 170, 99, 0.25), inset 0 0 20px rgba(0,0,0,0.05);
-    overflow: hidden; 
-    border: none;
-    flex-shrink: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(46, 170, 99, 0.2);
+    overflow: hidden;
+    animation: pulseGlow 2s infinite alternate;
 
-    @media (max-width: 480px) {
-      width: 90px;
-      height: 90px;
+    .loader-logo {
+      width: 70%;
+      height: auto;
+      object-fit: contain;
+      z-index: 2;
+    }
+
+    .logo-glare {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.8), transparent);
+      transform: rotate(45deg) translateY(-100%);
+      animation: glareSweep 2.5s infinite;
+      z-index: 3;
     }
   }
 
-  .loader-logo {
-    width: 75%;
-    height: auto;
-    object-fit: contain;
-    opacity: 0;
-    transform: scale(0.9);
-    animation: revealLogo 1.5s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
-  }
-
-  .curtain {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background-color: #ffffff;
-    background-image: repeating-linear-gradient(
-      90deg, 
-      rgba(46, 170, 99, 0.85) 0px, 
-      rgba(46, 170, 99, 0.85) 2px, 
-      transparent 2px, 
-      transparent 6px
-    );
-    z-index: 10;
-  }
-
-  .left-curtain {
-    left: 0;
-    transform-origin: left;
-    animation: openCurtainLeft 1.2s cubic-bezier(0.77, 0, 0.175, 1) 1s forwards;
-  }
-
-  .right-curtain {
-    right: 0;
-    transform-origin: right;
-    animation: openCurtainRight 1.2s cubic-bezier(0.77, 0, 0.175, 1) 1s forwards;
-  }
-
-  .progress-container {
+  .loading-stats {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    opacity: 0;
-    animation: fadeInProgress 0.8s ease 0.6s forwards;
+    gap: 0.5rem;
   }
 
   .loading-label {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #b6e76d;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .loading-percent {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -2px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .progress-container {
+    width: 300px;
+    margin-top: 1rem;
   }
 
   .progress-track {
-    width: 250px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.15);
-    position: relative;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
     overflow: hidden;
     
     .progress-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
       height: 100%;
-      background: var(--green);
-      box-shadow: 0 0 10px rgba(46, 170, 99, 0.5);
-      width: 0%;
-      animation: loadProgressFarakan 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      background: #2EAA63;
+      box-shadow: 0 0 10px rgba(46, 170, 99, 0.8);
+      transition: width 0.1s linear;
     }
   }
 }
 
-@keyframes fadeUpText {
-  to { opacity: 1; transform: translateY(0); }
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 30px rgba(46, 170, 99, 0.1); }
+  to { box-shadow: 0 0 60px rgba(46, 170, 99, 0.4); }
 }
 
-@keyframes openCurtainLeft {
-  to { transform: translateX(-105%); }
-}
-
-@keyframes openCurtainRight {
-  to { transform: translateX(105%); }
-}
-
-@keyframes revealLogo {
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes slideUpContent {
-  to { transform: translateY(-40px); opacity: 0; }
-}
-
-@keyframes loadProgressFarakan {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-@keyframes fadeInProgress {
-  to { opacity: 1; }
+@keyframes glareSweep {
+  0% { transform: rotate(45deg) translateY(-100%); }
+  100% { transform: rotate(45deg) translateY(100%); }
 }
