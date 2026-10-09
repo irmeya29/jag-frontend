@@ -1096,8 +1096,8 @@ body:has(app-hero1) .main-content {
 .uniform-title {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     line-height: 1.15 !important;
     letter-spacing: -0.02em !important;
     white-space: normal !important;
@@ -1112,6 +1112,7 @@ h1.uniform-title,
     font-weight: 800 !important;
     line-height: 1.15 !important;
     letter-spacing: -0.02em !important;
+    text-align: left !important;
 }
 
 h1.uniform-title > span,
@@ -1122,9 +1123,10 @@ h1.uniform-title > div,
     line-height: 1.15 !important;
     white-space: nowrap !important;
     width: auto !important;
-    display: inline-block !important;
-    text-align: center !important;
-    margin-inline: auto !important;
+    display: block !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
 }
 
 /* 2. H2 - Titres de Sections (Option A : ~1.65rem mobile -> 2.5rem desktop) */
@@ -1135,7 +1137,7 @@ h2.uniform-title,
     font-weight: 800 !important;
     line-height: 1.2 !important;
     letter-spacing: -0.015em !important;
-    text-align: center !important;
+    text-align: left !important;
 }
 
 h2.uniform-title > span,
@@ -1146,9 +1148,40 @@ h2.uniform-title > div,
     line-height: 1.2 !important;
     white-space: nowrap !important;
     width: auto !important;
-    display: inline-block !important;
+    display: block !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
+}
+
+/* ==========================================================================
+   ALIGNEMENT CENTRÉ SPÉCIFIQUE (uniquement quand le conteneur est text-center)
+   ========================================================================== */
+.text-center .uniform-title,
+.section-heading.text-center .uniform-title,
+.container.text-center .uniform-title,
+.poles-header.text-center .uniform-title,
+.hero-text-block .uniform-title,
+.uniform-title.text-center {
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.text-center .uniform-title > span,
+.text-center .uniform-title > div,
+.section-heading.text-center .uniform-title > span,
+.section-heading.text-center .uniform-title > div,
+.container.text-center .uniform-title > span,
+.container.text-center .uniform-title > div,
+.poles-header.text-center .uniform-title > span,
+.poles-header.text-center .uniform-title > div,
+.hero-text-block .uniform-title > span,
+.hero-text-block .uniform-title > div,
+.uniform-title.text-center > span,
+.uniform-title.text-center > div {
     text-align: center !important;
     margin-inline: auto !important;
+    align-self: center !important;
 }
 
 /* 3. Kickers / Sur-titres harmonisés */
