@@ -199,6 +199,7 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
 
 .target-card-floating {
   position: relative;
+  z-index: 1;
   border-radius: 2rem;
   padding: 3rem;
   display: flex;
@@ -250,7 +251,7 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
   color: var(--navy);
   box-shadow: 0 30px 60px rgba(13, 33, 55, 0.08);
   border: 1px solid rgba(13, 33, 55, 0.05);
-  z-index: 2;
+  z-index: 2 !important;
 
   .icon-wrap {
     width: 60px;
@@ -262,25 +263,37 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
-    
-    svg { width: 30px; height: 30px; }
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
   }
 
-  h3 { color: var(--navy); }
-  p { color: #555; }
-  .num { color: var(--navy); opacity: 0.05; }
+  h3 {
+    color: var(--navy);
+  }
+
+  p {
+    color: #555;
+  }
+
+  .num {
+    color: var(--navy);
+    opacity: 0.05;
+  }
 }
 
 .dark-card {
   color: #fff;
   overflow: hidden;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 1 !important;
   background: var(--navy);
 
   @media (min-width: 992px) {
-    margin-left: -10%; /* Creates the overlapping effect */
-    padding-left: 14%; /* Adds space where it overlaps */
+    margin-left: -10%;
+    padding-left: 14%;
   }
 
   .bg-img {
@@ -288,7 +301,7 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
     inset: 0;
     background-size: cover;
     background-position: center;
-    z-index: 0;
+    z-index: -2;
     transition: transform 0.8s ease;
   }
 
@@ -296,8 +309,8 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(13, 33, 55, 0.95) 0%, rgba(17, 42, 70, 0.85) 100%);
-    backdrop-filter: blur(10px); /* Premium glassmorphism effect */
-    z-index: 1;
+    backdrop-filter: blur(10px);
+    z-index: -1;
   }
 
   .content-wrapper {
@@ -305,9 +318,14 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
     z-index: 2;
   }
 
-  h3 { color: #fff; }
-  p { color: rgba(255, 255, 255, 0.9); }
-  
+  h3 {
+    color: #fff;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
   .num.text-green {
     color: var(--green);
     opacity: 0.2;
