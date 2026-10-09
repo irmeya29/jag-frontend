@@ -1083,22 +1083,96 @@ body:has(app-hero1) .main-content {
 .delay-2 { transition-delay: 0.3s !important; }
 .delay-3 { transition-delay: 0.45s !important; }
 
-/* Universal rule for all major titles (H1 and H2) to guarantee uniform size and max 2 lines */
+/* ==========================================================================
+   TYPOGRAPHIE HARMONISÉE GLOBALE (H1 Hero, H2 Sections, Kickers, Paragraphes)
+   Option A : Modérée & Corporate (H1: 3.2rem-3.5rem | H2: 2.2rem-2.5rem)
+   ========================================================================== */
+
 .uniform-title-wrapper {
     container-type: inline-size;
     width: 100%;
 }
+
 .uniform-title {
     display: flex !important;
     flex-direction: column !important;
-    font-size: inherit !important;
-    line-height: inherit !important;
+    align-items: center !important;
+    text-align: center !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
     white-space: normal !important;
-    text-wrap: nowrap !important;
 }
-.uniform-title > span, .uniform-title > div {
-    font-size: min(6.5cqi, 3.5rem) !important;
+
+/* 1. H1 - Titres Hero (Option A : ~2.2rem mobile -> 3.5rem desktop) */
+h1.uniform-title,
+.uniform-title-wrapper h1,
+.hero__content h1,
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+}
+
+h1.uniform-title > span,
+h1.uniform-title > div,
+.uniform-title-wrapper h1 > span,
+.uniform-title-wrapper h1 > div {
+    font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+    line-height: 1.15 !important;
     white-space: nowrap !important;
-    line-height: 1.2 !important;
-    width: 100% !important;
+    width: auto !important;
+    display: inline-block !important;
+    text-align: center !important;
+    margin-inline: auto !important;
 }
+
+/* 2. H2 - Titres de Sections (Option A : ~1.65rem mobile -> 2.5rem desktop) */
+h2.uniform-title,
+.uniform-title-wrapper h2,
+.section-heading h2 {
+    font-size: clamp(1.65rem, 3.5vw, 2.5rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.015em !important;
+    text-align: center !important;
+}
+
+h2.uniform-title > span,
+h2.uniform-title > div,
+.uniform-title-wrapper h2 > span,
+.uniform-title-wrapper h2 > div {
+    font-size: clamp(1.65rem, 3.5vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    display: inline-block !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+}
+
+/* 3. Kickers / Sur-titres harmonisés */
+.kicker,
+.hero__eyebrow {
+    font-size: clamp(0.75rem, 1.1vw, 0.85rem) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    display: inline-block !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* 4. Paragraphes de présentation sous les titres */
+.hero__description {
+    font-size: clamp(1rem, 1.5vw, 1.15rem) !important;
+    line-height: 1.6 !important;
+    max-width: 44rem;
+}
+
+.section-heading p,
+.synergy-subtitle {
+    font-size: clamp(0.95rem, 1.3vw, 1.05rem) !important;
+    line-height: 1.6 !important;
+    max-width: 42rem;
+}
+

@@ -172,11 +172,22 @@ h4,
 
 .hero-text-block {
   display: none;
-  max-width: 800px;
+  width: 100%;
+  max-width: 950px;
   margin: 0 auto;
+  text-align: center;
+
+  .uniform-title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   &.text-pole1 {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -186,7 +197,9 @@ h4,
   }
 
   .text-pole2 {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: contentFadeIn 0.8s forwards;
   }
 }
@@ -208,6 +221,8 @@ h4,
 }
 
 .hero-title {
+  width: 100%;
+  text-align: center;
   font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 900;
   line-height: 1.1;

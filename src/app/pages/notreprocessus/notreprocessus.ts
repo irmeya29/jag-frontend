@@ -44,4 +44,13 @@ export class Notreprocessus implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.observer) this.observer.disconnect();
   }
+
+  scrollTo(id: string, event: Event): void {
+    event.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = id;
+    }
+  }
 }

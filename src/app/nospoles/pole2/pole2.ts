@@ -50,5 +50,14 @@ export class Pole2 implements AfterViewInit, OnDestroy {
     document.documentElement.classList.remove('snap-scroll-enabled');
     if (this.observer) this.observer.disconnect();
   }
+
+  scrollTo(id: string, event: Event): void {
+    event.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.location.hash = id;
+    }
+  }
 }
 
