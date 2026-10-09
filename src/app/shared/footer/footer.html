@@ -1,51 +1,81 @@
-<footer class="footer">
-  <div class="footer-gradient-bar" aria-hidden="true"></div>
-  <div class="footer-bg" aria-hidden="true"></div>
+<footer class="footer-premium">
+  <div class="footer-bg" aria-hidden="true" style="background-image: url('/cadrage_industriel.jpg');"></div>
+  <div class="footer-overlay"></div>
 
   <div class="footer-container">
 
-    <div class="footer-main">
-      <!-- Logo -->
-      <a routerLink="/" class="footer-logo">
-        <img src="/logo.webp" alt="Just Agro Group" class="footer-logo-img" />
-      </a>
 
-      <!-- Navigation -->
-      <nav class="footer-nav" aria-label="Pied de page">
-        <a routerLink="/hero1">Accueil</a>
-        <a routerLink="/apropos">À propos</a>
-        <a routerLink="/notre-processus">Processus</a>
-        <a routerLink="/realisations">Réalisations</a>
-        <a routerLink="/contact">Contact</a>
-      </nav>
 
+    <!-- Main Grid -->
+    <div class="footer-grid">
+      <!-- Brand Col -->
+      <div class="footer-col brand-col">
+        <a routerLink="/hero1" class="footer-logo">
+          <img src="/logo.webp" alt="Just Agro Group" class="footer-logo-img" />
+        </a>
+        <p class="brand-desc">Nous structurons, exploitons et sécurisons vos projets agricoles avec une approche
+          industrielle millimétrée.</p>
+        <div class="footer-contact-info">
+          <a href="tel:+22654126299" class="contact-link">
+            <div class="icon-circle"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                width="16" height="16">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg></div>
+            +226 54 12 62 99
+          </a>
+          <a href="mailto:contact@justagrogroup.com" class="contact-link">
+            <div class="icon-circle"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                width="16" height="16">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg></div>
+            contact@justagrogroup.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Col -->
+      <div class="footer-col">
+        <h4 class="col-title">L'Agence</h4>
+        <nav class="footer-nav">
+          <a routerLink="/hero1" class="hover-arrow">Accueil</a>
+          <a routerLink="/apropos" class="hover-arrow">Notre Vision</a>
+          <a routerLink="/notre-processus" class="hover-arrow">Notre Méthode</a>
+          <a routerLink="/realisations" class="hover-arrow">Réalisations</a>
+          <a routerLink="/contact" class="hover-arrow">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Poles Col -->
+      <div class="footer-col">
+        <h4 class="col-title">Expertise</h4>
+        <nav class="footer-nav">
+          <a routerLink="/nospoles/pole1" class="hover-arrow">Propriétaires Fonciers</a>
+          <a routerLink="/nospoles/pole2" class="hover-arrow">Partenaires Industriels</a>
+          <a routerLink="/mon-espace-just" class="hover-arrow highlight-link">
+            Mon Espace Just <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14"
+              height="14" style="margin-left: 10px;">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </a>
+        </nav>
+      </div>
     </div>
 
-    <!-- Middle row: quick access + contact -->
-    <div class="footer-middle">
-      <div class="footer-quick">
-        <span class="footer-quick-label">Pôles</span>
-        <a routerLink="/nospoles/pole1">Maîtrise d'Ouvrage</a>
-        <a routerLink="/nospoles/pole2">Fournisseur Industriel</a>
-        <a routerLink="/mon-espace-just">Mon Espace Just</a>
-      </div>
-      <div class="footer-contact">
-        <a href="tel:+22654126299" class="contact-item">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          +226 54 12 62 99
-        </a>
-        <a href="https://wa.me/22678612152" target="_blank" rel="noopener" class="contact-item contact-wa">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.982L2 22l5.233-1.371a9.92 9.92 0 004.775 1.226h.005c5.505 0 9.99-4.478 9.99-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0012.012 2z"/></svg>
-          WhatsApp
-        </a>
-      </div>
-    </div>
+    <!-- Huge Typography -->
 
     <!-- Baseline -->
     <div class="footer-baseline">
-      <p>&copy; {{ currentYear }} <strong>Just Agro Group</strong> &mdash; Koudougou, Burkina Faso</p>
+      <p>&copy; {{ currentYear }} <strong>Just Agro Group</strong> &mdash; Excellence Agricole en Afrique</p>
       <div class="footer-baseline-links">
-        <a href="mailto:contact@justagrogroup.com">contact&#64;justagrogroup.com</a>
+        <a href="https://wa.me/22678612152" target="_blank" class="wa-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path
+              d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.333 4.982L2 22l5.233-1.371a9.92 9.92 0 004.775 1.226h.005c5.505 0 9.99-4.478 9.99-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0012.012 2z" />
+          </svg> WhatsApp Direct
+        </a>
         <span class="sep">&middot;</span>
         <a routerLink="/contact">Mentions légales</a>
       </div>

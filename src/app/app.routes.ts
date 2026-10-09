@@ -13,8 +13,8 @@ export const routes: Routes = [
   { path: 'hero1', loadComponent: () => import('./pages/hero1/hero1').then(m => m.Hero1) },
 
   // Redirection par défaut
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/hero1', pathMatch: 'full' },
 
   // Redirection 404
-  { path: '**', redirectTo: '/home' }
+  { path: '**', redirectTo: '/hero1' }
 ];

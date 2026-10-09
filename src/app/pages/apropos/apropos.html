@@ -4,7 +4,7 @@
         <img class="hero__image" src="/f2.jpg" alt="Qui sommes-nous" />
         <div class="hero__overlay"></div>
         <div class="hero__content">
-            <h1 id="hero-title">Qui sommes-<span class="text-green">nous</span> ?</h1>
+            <h1 id="hero-title" class="text-white">Qui sommes-nous ?</h1>
             <p class="hero__description">Depuis plus de 20 ans, nous construisons des chaînes d'approvisionnement
                 agricoles solides, fiables et durables.</p>
             <a class="btn-premium" tabindex="0" (click)="scrollTo('racines', $event)" (keyup.enter)="scrollTo('racines', $event)">Découvrir nos racines</a>
@@ -118,9 +118,12 @@
         <div class="container">
             <div class="section-heading text-center auto-fade-up" style="margin-bottom: 0;">
                 <span class="kicker">Notre Vision</span>
-                <h2 style="font-size: clamp(2.5rem, 4vw, 4rem); max-width: 900px; margin: 0 auto 1.5rem;">
-                    Devenir le partenaire de référence <span class="text-green">pour tout acheteur industriel</span>
-                </h2>
+                <div style="container-type: inline-size; width: 100%;">
+                    <h2 style="display: flex; flex-direction: column; align-items: center; margin: 0 auto 1.5rem; font-size: inherit !important; line-height: inherit !important; white-space: normal !important; text-wrap: nowrap !important;">
+                        <span style="font-size: min(6.5cqi, 3.5rem) !important; white-space: nowrap !important; line-height: 1.2 !important;">Devenir le partenaire de référence</span>
+                        <span class="text-green" style="font-size: min(6.5cqi, 3.5rem) !important; white-space: nowrap !important; line-height: 1.2 !important;">pour tout acheteur industriel</span>
+                    </h2>
+                </div>
                 <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto;">
                     qui exige traçabilité, volume et régularité.
                 </p>
@@ -134,7 +137,12 @@
         <div class="container">
             <div class="section-heading text-center auto-fade-up">
                 <span class="kicker">Nos principes</span>
-                <h2>Des valeurs qui guident chaque action.</h2>
+                <div style="container-type: inline-size; width: 100%;">
+                    <h2 style="display: flex; flex-direction: column; align-items: center; margin: 0 auto 1.5rem; font-size: inherit !important; line-height: inherit !important; white-space: normal !important; text-wrap: nowrap !important;">
+                        <span style="font-size: min(6.5cqi, 3.5rem) !important; white-space: nowrap !important; line-height: 1.2 !important;">Des valeurs qui guident</span>
+                        <span style="font-size: min(6.5cqi, 3.5rem) !important; white-space: nowrap !important; line-height: 1.2 !important;">chaque action.</span>
+                    </h2>
+                </div>
             </div>
 
             <div class="premium-values-grid">

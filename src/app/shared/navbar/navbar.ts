@@ -11,6 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Navbar {
   isMenuOpen = signal(false);
   isDropdownOpen = signal(false);
+  activePole = signal<'pole1' | 'pole2'>('pole1');
 
   toggleMenu() {
     this.isMenuOpen.update(v => !v);
