@@ -7,38 +7,62 @@
   background-color: transparent;
 }
 
-/* GLOBAL LOADER - CINEMATIC EDITION */
+/* GLOBAL LOADER - AWWWARDS EDITION */
 .global-loader {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #081529; /* Deep navy */
+  background: var(--bg-dark);
+  /* Match the dark theme exactly */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  transition: opacity 0.8s ease-in-out;
-  will-change: opacity;
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
 
+  /* The Curtain Lift Exit */
+  transition: transform 1.2s cubic-bezier(0.86, 0, 0.07, 1), border-radius 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+  will-change: transform, border-radius;
+
   &.fade-out {
-    opacity: 0;
+    transform: translateY(-100%);
+    border-radius: 0 0 60% 60%;
+    /* Enhanced liquid curve on exit */
+
+    .loader-content {
+      transform: scale(0.9) translateY(-50px);
+      opacity: 0;
+    }
+
+    .loader-massive-counter {
+      opacity: 0;
+      transform: translate(-50%, -60%) scale(0.95);
+      transition: all 0.8s ease;
+    }
   }
 
-  .loader-bg-text {
+  .loader-massive-counter {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: clamp(5rem, 15vw, 15rem);
+    font-size: clamp(10rem, 25vw, 30rem);
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.02);
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.04);
     white-space: nowrap;
     z-index: 0;
     pointer-events: none;
     user-select: none;
+    letter-spacing: -5px;
+    font-variant-numeric: tabular-nums;
+    animation: counterPulse 4s ease-out forwards;
+
+    .percent-sign {
+      font-size: 0.5em;
+      /* Smaller % sign */
+    }
   }
 
   .loader-content {
@@ -48,91 +72,179 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.6s ease;
   }
 
   .loader-logo-wrapper {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ffffff;
     border-radius: 50%;
-    box-shadow: 0 0 40px rgba(46, 170, 99, 0.2);
-    overflow: hidden;
-    animation: pulseGlow 2s infinite alternate;
+    animation: float 4s ease-in-out infinite;
 
-    .loader-logo {
-      width: 70%;
-      height: auto;
-      object-fit: contain;
-      z-index: 2;
-    }
-
-    .logo-glare {
+    .loader-rings {
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.8), transparent);
-      transform: rotate(45deg) translateY(-100%);
-      animation: glareSweep 2.5s infinite;
-      z-index: 3;
-    }
-  }
+      inset: -15px;
+      border-radius: 50%;
+      border: 2px dashed rgba(46, 170, 99, 0.3);
+      animation: spinRotate 15s linear infinite;
 
-  .loading-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+      &::before {
+        content: '';
+        position: absolute;
+        inset: -8px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: var(--jag-green);
+        border-right-color: transparent;
+        animation: spinRotate 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite reverse;
+      }
+    }
+
+    .loader-logo-inner {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 0 50px rgba(46, 170, 99, 0.15), inset 0 0 20px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .loader-logo {
+        width: 65%;
+        height: auto;
+        object-fit: contain;
+        z-index: 2;
+        animation: gentlePulse 2s infinite alternate;
+      }
+
+      .logo-glare {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        transform: rotate(45deg) translateY(-100%);
+        animation: glareSweep 3s infinite;
+        z-index: 3;
+      }
+    }
   }
 
   .loading-label {
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 8px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, #ffffff 50%, rgba(255, 255, 255, 0.4) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerText 2.5s linear infinite;
   }
 
-  .loading-percent {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -2px;
-    font-variant-numeric: tabular-nums;
+  /* Ultra-thin bottom progress line */
+  .progress-container-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.05);
   }
 
-  .progress-container {
-    width: 300px;
-    margin-top: 1rem;
-  }
+  .progress-fill {
+    height: 100%;
+    background: var(--jag-green);
+    box-shadow: 0 0 15px var(--jag-green);
+    transition: width 0.1s linear;
+    position: relative;
 
-  .progress-track {
-    width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    
-    .progress-fill {
-      height: 100%;
-      background: #2EAA63;
-      box-shadow: 0 0 10px rgba(46, 170, 99, 0.8);
-      transition: width 0.1s linear;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50px;
+      background: linear-gradient(to right, transparent, #ffffff);
+      box-shadow: 5px 0 15px var(--jag-green);
+      border-radius: 0 50px 50px 0;
     }
   }
 }
 
 @keyframes pulseGlow {
-  from { box-shadow: 0 0 30px rgba(46, 170, 99, 0.1); }
-  to { box-shadow: 0 0 60px rgba(46, 170, 99, 0.4); }
+  from {
+    box-shadow: 0 0 30px rgba(46, 170, 99, 0.1);
+  }
+
+  to {
+    box-shadow: 0 0 60px rgba(46, 170, 99, 0.4);
+  }
+}
+
+@keyframes gentlePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes glareSweep {
-  0% { transform: rotate(45deg) translateY(-100%); }
-  100% { transform: rotate(45deg) translateY(100%); }
+  0% {
+    transform: rotate(45deg) translateY(-150%);
+  }
+
+  50%,
+  100% {
+    transform: rotate(45deg) translateY(150%);
+  }
+}
+
+@keyframes shimmerText {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes spinRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes counterPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

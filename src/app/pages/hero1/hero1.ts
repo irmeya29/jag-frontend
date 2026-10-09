@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, AfterViewInit, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, AfterViewInit, inject, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealService } from '../../shared/scroll-reveal/scroll-reveal.service';
 

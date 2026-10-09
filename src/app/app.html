@@ -1,31 +1,29 @@
 @if (isLoading()) {
 <div class="global-loader premium-loader" [class.fade-out]="isFadingOut()">
-  
-  <!-- Subtle Background Text -->
-  <div class="loader-bg-text">JUST AGRO</div>
+
+  <!-- Massive Background Counter -->
+  <div class="loader-massive-counter">
+    {{ loadingPercentage() }}<span class="percent-sign">%</span>
+  </div>
 
   <div class="loader-content">
-    
     <!-- Central Logo -->
     <div class="loader-logo-wrapper">
-      <img src="/logo.webp" alt="Just Agro Group Logo" class="loader-logo" />
-      <div class="logo-glare"></div>
-    </div>
-    
-    <!-- Stats & Percentage -->
-    <div class="loading-stats">
-      <span class="loading-label">INITIALISATION</span>
-      <span class="loading-percent">{{ loadingPercentage() }}%</span>
-    </div>
-
-    <!-- Progress Bar -->
-    <div class="progress-container">
-      <div class="progress-track">
-        <div class="progress-fill" [style.width.%]="loadingPercentage()"></div>
+      <div class="loader-rings"></div>
+      <div class="loader-logo-inner">
+        <img src="/logo.webp" alt="Just Agro Group Logo" class="loader-logo" />
+        <div class="logo-glare"></div>
       </div>
     </div>
 
+    <div class="loading-label">CHARGEMENT DE L'EXPÉRIENCE</div>
   </div>
+
+  <!-- Absolute Bottom Progress Bar -->
+  <div class="progress-container-bottom">
+    <div class="progress-fill" [style.width.%]="loadingPercentage()"></div>
+  </div>
+
 </div>
 }
 

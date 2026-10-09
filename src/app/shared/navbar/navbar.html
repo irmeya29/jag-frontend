@@ -16,58 +16,30 @@
             <span class="link-text">Accueil</span>
           </a>
         </li>
-        <li class="nav-item has-mega-menu" [class.is-active]="isDropdownOpen()">
+        <li class="nav-item has-dropdown" [class.is-active]="isDropdownOpen()">
           <a class="nav-link dropdown-toggle" tabindex="0" (click)="toggleDropdown($event)" (keyup.enter)="toggleDropdown($event)">
             <span class="link-text">Nos Pôles</span>
             <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </a>
-          <!-- DYNAMIC SPLIT-PANEL MEGA MENU -->
-          <div class="mega-menu split-mega">
-            <div class="mega-menu-inner container">
-              
-              <!-- Left Side: Massive Typography Links -->
-              <div class="mega-left-nav">
-                <a routerLink="/nospoles/pole1" 
-                   class="split-nav-item" 
-                   (mouseenter)="activePole.set('pole1')" 
-                   (click)="closeMenu()">
-                  <span class="split-num">01</span>
-                  <div class="split-text-group">
-                    <h2 class="split-title">Maîtrise d’Ouvrage</h2>
-                    <span class="split-desc">Ingénierie & Structuration</span>
-                  </div>
-                  <svg class="split-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
-
-                <a routerLink="/nospoles/pole2" 
-                   class="split-nav-item" 
-                   (mouseenter)="activePole.set('pole2')" 
-                   (click)="closeMenu()">
-                  <span class="split-num">02</span>
-                  <div class="split-text-group">
-                    <h2 class="split-title">Fournisseur Industriel</h2>
-                    <span class="split-desc">Exploitation & Production</span>
-                  </div>
-                  <svg class="split-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
-              </div>
-
-              <!-- Right Side: Dynamic Canvas / Visual Reaveal -->
-              <div class="mega-right-visuals">
-                <div class="visual-panel" [class.is-active]="activePole() === 'pole1'">
-                  <img src="/drone_agriculture.jpg" alt="Maîtrise d'Ouvrage">
-                  <div class="visual-overlay"></div>
-                  <div class="visual-caption">Déploiement de technologies de pointe pour structurer vos ambitions agricoles.</div>
+          <!-- COMPACT GLASSMORPHISM DROPDOWN -->
+          <div class="glass-dropdown">
+            <div class="glass-dropdown-inner">
+              <a routerLink="/nospoles/pole1" class="glass-item" (click)="closeMenu()">
+                <div class="glass-item-content">
+                  <span class="glass-title">Maîtrise d’Ouvrage</span>
+                  <span class="glass-desc">Ingénierie & Structuration</span>
                 </div>
-                <div class="visual-panel" [class.is-active]="activePole() === 'pole2'">
-                  <img src="/agri_industry.jpg" alt="Fournisseur Industriel">
-                  <div class="visual-overlay"></div>
-                  <div class="visual-caption">Sécurisation et massification de vos approvisionnements industriels.</div>
+                <svg class="glass-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+              <a routerLink="/nospoles/pole2" class="glass-item" (click)="closeMenu()">
+                <div class="glass-item-content">
+                  <span class="glass-title">Fournisseur Industriel</span>
+                  <span class="glass-desc">Exploitation & Production</span>
                 </div>
-              </div>
-
+                <svg class="glass-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
             </div>
           </div>
         </li>
@@ -81,7 +53,7 @@
 
     <!-- Centered Logo -->
     <div class="nav-center-brand">
-      <a routerLink="/" class="logo-link" (click)="closeMenu()">
+      <a routerLink="/hero1" class="logo-link" (click)="closeMenu()">
         <img src="/logo.webp" alt="Just Agro Group Logo" class="logo-img" />
       </a>
     </div>

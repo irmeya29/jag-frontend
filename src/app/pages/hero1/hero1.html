@@ -39,9 +39,12 @@
                 <div class="badge-wrap fade-up delay-2">
                     <!--<span class="badge badge--green glow-badge">Pôle 01</span>-->
                 </div>
-                <h1 class="hero-title text-white fade-up delay-3">
-                    Nous cultivons votre terre.<br><span class="text-gradient-green">Vous récoltez les profits.</span>
-                </h1>
+                <div class="uniform-title-wrapper">
+                  <h1 class="hero-title text-white fade-up delay-3 uniform-title">
+                      <span>Nous cultivons votre terre.</span>
+                      <span>Vous récoltez les profits.</span>
+                  </h1>
+                </div>
                 <p class="hero-desc fade-up delay-4">
                     Nous prenons le contrôle opérationnel de vos terres avec une ingénierie agronomique de pointe. Une
                     rentabilité maximale, garantie et sans compromis.
@@ -58,9 +61,12 @@
                 <div class="badge-wrap fade-up delay-2">
                     <!-- <span class="badge badge--blue glow-badge">Pôle 02</span> -->
                 </div>
-                <h1 class="hero-title text-white fade-up delay-3">
-                    Nous produisons vos volumes.<br><span class="text-gradient-blue">Vous sécurisez votre usine.</span>
-                </h1>
+                <div class="uniform-title-wrapper">
+                  <h1 class="hero-title text-white fade-up delay-3 uniform-title">
+                      <span>Nous produisons vos volumes.</span>
+                      <span>Vous sécurisez votre usine.</span>
+                  </h1>
+                </div>
                 <p class="hero-desc fade-up delay-4">
                     Sécurisez vos lignes de production avec un sourcing agricole rigoureusement tracé, certifié et
                     garanti par des contrats fermes.
@@ -74,19 +80,45 @@
         </div>
     </section>
 
-    <!-- =====================================
-         2. NOTRE PROMESSE (Premium Section)
-         ===================================== -->
-    <section class="premium-section promise-section light-bg">
-        <img src="/plante3.webp" alt="" class="proc-intro-branche parallax-branch" aria-hidden="true" />
+    <section class="premium-section promise-section light-bg" style="padding: 0; position: relative;">
 
-        <div class="container">
-            <div class="section-heading text-center">
-                <span class="kicker fade-up">Notre promesse</span>
-                <h2 class="text-navy fade-up delay-1">Nous structurons, exploitons et sécurisons vos projets agricoles.
-                </h2>
-                <p class="fade-up delay-2">De l'étude de sol à la livraison industrielle, nous déployons une expertise
-                    millimétrée pour garantir chaque rendement.</p>
+        <div class="promise-magazine-container">
+
+            <!-- Left: Sticky Title -->
+            <div class="promise-mag-left">
+                <div class="mag-sticky">
+                    <span class="kicker fade-up">Notre promesse</span>
+                    <div class="uniform-title-wrapper">
+                      <h2 class="text-navy massive-promise fade-up delay-1 uniform-title">
+                          <span>Des rendements maximisés.</span>
+                          <span class="highlight-green">Zéro incertitude.</span>
+                      </h2>
+                    </div>
+                    <p class="mag-desc fade-up delay-2">
+                        De l'étude de sol à la livraison industrielle, nous déployons une expertise millimétrée pour
+                        garantir chaque rendement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Stats ONLY -->
+            <div class="promise-mag-right">
+
+                <div class="mag-stats-block fade-up delay-3">
+                    <div class="stat-item">
+                        <span class="stat-val">100<span class="stat-unit">%</span></span>
+                        <span class="stat-label">Traçabilité<br>Garantie</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val">360<span class="stat-unit">°</span></span>
+                        <span class="stat-label">Maîtrise<br>Agronomique</span>
+                    </div>
+                    <div class="stat-item" style="grid-column: span 2; margin-top: 1rem;">
+                        <span class="stat-val">0<span class="stat-unit"></span></span>
+                        <span class="stat-label">Compromis<br>Opérationnel</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -109,50 +141,72 @@
     </div>
 
     <!-- =====================================
-         3. POUR QUI ? (Overlap Layout)
+         3. POUR QUI ? (Sticky Side Layout)
          ===================================== -->
-    <section class="premium-section target-section dark-bg">
+    <section class="premium-section sticky-side-section dark-bg immersive-bg"
+        style="position: relative; overflow: hidden;">
+        <!-- Full Section Parallax Background -->
+        <div class="section-parallax-bg" style="background-image: url('/champ.jpg');"></div>
+        <div class="section-bg-overlay"></div>
+
         <div class="ambient-glow glow-3"></div>
 
-        <div class="container">
-            <div class="section-heading text-center">
-                <span class="kicker fade-up">Une approche ciblée</span>
-                <h2 class="text-white fade-up delay-1">Nous concevons des solutions sur-mesure pour chaque acteur.</h2>
-            </div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="sticky-grid">
 
-            <div class="target-overlap-layout">
-                <!-- Investisseur Path -->
-                <div class="target-card-floating fade-up card-3d">
-                    <span class="num fade-up">01</span>
-                    <div class="bg-img" style="background-image: url('/drone_agriculture.jpg');"></div>
-                    <div class="dark-overlay"></div>
-                    <div class="content-wrapper">
-                        <h3>Nous valorisons votre capital foncier.</h3>
-                        <p>Déléguez la gestion de votre domaine. Nous apportons le savoir-faire agronomique et
-                            opérationnel
-                            pour maximiser votre rentabilité.</p>
-                        <a routerLink="/nospoles/pole1" class="btn-premium btn-premium--green magnetic-btn"
-                            style="margin-top: 1rem;">
-                            Découvrir le Pôle 1 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-                        </a>
+                <!-- Left Side: Sticky Intro -->
+                <div class="sticky-sidebar">
+                    <div class="sticky-content">
+                        <span class="kicker fade-up">Une approche ciblée</span>
+                        <div class="uniform-title-wrapper">
+                          <h2 class="text-white fade-up delay-1 uniform-title">
+                            <span>Des solutions exclusives</span>
+                            <span>pour chaque acteur.</span>
+                          </h2>
+                        </div>
+                        <p class="fade-up delay-2"
+                            style="color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 1.15rem; line-height: 1.6; max-width: 400px;">
+                            Nous ne standardisons rien. Chaque projet bénéficie d'une attention sur-mesure pour
+                            s'aligner exactement sur vos objectifs de rendement et de sécurité.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Industriel Path -->
-                <div class="target-card-floating fade-up delay-1 card-3d">
-                    <span class="num fade-up">02</span>
-                    <div class="bg-img" style="background-image: url('/cadrage_industriel.jpg');"></div>
-                    <div class="dark-overlay"></div>
-                    <div class="content-wrapper">
-                        <h3>Nous garantissons votre approvisionnement.</h3>
-                        <p>Ne subissez plus les aléas du marché. Nous planifions et contrôlons la production de vos
-                            matières premières de A à Z.</p>
-                        <a routerLink="/nospoles/pole2" class="btn-premium btn-premium--blue magnetic-btn"
-                            style="margin-top: 1rem;">
-                            Découvrir le Pôle 2 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-                        </a>
+                <!-- Right Side: Scrolling Cards -->
+                <div class="scrolling-cards">
+                    <!-- Card 1 -->
+                    <div class="target-card-floating card-3d fade-up">
+                        <span class="num">01</span>
+                        <div class="bg-img" style="background-image: url('/terre.webp');"></div>
+                        <div class="dark-overlay"></div>
+                        <div class="content-wrapper">
+                            <h3>Propriétaires Fonciers</h3>
+                            <p>Déléguez la gestion de votre domaine. Nous apportons le savoir-faire agronomique et
+                                opérationnel pour maximiser votre rentabilité à long terme.</p>
+                            <a routerLink="/nospoles/pole1" class="btn-premium btn-premium--green magnetic-btn"
+                                style="margin-top: 1rem;">
+                                Découvrir le Pôle 1 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="target-card-floating card-3d fade-up delay-1">
+                        <span class="num">02</span>
+                        <div class="bg-img" style="background-image: url('/industriel_africain.jpg');"></div>
+                        <div class="dark-overlay"></div>
+                        <div class="content-wrapper">
+                            <h3>Partenaires Industriels</h3>
+                            <p>Ne subissez plus les aléas du marché. Nous planifions et contrôlons la production de vos
+                                matières premières de A à Z, avec des garanties de volume.</p>
+                            <a routerLink="/nospoles/pole2" class="btn-premium btn-premium--blue magnetic-btn"
+                                style="margin-top: 1rem;">
+                                Découvrir le Pôle 2 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -164,7 +218,12 @@
         <div class="container">
             <div class="section-heading text-center">
                 <span class="kicker fade-up">Notre méthode</span>
-                <h2 class="text-navy fade-up delay-1">Nous diagnostiquons, planifions et exécutons sur le terrain.</h2>
+                <div class="uniform-title-wrapper">
+                  <h2 class="text-navy fade-up delay-1 uniform-title">
+                    <span>Nous diagnostiquons, planifions</span>
+                    <span>et exécutons sur le terrain.</span>
+                  </h2>
+                </div>
             </div>
 
             <div class="sticky-stack">
@@ -216,7 +275,6 @@
          ===================================== -->
     <div class="floating-contact">
         <a href="tel:+2250707070707" class="btn-floating magnetic-btn hover-glow">
-            <div class="pulse-ring"></div>
             <i class="fa-solid fa-phone"></i>
             <span class="fc-text">Appeler JUST AGRO GROUP</span>
         </a>
@@ -224,22 +282,28 @@
 
 
     <!-- CTA Section -->
-    <section class="cta-section" style="position: relative; z-index: 5; background-color: var(--bg-light);">
-        <div class="container" style="padding-top: 40px; padding-bottom: 80px;">
-            <div class="footer-cta">
-                <div class="cta-bg-image" style="background-image: url('/dom2.jpeg');"></div>
-                <div class="cta-overlay"></div>
+    <section class="cta-section" style="position: relative; z-index: 5; padding: 120px 0; overflow: hidden;">
 
+        <!-- Full Bleed Parallax Background (Hors du CTA) -->
+        <div class="section-parallax-bg" style="background-image: url('/champ.jpg'); z-index: 1;"></div>
+        <!-- Light overlay so the floating box stands out -->
+        <div class="section-bg-overlay" style="background: rgba(6, 16, 33, 0.3); z-index: 2;"></div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="footer-cta floating-cta-box">
                 <div class="cta-content cta-split">
                     <div class="cta-text-col">
-                        <span class="cta-subtitle">Passez à l'échelle supérieure</span>
-                        <h2 class="footer-cta-title">Prêt à transformer<br>votre capital agricole ?</h2>
+                        <span class="cta-subtitle text-green">Passez à l'échelle supérieure</span>
+                        <div class="uniform-title-wrapper">
+                          <h2 class="footer-cta-title uniform-title">
+                            <span>Prêt à transformer</span>
+                            <span>votre capital agricole ?</span>
+                          </h2>
+                        </div>
                     </div>
                     <div class="cta-action-col">
                         <p class="cta-desc">Rejoignez les leaders de l'agrobusiness qui nous font confiance pour
-                            structurer
-                            et
-                            rentabiliser leurs exploitations avec une précision industrielle.</p>
+                            structurer et rentabiliser leurs exploitations avec une précision industrielle.</p>
                         <a routerLink="/contact" class="btn-premium magnetic-btn">
                             Démarrer un projet <svg fill="none" stroke="currentColor" stroke-width="2"
                                 viewBox="0 0 24 24" width="16" height="16" style="margin-left: 10px;">

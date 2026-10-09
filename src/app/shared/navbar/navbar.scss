@@ -77,10 +77,6 @@
 
 .nav-item {
   position: relative;
-  
-  &.has-mega-menu {
-    position: static;
-  }
 }
 
 .nav-link {
@@ -134,191 +130,109 @@
   transition: transform var(--transition-fast);
 }
 
-// MEGA MENU (AWWWARDS STYLE)
-.mega-menu {
+// ==========================================
+// GLASSMORPHISM DROPDOWN
+// ==========================================
+.glass-dropdown {
   position: absolute;
-  top: 90px;
-  left: 0;
-  width: 100vw;
-  background: rgba(6, 16, 33, 0.98); // Dark navy solid glass
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 60px 0;
-  transform: translateY(-20px);
+  top: 100%; /* Drop right below the nav item */
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  width: 320px;
+  background: rgba(255, 255, 255, 0.7); /* Light glass */
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(8, 21, 41, 0.08);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-}
-
-.split-mega {
-  padding: 0; // Removing padding for a true flush full-screen split
-}
-
-.mega-menu-inner {
-  display: flex;
-  height: 450px; // Fixed massive height for the canvas
-  max-width: 100vw;
-  margin: 0;
-  padding: 0;
-}
-
-// LEFT NAVIGATION SIDE
-.mega-left-nav {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px 10%;
-  background: rgba(6, 16, 33, 0.98);
-  gap: 20px;
-}
-
-.split-nav-item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding: 30px;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  pointer-events: none;
+  z-index: 100;
   overflow: hidden;
 
-  // Background hover reveal
+  /* Subtle inner glow */
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(46, 170, 99, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 0;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    pointer-events: none;
   }
+}
 
-  > * { position: relative; z-index: 1; } // Lift above pseudo element
+.glass-dropdown-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.glass-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 
   &:hover {
-    padding-left: 45px;
-    border-color: rgba(46, 170, 99, 0.3);
-
-    &::before { transform: translateX(0); }
-
-    .split-num { color: var(--jag-green); }
-    .split-title { color: #ffffff; }
-    .split-arrow { 
-      opacity: 1; 
-      transform: translateX(0); 
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transform: translateX(5px);
+    
+    .glass-title {
+      color: var(--jag-green);
+    }
+    
+    .glass-arrow {
+      opacity: 1;
+      transform: translateX(0);
       color: var(--jag-green);
     }
   }
 }
 
-.split-num {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.2);
-  transition: color 0.4s ease;
-}
-
-.split-text-group {
-  flex: 1;
+.glass-item-content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
-.split-title {
+.glass-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 2px;
-  margin: 0;
-  transition: color 0.4s ease;
+  color: var(--jag-navy);
+  transition: color 0.3s ease;
 }
 
-.split-desc {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.4);
-  font-weight: 400;
-}
-
-.split-arrow {
-  width: 32px;
-  height: 32px;
-  color: rgba(255, 255, 255, 0.2);
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-// RIGHT VISUAL SIDE
-.mega-right-visuals {
-  flex: 1.2;
-  position: relative;
-  overflow: hidden;
-  background: #000;
-}
-
-.visual-panel {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-  transform: scale(1.05); // Slight zoom out effect on reveal
-
-  &.is-active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.visual-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(6, 16, 33, 1) 0%, rgba(6, 16, 33, 0.3) 40%, rgba(6, 16, 33, 0.1) 100%);
-}
-
-.visual-caption {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  max-width: 60%;
-  color: #ffffff;
-  font-size: 1.2rem;
+.glass-desc {
+  font-size: 0.75rem;
+  color: rgba(13, 33, 55, 0.6); /* Muted navy */
   font-weight: 500;
-  line-height: 1.6;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.glass-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--jag-navy);
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s; // Staggered reveal
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.visual-panel.is-active .visual-caption {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-// Show mega menu on hover (Desktop)
+// Show dropdown on hover (Desktop)
 @media (min-width: 1025px) {
-  .has-mega-menu:hover {
-    .mega-menu {
+  .has-dropdown:hover {
+    .glass-dropdown {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: translateX(-50%) translateY(10px);
       pointer-events: auto;
     }
 

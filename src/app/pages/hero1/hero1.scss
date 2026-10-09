@@ -53,10 +53,12 @@ h4,
 .cinematic-hero {
   position: relative;
   width: 100%;
-  min-height: 75vh;
+  min-height: 45vh;
+  /* Reduced further */
   display: flex;
   align-items: center;
-  padding: 100px 0 60px;
+  padding: 100px 0 40px;
+  /* Tighter padding */
   overflow: hidden;
 
   .hero-bg-container {
@@ -113,7 +115,8 @@ h4,
 }
 
 .audience-switcher-wrap {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
+  /* Reduced from 4rem */
 }
 
 .audience-switcher {
@@ -213,15 +216,11 @@ h4,
   /* Tighter spacing similar to section-heading */
 
   .text-gradient-green {
-    background: linear-gradient(90deg, var(--jag-green), #6ee7b7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--jag-green);
   }
 
   .text-gradient-blue {
-    background: linear-gradient(90deg, var(--jag-blue), #93c5fd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--jag-blue);
   }
 }
 
@@ -229,7 +228,8 @@ h4,
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  /* Reduced from 3rem */
   max-width: 650px;
   margin-inline: auto;
 }
@@ -329,6 +329,125 @@ h4,
 }
 
 /* =========================================
+   2. NOTRE PROMESSE (Magazine Layout)
+   ========================================= */
+.promise-magazine-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 8rem 5% 4rem;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 8rem;
+  }
+}
+
+.promise-mag-left {
+  position: relative;
+}
+
+.mag-sticky {
+  position: sticky;
+  top: 25vh;
+}
+
+.massive-promise {
+  font-size: clamp(3rem, 4.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--navy);
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+
+  .highlight-green {
+    color: var(--jag-green);
+  }
+}
+
+.mag-desc {
+  font-size: 1.1rem;
+  color: rgba(13, 33, 55, 0.7);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.promise-mag-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding-top: 2rem;
+
+  @media (min-width: 1024px) {
+    padding-top: 5rem;
+  }
+}
+
+.mag-stats-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  border-top: 2px solid rgba(13, 33, 55, 0.1);
+  padding-top: 3rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(4rem, 6vw, 5.5rem);
+  font-weight: 900;
+  color: var(--jag-green);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -3px;
+}
+
+.stat-unit {
+  font-size: 0.5em;
+  color: var(--navy);
+  vertical-align: super;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--navy);
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   IMMERSIVE PARALLAX BACKGROUND (Generic)
+   ========================================= */
+.section-parallax-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(6, 16, 33, 0.95) 0%, rgba(6, 16, 33, 0.8) 50%, rgba(6, 16, 33, 0.5) 100%);
+  z-index: 1;
+}
+
+.promise-magazine-container {
+  /* Ensure content stays above the new background */
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
    DECORATIVE BRANCH
    ========================================= */
 .proc-intro-branche {
@@ -363,29 +482,59 @@ h4,
 }
 
 /* =========================================
-   3. TARGET CARDS (Bento/Poster Layout)
+   3. TARGET SECTION (Sticky Side Layout)
    ========================================= */
-.target-section {
-  overflow: visible;
-  padding-bottom: 10rem;
+.sticky-side-section {
+  position: relative;
+  z-index: 3;
+  padding: 8rem 0;
+  background-color: var(--bg-dark);
 }
 
-.target-overlap-layout {
-  position: relative;
+.sticky-grid {
   display: grid;
-  gap: 2rem;
-  margin-top: 4rem;
-  grid-template-columns: 1fr;
+  gap: 4rem;
 
   @media (min-width: 992px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 4fr 6fr;
+    /* 40% text, 60% cards */
+    align-items: start;
+    /* critical for sticky to work */
+    gap: 6rem;
   }
 }
 
+.sticky-sidebar {
+  @media (min-width: 992px) {
+    position: sticky;
+    top: 25vh;
+    /* Stick a quarter way down the viewport */
+  }
+}
+
+.sticky-content {
+  .kicker {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+  }
+}
+
+.scrolling-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* =========================================
+   Target Cards
+   ========================================= */
 .target-card-floating {
   position: relative;
-  border-radius: 2rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -393,14 +542,12 @@ h4,
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
   overflow: hidden;
   color: #fff;
-  min-height: 400px;
   background: var(--navy);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
   @media (min-width: 992px) {
-    min-height: 500px;
-    padding: 4rem;
+    padding: 5rem;
   }
 
   .bg-img {
@@ -409,7 +556,6 @@ h4,
     background-size: cover;
     background-position: center;
     z-index: 0;
-    transition: transform 0.8s ease;
   }
 
   .dark-overlay {
@@ -426,12 +572,12 @@ h4,
 
   .num {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 4rem;
+    top: 3rem;
+    right: 3rem;
+    font-size: 5rem;
     font-weight: 900;
     color: var(--green);
-    opacity: 0.3;
+    opacity: 0.2;
     z-index: 2;
     font-family: 'Montserrat', sans-serif;
   }
@@ -449,16 +595,6 @@ h4,
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
-  }
-
-  &:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-    z-index: 10;
-
-    .bg-img {
-      transform: scale(1.08);
-    }
   }
 }
 
@@ -586,36 +722,6 @@ h4,
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 15px 40px rgba(46, 170, 99, 0.6);
     background-color: #259955;
-  }
-
-  /* Animation pulse */
-  .pulse-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    border: 2px solid var(--jag-green);
-    animation: pulseAnimation 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
-    z-index: 0;
-  }
-}
-
-@keyframes pulseAnimation {
-  0% {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    border-width: 4px;
-  }
-
-  100% {
-    width: 140%;
-    height: 180%;
-    opacity: 0;
-    border-width: 1px;
   }
 }
 
@@ -848,63 +954,21 @@ h4,
 }
 
 /* =========================================
-   TOP CTA (Distinct Premium Card) - Moved from footer
+   TOP CTA (Floating Box)
    ========================================= */
-.footer-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 100px 40px;
-  margin-bottom: 80px;
-  border-radius: 40px;
+.floating-cta-box {
+  background: rgba(6, 16, 33, 0.85);
+  /* Solid Navy Glass */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding: 60px 5%;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
   position: relative;
-  z-index: 10;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 
-  .cta-bg-image {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-  }
-
-  .cta-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(6, 16, 33, 0.85);
-    /* Solid black/dark navy overlay */
-    z-index: 1;
-  }
-
-  /* Decorative Solid Orbs */
-  &::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.05);
-    /* Solid transparent white */
-    border-radius: 50%;
-    z-index: 2;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    right: -150px;
-    width: 500px;
-    height: 500px;
-    background: rgba(0, 0, 0, 0.08);
-    /* Solid transparent black */
-    border-radius: 50%;
-    z-index: 2;
-  }
+/* No inner glow, clean flat look */
 
   .cta-content.cta-split {
     position: relative;

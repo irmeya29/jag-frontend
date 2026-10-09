@@ -1082,3 +1082,23 @@ body:has(app-hero1) .main-content {
 .delay-1 { transition-delay: 0.15s !important; }
 .delay-2 { transition-delay: 0.3s !important; }
 .delay-3 { transition-delay: 0.45s !important; }
+
+/* Universal rule for all major titles (H1 and H2) to guarantee uniform size and max 2 lines */
+.uniform-title-wrapper {
+    container-type: inline-size;
+    width: 100%;
+}
+.uniform-title {
+    display: flex !important;
+    flex-direction: column !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    white-space: normal !important;
+    text-wrap: nowrap !important;
+}
+.uniform-title > span, .uniform-title > div {
+    font-size: min(6.5cqi, 3.5rem) !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+    width: 100% !important;
+}

@@ -14,7 +14,7 @@ import { ScrollRevealService } from './shared/scroll-reveal/scroll-reveal.servic
 export class App {
   private readonly scrollReveal = inject(ScrollRevealService);
 
-  isLoading = signal(true);
+  isLoading = signal(false); // Désactivé pour le moment
   isFadingOut = signal(false);
   loadingPercentage = signal(0);
 
@@ -23,6 +23,7 @@ export class App {
     afterNextRender(() => {
       this.scrollReveal.init();
 
+      /* LOADER TEMPORAIREMENT DÉSACTIVÉ
       let percent = 0;
       const interval = setInterval(() => {
         percent += 2;
@@ -40,6 +41,7 @@ export class App {
           this.isLoading.set(false);
         }, 1200);
       }, 2800);
+      */
     });
   }
 }
