@@ -1121,7 +1121,8 @@ h1.uniform-title > div,
 .uniform-title-wrapper h1 > div {
     font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
     line-height: 1.15 !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
+    word-break: break-word !important;
     width: auto !important;
     display: block !important;
     text-align: left !important;
@@ -1146,7 +1147,8 @@ h2.uniform-title > div,
 .uniform-title-wrapper h2 > div {
     font-size: clamp(1.65rem, 3.5vw, 2.5rem) !important;
     line-height: 1.2 !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
+    word-break: break-word !important;
     width: auto !important;
     display: block !important;
     text-align: left !important;

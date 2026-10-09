@@ -2,10 +2,12 @@ import { Component, ChangeDetectionStrategy, signal, AfterViewInit, inject, View
 import { RouterLink } from '@angular/router';
 import { ScrollRevealService } from '../../shared/scroll-reveal/scroll-reveal.service';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-hero1',
-  imports: [RouterLink],
+  imports: [RouterLink, DragDropModule],
   templateUrl: './hero1.html',
   styleUrl: './hero1.scss',
 })
