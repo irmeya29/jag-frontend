@@ -81,14 +81,22 @@ h1, h2, h3, h4, .hero__eyebrow, .kicker, .btn-premium {
   margin-top: clamp(0.5rem, 3vh, 2rem);
 }
 
-.pole-hero h1 {
-  max-width: 12ch;
+.cinematic-hero-title {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   color: #fff;
-  font-size: clamp(3rem, 5.5vw, 5.55rem);
+  font-size: clamp(1.6rem, 7vw, 5.55rem);
   font-weight: 800;
   line-height: 1.05;
-  text-wrap: balance;
+  letter-spacing: -0.02em;
+  margin-inline: -1rem; // Helps on small mobile screens
+  width: calc(100% + 2rem);
+  
+  span {
+    display: block;
+    white-space: nowrap; // FORCE precisely one line per span (2 lines total)
+  }
 }
 
 .hero__description {
