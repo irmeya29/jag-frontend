@@ -1,23 +1,23 @@
 <nav class="navbar animate-fadeIn">
   <div class="container navbar-container">
-    
-    <!-- Mobile Menu Button (Left on Mobile) -->
-    <button class="mobile-toggle" [class.is-active]="isMenuOpen()" (click)="toggleMenu()" aria-label="Toggle menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
 
-    <!-- Mobile Logo -->
+    <!-- Mobile Logo (Left on Mobile) -->
     <div class="nav-center-brand mobile-logo">
       <a routerLink="/hero1" class="logo-link" (click)="closeMenu()">
         <img src="/logo.webp" alt="Just Agro Group Logo" class="logo-img" />
       </a>
     </div>
 
+    <!-- Mobile Menu Button (Right on Mobile) -->
+    <button class="mobile-toggle" [class.is-active]="isMenuOpen()" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
     <!-- The actual menu wrapper (Grid contents on desktop, Modal on mobile) -->
     <div class="nav-menu-wrapper" [class.is-open]="isMenuOpen()">
-      
+
       <!-- Left Nav Links -->
       <div class="nav-menu nav-menu-left">
         <ul class="nav-list">
@@ -27,7 +27,8 @@
             </a>
           </li>
           <li class="nav-item has-dropdown" [class.is-active]="isDropdownOpen()">
-            <a class="nav-link dropdown-toggle" tabindex="0" (click)="toggleDropdown($event)" (keyup.enter)="toggleDropdown($event)">
+            <a class="nav-link dropdown-toggle" tabindex="0" (click)="toggleDropdown($event)"
+              (keyup.enter)="toggleDropdown($event)">
               <span class="link-text">Nos Pôles</span>
               <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -36,14 +37,14 @@
             <!-- COMPACT GLASSMORPHISM DROPDOWN -->
             <div class="glass-dropdown dropdown-menu">
               <div class="glass-dropdown-inner">
-                <a routerLink="/nospoles/pole1" class="glass-item" (click)="closeMenu()">
+                <a routerLink="/nospoles/pole1" class="glass-item" (click)="navigateTo('/nospoles/pole1', $event)">
                   <div class="glass-item-content">
                     <span class="glass-title">Maîtrise d’Ouvrage</span>
                   </div>
                 </a>
-                <a routerLink="/nospoles/pole2" class="glass-item" (click)="closeMenu()">
+                <a routerLink="/nospoles/pole2" class="glass-item" (click)="navigateTo('/nospoles/pole2', $event)">
                   <div class="glass-item-content">
-                    <span class="glass-title">Fournisseur Industriel</span>
+                    <span class="glass-title">Fournisseurs Industriels</span>
                   </div>
                 </a>
               </div>
@@ -78,7 +79,7 @@
             </a>
           </li>
         </ul>
-        
+
         <div class="nav-cta">
           <a routerLink="/mon-espace-just" class="btn btn--danger btn-espace" (click)="closeMenu()">
             ESPACE JUST

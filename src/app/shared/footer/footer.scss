@@ -92,9 +92,11 @@
   padding-right: 40px;
 
   .footer-logo-img {
-    height: 50px;
+    display: block;
+    height: 110px;
+    width: auto;
     margin-bottom: 30px;
-    filter: drop-shadow(0 0 10px rgba(46,170,99,0.3));
+    background: transparent;
   }
 
   .brand-desc {

@@ -1,5 +1,5 @@
-import { Component, signal , ChangeDetectionStrategy} from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, signal, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,6 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+  private router = inject(Router);
   isMenuOpen = signal(false);
   isDropdownOpen = signal(false);
   activePole = signal<'pole1' | 'pole2'>('pole1');
@@ -20,6 +21,15 @@ export class Navbar {
   toggleDropdown(event: Event) {
     event.stopPropagation();
     this.isDropdownOpen.update(v => !v);
+  }
+
+  navigateTo(path: string, event?: Event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.closeMenu();
+    this.router.navigateByUrl(path);
   }
 
   closeMenu() {

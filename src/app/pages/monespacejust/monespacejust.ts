@@ -1,10 +1,11 @@
-import { Component , ChangeDetectionStrategy} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-monespacejust',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './monespacejust.html',
   styleUrl: './monespacejust.scss',
 })

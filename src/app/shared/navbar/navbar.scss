@@ -12,6 +12,10 @@
   display: flex;
   align-items: center;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (max-width: 1024px) {
+    height: 74px;
+  }
 }
 
 .navbar-container {
@@ -27,6 +31,8 @@
   @media (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--space-4, 1rem);
   }
 }
 
@@ -184,6 +190,8 @@
   transition: background-color 0.2s ease;
   position: relative;
   z-index: 2;
+  cursor: pointer;
+  pointer-events: auto;
 
   &:hover {
     background: rgba(0, 0, 0, 0.04);
@@ -197,6 +205,7 @@
 .glass-item-content {
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 
 .glass-title {
@@ -207,6 +216,7 @@
   letter-spacing: 1.5px;
   color: var(--jag-navy);
   transition: color 0.2s ease;
+  pointer-events: none;
 }
 
 // Invisible bridge to keep hover active between the nav item and the dropdown
@@ -222,9 +232,10 @@
   }
 }
 
-// Show dropdown on hover (Desktop)
+// Show dropdown on hover or when open (Desktop)
 @media (min-width: 1025px) {
-  .has-dropdown:hover {
+  .has-dropdown:hover,
+  .has-dropdown.is-active {
     .glass-dropdown {
       opacity: 1;
       visibility: visible;
@@ -281,6 +292,18 @@
 
 .mobile-logo {
   display: none;
+  align-items: center;
+
+  .logo-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
 }
 
 // Mobile Toggle modernise
@@ -289,26 +312,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  background: var(--jag-muted);
-  border-radius: var(--radius-md);
-  border: none;
+  width: 42px;
+  height: 42px;
+  background: rgba(13, 33, 55, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(13, 33, 55, 0.08);
   cursor: pointer;
   padding: 0;
   gap: 5px;
   z-index: calc(var(--z-navbar) + 1);
-  transition: background var(--transition-fast);
+  transition: all var(--transition-fast);
 
-  &:hover {
-    background: var(--gray-200);
+  &:hover, &:active {
+    background: rgba(13, 33, 55, 0.1);
   }
 
   .hamburger-line {
     width: 20px;
     height: 2px;
     background-color: var(--jag-navy);
+    border-radius: 2px;
     transition: transform var(--transition-fast), opacity var(--transition-fast);
+    transform-origin: center;
   }
 }
 
@@ -318,12 +343,15 @@
   }
 
   .mobile-toggle.is-active {
+    background: rgba(13, 33, 55, 0.08);
+
     .hamburger-line:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
 
     .hamburger-line:nth-child(2) {
       opacity: 0;
+      transform: scaleX(0);
     }
 
     .hamburger-line:nth-child(3) {
@@ -339,23 +367,24 @@
     width: 100%;
     max-width: none;
     height: auto;
-    max-height: calc(100vh - var(--navbar-height));
-    background: var(--white);
+    max-height: calc(100vh - 74px);
+    background: #ffffff;
     border: none;
-    border-top: 1px solid var(--gray-200);
-    border-bottom: 1px solid var(--gray-200);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 0;
     display: flex;
     flex-direction: column;
     padding: 0;
     gap: 0;
     align-items: stretch;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-10px);
+    box-shadow: 0 16px 36px rgba(8, 21, 41, 0.12);
+    transform: translateY(-8px);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0.25s ease;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-menu-wrapper.is-open {
@@ -367,6 +396,8 @@
   .nav-menu {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: stretch;
     gap: 0;
   }
 
@@ -376,36 +407,54 @@
 
   .mobile-logo {
     display: flex;
-    justify-content: center;
   }
 
   .nav-list {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
     gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    width: 100%;
   }
 
   .nav-link {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: none;
-    letter-spacing: normal;
-    padding: 1rem 1.5rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.15rem 1.5rem;
     width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 0;
     background: transparent;
     color: var(--jag-navy);
+    transition: background 0.2s ease, color 0.2s ease;
 
     &::before {
       display: none; // Hide desktop animated dot
     }
 
-    &.active {
-      background: var(--gray-100);
+    &:hover, &:active {
+      background: rgba(0, 0, 0, 0.02);
       color: var(--jag-green);
-      box-shadow: none;
+    }
+
+    &.active {
+      background: rgba(46, 170, 99, 0.07);
+      color: var(--jag-green);
+      font-weight: 800;
+      border-left: 4px solid var(--jag-green);
+      padding-left: calc(1.5rem - 4px);
     }
   }
 
@@ -414,32 +463,51 @@
     transform: none;
     box-shadow: none;
     border: none;
-    border-bottom: 1px solid var(--gray-200);
-    background-color: var(--gray-100);
-    padding: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background-color: #f8fafc;
+    padding: 0.4rem 0;
     margin-top: 0;
     display: none;
     opacity: 1;
     visibility: visible;
     border-radius: 0;
+    width: 100%;
+    pointer-events: auto;
+
+    &::before {
+      display: none;
+    }
+
+    .glass-dropdown-inner {
+      padding: 0;
+      gap: 0;
+      pointer-events: auto;
+    }
     
     .glass-item {
-      padding: 1rem 1.5rem 1rem 2.5rem; // Indent dropdown items
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 0.95rem 1.5rem 0.95rem 2.25rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
       border-radius: 0;
       color: var(--jag-navy);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      pointer-events: auto;
       
       &:last-child {
         border-bottom: none;
       }
 
-      &:hover, &.active {
-        background: rgba(0,0,0,0.03);
+      &:hover, &:active {
+        background: rgba(46, 170, 99, 0.07);
+        color: var(--jag-green);
       }
       
       .glass-title {
-        font-size: 0.95rem;
-        font-weight: 500;
+        font-size: 0.88rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        pointer-events: none;
       }
     }
   }
@@ -447,33 +515,29 @@
   .has-dropdown.is-active {
     .dropdown-menu {
       display: block;
+      pointer-events: auto;
     }
 
     .dropdown-arrow {
       transform: rotate(180deg);
+      color: var(--jag-green);
     }
-  }
-}
-
-.mobile-cta-only {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  .mobile-cta-only {
-    display: block;
-    margin-top: var(--space-4);
   }
 
   .nav-cta {
     display: flex;
     justify-content: center;
-    margin-top: var(--space-2);
+    padding: 1.5rem;
     width: 100%;
+    box-sizing: border-box;
 
     .btn-espace {
       width: 100%;
       justify-content: center;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
     }
   }
 }
